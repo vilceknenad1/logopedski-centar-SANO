@@ -30,6 +30,12 @@
     section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
     #pocetna{padding-top:96px!important}
     article{padding-left:18px!important;padding-right:18px!important}
+    #galerija-grid{grid-template-columns:1fr 1fr!important;grid-auto-rows:200px!important}
+    #galerija-grid>div{grid-column:auto!important;grid-row:auto!important}
+    #galerija-grid span{font-size:13px!important;padding:6px 13px!important}
+  }
+  @media (max-width:440px){
+    #galerija-grid{grid-template-columns:1fr!important;grid-auto-rows:230px!important}
   }
 </style>
 </helmet>
@@ -395,7 +401,7 @@
       <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 14px">Naš prostor i radionice</h2>
       <p style="font-size:18px;line-height:1.6">Mjesto po mjeri djece: svijetlo, toplo i puno poticaja za igru i učenje.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:14px">
+    <div id="galerija-grid" style="display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:14px">
       <sc-for list="{{ gallery }}" as="im" hint-placeholder-count="6">
         <div data-reveal onClick="{{ im.onOpen }}" style="grid-column:span {{ im.col }};grid-row:span {{ im.row }};border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(80,110,150,0.08);position:relative;cursor:zoom-in">
           <img src="{{ im.img }}" alt="{{ im.label }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease" style-hover="transform:scale(1.07)">
