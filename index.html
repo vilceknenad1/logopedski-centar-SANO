@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:110px}
+  body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#ffffff;-webkit-font-smoothing:antialiased}
+  a{color:#0f7c8c;text-decoration:none}
+  a:hover{color:#1ea6b6}
+  h1,h2,h3,h4{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.15;letter-spacing:-0.01em}
+  input,textarea,select{font-family:'Mulish',sans-serif}
+  ::placeholder{color:#9aa4b1}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  @keyframes floaty2{0%,100%{transform:translateY(0)}50%{transform:translateY(-24px)}}
+  @keyframes breathe{0%,100%{transform:translateY(0);box-shadow:0 18px 38px rgba(160,120,50,0.14)}50%{transform:translateY(-12px);box-shadow:0 36px 58px rgba(160,120,50,0.22)}}
+  @keyframes heroRise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  @media (max-width:680px){
+    html{scroll-padding-top:86px}
+    section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
+    #pocetna{padding-top:96px!important}
+    article{padding-left:18px!important;padding-right:18px!important}
+  }
+</style>
+</helmet>
+
+<div ref="{{ setRoot }}" style="overflow-x:clip">
+
+<!-- ================= HEADER (uokvirena, plutajuća, sticky) ================= -->
+<header style="position:sticky;top:0;z-index:60;padding:14px 16px 0">
+  <div style="max-width:1200px;margin:0 auto;background:#ffffff;border:1px solid #e6ecf3;border-radius:18px;box-shadow:0 10px 34px rgba(47,73,110,0.13);padding:6px 10px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="#pocetna" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
+    <sc-if value="{{ showDesktopNav }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:2px">
+        <a href="#o-nama" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">O nama</a>
+        <a href="#usluge" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Usluge</a>
+        <a href="#penjalica" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Jezična penjalica</a>
+        <a href="#cjenik-usluga" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Cjenik</a>
+        <a href="#kontakt" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Kontakt</a>
+        <div style="position:relative" onMouseEnter="{{ openRes }}" onMouseLeave="{{ closeRes }}">
+          <button onClick="{{ toggleRes }}" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px;background:none;border:none;cursor:pointer;font-family:'Mulish',sans-serif;display:flex;align-items:center;gap:5px" style-hover="background:#f1f5fa;color:#0f7c8c">Za roditelje <span style="font-size:10px;opacity:0.7">▾</span></button>
+          <sc-if value="{{ resOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:100%;right:0;padding-top:10px;z-index:70">
+              <div style="min-width:260px;background:#fff;border:1px solid #e6ecf3;border-radius:14px;box-shadow:0 14px 34px rgba(47,73,110,0.18);padding:8px">
+              <a href="#kada" onClick="{{ closeRes }}" style="display:block;padding:11px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Kada logopedu?</a>
+              <a href="materijali.html" onClick="{{ closeRes }}" style="display:block;padding:11px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Materijali za vježbu kod kuće</a>
+              <a href="#blog" onClick="{{ closeRes }}" style="display:block;padding:11px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Blog / Savjeti logopeda</a>
+              <a href="#recenzije" onClick="{{ closeRes }}" style="display:block;padding:11px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">Iskustva roditelja</a>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#narucivanje" style="margin-left:8px;padding:11px 20px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezerviraj termin</a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{ showBurger }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleNav }}" aria-label="Izbornik" style="border:none;background:#eef3fb;width:46px;height:46px;border-radius:12px;cursor:pointer;font-size:22px;color:#4b5563;flex:none">≡</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1200px;margin:8px auto 0;background:#fff;border:1px solid #e6ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(47,73,110,0.12);padding:14px;display:flex;flex-wrap:wrap;gap:8px">
+      <a href="#o-nama" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">O nama</a>
+      <a href="#usluge" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Usluge</a>
+      <a href="#kada" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Kada logopedu?</a>
+      <a href="#penjalica" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Jezična penjalica</a>
+      <a href="materijali.html" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Materijali</a>
+      <a href="#cjenik-usluga" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Cjenik</a>
+      <a href="#blog" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Blog</a>
+      <a href="#galerija" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#f1f5fa;color:#4b5563;font-weight:700">Galerija</a>
+      <a href="#narucivanje" onClick="{{ closeNav }}" style="padding:10px 14px;border-radius:10px;background:#1ea6b6;color:#fff;font-weight:800">Rezerviraj termin</a>
+    </div>
+  </sc-if>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="pocetna" style="position:relative;background:linear-gradient(165deg,#f4f8fd 0%,#e9f5f7 100%);overflow:hidden;margin-top:-72px;padding:120px 22px 104px">
+  <div style="position:absolute;top:40px;right:7%;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle at 35% 30%, rgba(30,166,182,0.30), rgba(30,166,182,0.04));filter:blur(4px);pointer-events:none;animation:floaty 10s ease-in-out infinite"></div>
+  <div style="position:absolute;top:150px;right:21%;width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%, rgba(109,142,214,0.28), rgba(109,142,214,0.04));filter:blur(4px);pointer-events:none;animation:floaty2 13s ease-in-out infinite"></div>
+  <div style="position:absolute;bottom:-70px;left:-70px;width:260px;height:260px;border-radius:50%;background:rgba(109,142,214,0.1)"></div>
+  <div style="max-width:1200px;margin:0 auto;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:center">
+    <div data-reveal>
+      <span style="display:inline-block;background:#fff;color:#0f7c8c;font-weight:800;font-size:13px;letter-spacing:0.06em;padding:8px 16px;border-radius:999px;box-shadow:0 4px 14px rgba(30,166,182,0.12);margin-bottom:24px;animation:heroRise .7s ease-out both;animation-delay:.05s">LOGOPEDSKI CENTAR · ZAGREB</span>
+      <h1 style="font-size:clamp(36px,5.6vw,60px);font-weight:700;margin:0;color:#1F2A44;animation:heroRise .7s ease-out both;animation-delay:.15s">Mjesto gdje prvi glasovi<br><span style="font-family:'Lora',Georgia,serif;font-style:italic;font-weight:600;color:#1ea6b6">postaju velike priče</span></h1>
+      <p style="font-size:18px;line-height:1.65;margin:22px 0 34px;max-width:480px;color:#5A6D80;animation:heroRise .7s ease-out both;animation-delay:.25s">Toplo i posvećeno mjesto gdje djeca uz stručnu podršku razvijaju govor, jezik i komunikaciju. <strong style="color:#1F2A44;font-weight:800">Mali glasovi, veliki koraci.</strong></p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:22px;animation:heroRise .7s ease-out both;animation-delay:.35s">
+        <a href="#narucivanje" style="height:48px;display:inline-flex;align-items:center;padding:0 28px;border-radius:14px;background:#1ea6b6;color:#fff;font-weight:800;font-size:17px;border:1.5px solid #1ea6b6;box-shadow:0 10px 24px rgba(30,166,182,0.3)" style-hover="background:#16899a;border-color:#16899a">Rezerviraj termin</a>
+        <a href="#usluge" style="display:inline-flex;align-items:center;gap:7px;color:#0f7c8c;font-weight:800;font-size:16px" style-hover="color:#1ea6b6;gap:11px">Pogledaj usluge <span style="font-size:18px">→</span></a>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:#8a93a1;font-weight:600;animation:heroRise .7s ease-out both;animation-delay:.4s">Odgovaramo u roku 24h · bez liste čekanja</p>
+      <div style="display:flex;gap:14px;margin-top:42px;flex-wrap:wrap;animation:heroRise .7s ease-out both;animation-delay:.45s">
+        <div style="flex:1 1 0;min-width:150px;display:flex;align-items:center;gap:12px;background:#fff;padding:14px 16px;border-radius:16px;box-shadow:0 8px 22px rgba(30,60,90,0.1)">
+          <span style="width:42px;height:42px;flex:none;border-radius:12px;background:#eef3fb;color:#6d8ed6;display:flex;align-items:center;justify-content:center;font-size:21px">★</span>
+          <div><div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:32px;color:#1A2B4C;line-height:1">10+</div><div style="font-size:13px;font-weight:700;color:#5a6472">godina iskustva</div></div>
+        </div>
+        <div style="flex:1 1 0;min-width:150px;display:flex;align-items:center;gap:12px;background:#fff;padding:14px 16px;border-radius:16px;box-shadow:0 8px 22px rgba(30,60,90,0.1)">
+          <span style="width:42px;height:42px;flex:none;border-radius:12px;background:#e7f6f8;color:#1ea6b6;display:flex;align-items:center;justify-content:center;font-size:21px">♥</span>
+          <div><div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:32px;color:#1A2B4C;line-height:1">500+</div><div style="font-size:13px;font-weight:700;color:#5a6472">sretne djece</div></div>
+        </div>
+        <div style="flex:1 1 0;min-width:150px;display:flex;align-items:center;gap:12px;background:#fff;padding:14px 16px;border-radius:16px;box-shadow:0 8px 22px rgba(30,60,90,0.1)">
+          <span style="width:42px;height:42px;flex:none;border-radius:12px;background:#fbf1e2;color:#e2953a;display:flex;align-items:center;justify-content:center;font-size:21px">☺</span>
+          <div><div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:32px;color:#1A2B4C;line-height:1">1:1</div><div style="font-size:13px;font-weight:700;color:#5a6472">individualni rad</div></div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal style="position:relative">
+      <img src="uploads/speech_therapy_portrait.webp" alt="Roditelji i djeca u Logopedskom centru SANO" style="width:100%;border-radius:26px;aspect-ratio:4/5;object-fit:cover;box-shadow:0 24px 50px rgba(80,110,150,0.18);border:8px solid #fff;display:block;animation:floaty 8s ease-in-out infinite;will-change:transform">
+      <div style="position:absolute;bottom:34px;left:50%;transform:translateX(-50%);background:#fff;padding:13px 20px;border-radius:999px;box-shadow:0 16px 34px rgba(30,60,90,0.28);display:flex;align-items:center;gap:12px;white-space:nowrap">
+        <div style="width:36px;height:36px;border-radius:50%;background:#e7f6f8;display:flex;align-items:center;justify-content:center;color:#1ea6b6;font-weight:900;font-family:'Lora',Georgia,serif">✓</div>
+        <div style="font-weight:800;color:#2f3945;font-size:14px;line-height:1.2">Igra i učenje<br><span style="font-weight:600;color:#8a93a1;font-size:12px">u svakoj terapiji</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= O NAMA ================= -->
+<section id="o-nama" style="padding:92px 22px;background:#fff">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:52px;align-items:center">
+    <div data-reveal style="position:relative">
+      <img src="uploads/scandinavian_women_group.webp" alt="Tim Logopedskog centra SANO" loading="lazy" style="width:100%;border-radius:24px;aspect-ratio:1/1;object-fit:cover;box-shadow:0 20px 44px rgba(80,110,150,0.13);display:block">
+      <div style="position:absolute;top:-22px;right:-22px;width:96px;height:96px;border-radius:50%;background:#e2953a;opacity:0.15"></div>
+    </div>
+    <div data-reveal>
+      <span style="color:#0f7c8c;font-weight:800;letter-spacing:0.08em;font-size:14px">O NAMA</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 20px">Posvećeni svakom malom glasu</h2>
+      <p style="font-size:18px;line-height:1.7;margin-bottom:18px">Logopedski centar <strong style="color:#5b79c4">SANO</strong> okuplja tim iskusnih logopedinja koje s puno topline i stručnosti prate razvoj govora, jezika i komunikacije kod djece predškolske i školske dobi.</p>
+      <p style="font-size:18px;line-height:1.7;margin-bottom:28px">Vjerujemo da svako dijete napreduje svojim tempom. Zato je svaka terapija individualna, prilagođena djetetu, a roditelji su naši ravnopravni suradnici na tom putu.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#f5f9fe;padding:18px;border-radius:14px;text-align:left"><span style="flex:none;width:42px;height:42px;border-radius:12px;background:#6d8ed6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px">♥</span><div><strong style="color:#2f3945;display:block;margin-bottom:2px">Individualni pristup</strong><span style="font-size:14px;line-height:1.45">plan skrojen za svako dijete</span></div></div>
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#f5f9fe;padding:18px;border-radius:14px;text-align:left"><span style="flex:none;width:42px;height:42px;border-radius:12px;background:#1ea6b6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px">⌂</span><div><strong style="color:#2f3945;display:block;margin-bottom:2px">Uz roditelje</strong><span style="font-size:14px;line-height:1.45">podrška za rad kod kuće</span></div></div>
+      </div>
+      <a href="#tim" style="display:inline-flex;align-items:center;gap:7px;margin-top:24px;color:#0f7c8c;font-weight:800;font-size:16px" style-hover="color:#1ea6b6;gap:11px">Upoznaj naš tim <span style="font-size:18px">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NAŠ TIM ================= -->
+<section id="tim" style="padding:88px 22px 96px;background:linear-gradient(180deg,#faf7f2 0%,#f4eee4 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;top:40px;left:-50px;width:180px;height:180px;border-radius:50%;background:rgba(226,149,58,0.08)"></div>
+  <div style="position:absolute;bottom:20px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(30,166,182,0.08)"></div>
+  <div style="max-width:1120px;margin:0 auto;position:relative">
+    <div style="max-width:620px;margin:0 auto 48px;text-align:center" data-reveal>
+      <span style="color:#e2953a;font-weight:800;letter-spacing:0.08em;font-size:14px">NAŠ TIM</span>
+      <h2 style="font-size:clamp(28px,3.6vw,40px);font-weight:700;margin:12px 0 14px">Upoznajte naše logopedinje</h2>
+      <p style="font-size:18px;line-height:1.6">Stručni tim posvećen govorno-jezičnom razvoju svakog djeteta.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;align-items:start">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="3">
+        <div data-reveal style="background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 14px 34px rgba(80,110,150,0.1);text-align:center;height:326px;display:flex;flex-direction:column">
+          <div style="height:78px;flex:none;background:{{ m.tint }}"></div>
+          <div style="width:128px;height:128px;border-radius:50%;margin:-64px auto 16px;overflow:hidden;border:4px solid #fff">
+            <img src="{{ m.photo }}" alt="{{ m.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+          <h3 style="font-size:20px;font-weight:700;color:#1F2A44;margin:0 16px 10px;line-height:1.25;min-height:50px;display:flex;align-items:center;justify-content:center">{{ m.name }}</h3>
+          <span style="display:inline-block;font-size:13px;font-weight:800;letter-spacing:0.03em;color:#fff;background:#2BB5B0;padding:6px 16px;border-radius:999px;align-self:center">{{ m.title }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ================= USLUGE ================= -->
+<section id="usluge" style="position:relative;padding:92px 22px;background:linear-gradient(180deg,#f5f9fe 0%,#eef3fb 100%);overflow:hidden">
+  <div style="position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border-radius:50%;background:#e2953a;opacity:0.06;pointer-events:none"></div>
+  <div style="max-width:1120px;margin:0 auto;position:relative">
+    <div style="text-align:center;max-width:640px;margin:0 auto 50px" data-reveal>
+      <span style="color:#6d8ed6;font-weight:800;letter-spacing:0.08em;font-size:14px">NAŠE USLUGE</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 14px">Terapije i podrška</h2>
+      <p style="font-size:18px;line-height:1.6">Od procjene do napretka: pratimo dijete u svakom koraku govorno-jezičnog razvoja.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px">
+      <sc-for list="{{ services3 }}" as="s" hint-placeholder-count="3">
+        <div data-reveal style="position:relative;background:#fff;border-radius:20px;padding:28px 26px;box-shadow:0 10px 30px rgba(80,110,150,0.08);border-top:4px solid #2BB5B0;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-8px);box-shadow:0 22px 46px rgba(30,120,140,0.18)">
+          <div style="width:52px;height:52px;border-radius:50%;background:{{ s.iconBg }};color:#0f7c8c;display:flex;align-items:center;justify-content:center;margin-bottom:16px">{{ s.svg }}</div>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.09em;color:#0f7c8c">KORAK {{ s.num }}</span>
+          <h3 style="font-size:20px;font-weight:800;margin:5px 0 9px;color:#1F2A44">{{ s.title }}</h3>
+          <p style="font-size:15px;line-height:1.6;margin-bottom:16px">{{ s.desc }}</p>
+          <div style="align-self:flex-start;display:flex;gap:8px;align-items:center;background:{{ s.pillBg }};border-radius:999px;padding:8px 14px;margin-top:auto;margin-bottom:16px"><span style="font-size:13px;font-weight:700;color:{{ s.pillInk }};line-height:1.3">{{ s.bullet }}</span></div>
+          <a href="#narucivanje" style="display:inline-flex;align-items:center;gap:6px;color:#0f7c8c;font-weight:800;font-size:14.5px" style-hover="color:#1ea6b6;gap:10px">Saznaj više <span style="font-size:16px">→</span></a>
+        </div>
+      </sc-for>
+    </div>
+    <div data-reveal style="margin-top:22px;background:#FFFBEB;border:1px solid #f0e6c8;border-radius:22px;padding:34px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;align-items:center;box-shadow:0 12px 30px rgba(160,120,50,0.08)">
+      <div style="display:flex;align-items:center;gap:22px">
+        <div style="flex:none;width:84px;height:84px;border-radius:22px;background:#EDE9FE;color:#7c5cc4;display:flex;align-items:center;justify-content:center">{{ service4.svgBig }}</div>
+        <div>
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.09em;color:#7c5cc4">KORAK 4 · PROGRAM</span>
+          <h3 style="font-size:24px;font-weight:800;margin:5px 0 8px;color:#1F2A44">{{ service4.title }}</h3>
+          <span style="display:inline-block;font-size:13px;font-weight:700;color:#6b5aa8;background:#EDE9FE;border-radius:999px;padding:7px 14px">{{ service4.bullet }}</span>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:16px;line-height:1.65;margin-bottom:18px;color:#41505f">{{ service4.desc }}</p>
+        <a href="#narucivanje" style="display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:12px;background:#7c5cc4;color:#fff;font-weight:800;font-size:15px" style-hover="background:#684aae">Prijavi dijete <span style="font-size:16px">→</span></a>
+      </div>
+    </div>
+    <div data-reveal style="max-width:680px;margin:44px auto 0;background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:30px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 24px;text-align:center;box-shadow:0 16px 40px rgba(30,120,140,0.1)">
+      <span style="font-size:17px;color:#41505f;font-weight:600">Niste sigurni odakle krenuti? <strong style="color:#1F2A44">Počnite s dijagnostikom.</strong></span>
+      <a href="#narucivanje" style="display:inline-flex;align-items:center;gap:7px;padding:14px 28px;border-radius:12px;background:#2BB5B0;color:#fff;font-weight:800;font-size:16px;box-shadow:0 10px 24px rgba(43,181,176,0.32)" style-hover="background:#22938f">Rezerviraj procjenu <span style="font-size:17px">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KADA LOGOPEDU ================= -->
+<section id="kada" style="padding:92px 22px;background:#16899a;color:#eafafc;position:relative;overflow:hidden">
+  <div style="position:absolute;top:-40px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.06)"></div>
+  <div style="position:absolute;bottom:-60px;left:-30px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.05)"></div>
+  <div style="max-width:1080px;margin:0 auto;position:relative">
+    <div style="text-align:center;max-width:680px;margin:0 auto 44px" data-reveal>
+      <span style="font-weight:800;letter-spacing:0.08em;font-size:14px;color:#9fdbe4">SIGNALI</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 14px;color:#fff">Kada potražiti logopeda?</h2>
+      <p style="font-size:18px;line-height:1.6;color:#d6f1f5">Rana reakcija znači brži napredak. Ako primijetite nešto od navedenog, slobodno nas kontaktirajte, a savjet je uvijek besplatan.</p>
+    </div>
+    <div data-reveal style="margin-bottom:16px"><span style="display:inline-block;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px">Govor</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+      <sc-for list="{{ signsGovor }}" as="g" hint-placeholder-count="4">
+        <a href="#narucivanje" data-reveal style="display:flex;gap:14px;align-items:center;background:rgba(255,255,255,0.08);padding:18px 20px;border-radius:16px;transition:background .2s" style-hover="background:#1A7A8A">
+          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.15);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;font-family:'Lora',Georgia,serif">{{ g.n }}</span>
+          <span style="flex:1;font-size:16px;line-height:1.4;color:#fff;font-weight:500">{{ g.t }}</span>
+          <span style="flex:none;color:#9fdbe4;font-size:18px;font-weight:800">→</span>
+        </a>
+      </sc-for>
+    </div>
+    <div data-reveal style="margin:32px 0 16px"><span style="display:inline-block;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:7px 14px;border-radius:999px">Razumijevanje i učenje</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px">
+      <sc-for list="{{ signsUcenje }}" as="g" hint-placeholder-count="2">
+        <a href="#narucivanje" data-reveal style="display:flex;gap:14px;align-items:center;background:rgba(255,255,255,0.08);padding:18px 20px;border-radius:16px;transition:background .2s" style-hover="background:#1A7A8A">
+          <span style="flex:none;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.15);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;font-family:'Lora',Georgia,serif">{{ g.n }}</span>
+          <span style="flex:1;font-size:16px;line-height:1.4;color:#fff;font-weight:500">{{ g.t }}</span>
+          <span style="flex:none;color:#9fdbe4;font-size:18px;font-weight:800">→</span>
+        </a>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:52px;display:flex;flex-direction:column;align-items:center;gap:12px" data-reveal>
+      <a href="#narucivanje" style="display:inline-block;padding:17px 34px;border-radius:14px;background:#fff;color:#16899a;font-weight:800;font-size:17px;box-shadow:0 12px 28px rgba(0,0,0,0.16)" style-hover="background:#eafafc">Zatraži besplatan savjet</a>
+      <span style="font-size:14px;color:#bfe6ec;font-weight:600">Odgovaramo unutar 24h · bez obveze</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROIZVODI / JEZIČNA PENJALICA ================= -->
+<section id="penjalica" style="padding:92px 22px;background:#fbf6ee;position:relative;overflow:hidden">
+  <div style="max-width:1160px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:center">
+      <div data-reveal>
+        <span style="display:inline-block;background:#e2953a;color:#fff;font-weight:800;letter-spacing:0.05em;font-size:13px;padding:6px 14px;border-radius:999px">EDUKATIVNI BREND</span>
+        <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:16px 0 8px;color:#2f3945">Jezična penjalica</h2>
+        <p style="font-size:18px;font-weight:700;color:#c07d26;margin-bottom:18px">Logopedski materijali za jezično-govorni razvoj djece</p>
+        <p style="font-size:17px;line-height:1.7;margin-bottom:16px">Jezična penjalica je edukativni brend Logopedskog centra SANO, nastao iz dugogodišnjeg iskustva naših logopedinja u radu s djecom te svakodnevnih potreba djece u terapiji.</p>
+        <p style="font-size:17px;line-height:1.7;margin-bottom:26px">Kroz ilustrirane materijale, AAC simbole i ciljane jezične poticaje pomaže djeci razvijati jezično razumijevanje, obogatiti rječnik, uvježbati pravilnu morfologiju i sintaksu te razvijati predmatematičke i grafomotoričke vještine.</p>
+        <a href="#webshop" style="display:inline-block;padding:14px 26px;border-radius:14px;background:#e2953a;color:#fff;font-weight:800;font-size:16px;box-shadow:0 10px 22px rgba(226,149,58,0.32)" style-hover="background:#c87f28">Pogledaj materijale ↓</a>
+      </div>
+      <div data-reveal style="position:relative">
+        <img src="uploads/image_28.webp" alt="Jezična penjalica: logopedske kartice" style="width:100%;height:auto;border-radius:24px;object-fit:contain;border:8px solid #fff;display:block;animation:breathe 5s ease-in-out infinite;will-change:transform">
+        <div style="position:absolute;top:-18px;left:-18px;width:80px;height:80px;border-radius:50%;background:#e7f6f8;opacity:0.9;z-index:-1"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= WEBSHOP MATERIJALI ================= -->
+<section id="webshop" style="padding:92px 22px;background:#fff">
+  <div style="max-width:1180px;margin:0 auto">
+    <div style="text-align:center;max-width:660px;margin:0 auto 48px" data-reveal>
+      <span style="color:#e2953a;font-weight:800;letter-spacing:0.08em;font-size:14px">MATERIJALI ZA KUPNJU</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 14px">Materijali i vježbenice</h2>
+      <p style="font-size:18px;line-height:1.6">Provjereni logopedski materijali „Jezične penjalice": kartice, penjalice i vježbenice u tiskanom i digitalnom izdanju.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px">
+      <sc-for list="{{ featuredShop }}" as="p" hint-placeholder-count="8">
+        <div data-reveal style="background:#fff;border:1px solid #eef0e6;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(90,110,70,0.08);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-6px);box-shadow:0 20px 40px rgba(90,110,70,0.16)">
+          <div style="position:relative;height:220px;background:#f7f6f0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px">
+            <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:12px;left:12px;z-index:2;background:#b0475a;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.04em;padding:4px 9px;border-radius:6px">{{ p.badgeText }}</span></sc-if>
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain">
+          </div>
+          <div style="padding:20px 20px 22px;display:flex;flex-direction:column;flex:1">
+            <span style="font-size:11.5px;font-weight:800;color:#7a8b4a;letter-spacing:0.05em">{{ p.cat }}</span>
+            <h3 style="font-size:17.5px;font-weight:800;margin:7px 0 5px;color:#2f3945;line-height:1.25">{{ p.name }}</h3>
+            <span style="font-size:13.5px;color:#8a8d80;margin-bottom:16px">{{ p.variant }}</span>
+            <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px">
+              <span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#b0475a">{{ p.price }}</span>
+              <a href="{{ p.link }}" target="_blank" rel="noopener" style="padding:10px 16px;border-radius:11px;background:#6b7a3f;color:#fff;font-weight:800;font-size:14px" style-hover="background:#586632">Kupi</a>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:40px;display:flex;flex-direction:column;align-items:center;gap:18px" data-reveal>
+      <a href="materijali.html" style="display:inline-block;padding:15px 30px;border-radius:14px;background:#6b7a3f;color:#fff;font-weight:800;font-size:17px;box-shadow:0 10px 24px rgba(107,122,63,0.3)" style-hover="background:#586632">Pogledaj sve materijale →</a>
+      <span style="font-size:14.5px;color:#8a8d80">Poštarina unutar RH: <strong style="color:#6b7a3f">5 €</strong> · kupnja putem web trgovine</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CJENIK USLUGA ================= -->
+<section id="cjenik-usluga" style="padding:88px 22px;background:linear-gradient(180deg,#16899a 0%,#0f7c8c 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;top:-60px;right:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.06)"></div>
+  <div style="position:absolute;bottom:40px;left:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.05)"></div>
+  <div style="max-width:960px;margin:0 auto;position:relative">
+    <div style="text-align:center;max-width:620px;margin:0 auto 40px" data-reveal>
+      <span style="color:#9fdbe4;font-weight:800;letter-spacing:0.08em;font-size:14px">CJENIK</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:700;margin:12px 0 12px;color:#fff">Cjenik usluga</h2>
+      <p style="font-size:18px;line-height:1.6;color:#d6f1f5;margin-top:6px">Jasne cijene, bez skrivenih troškova — nakon što zajedno utvrdimo što vašem djetetu treba.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;align-items:stretch">
+      <div data-reveal style="position:relative;background:#fff;border-radius:22px;padding:34px 30px;box-shadow:0 18px 40px rgba(0,0,0,0.14);display:flex;flex-direction:column">
+        <span style="position:absolute;top:-13px;left:30px;background:#e2953a;color:#fff;font-weight:800;font-size:12px;letter-spacing:0.03em;padding:6px 14px;border-radius:999px">NAJČEŠĆI PRVI KORAK</span>
+        <h3 style="font-size:22px;font-weight:700;color:#1F2A44;margin-bottom:20px">Prvi susret</h3>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-bottom:18px;border-bottom:1px solid #eef0f4">
+          <div style="flex:1"><p style="font-size:16px;font-weight:700;color:#1F2A44;line-height:1.3">Inicijalna logopedska procjena</p><p style="font-size:13px;color:#64748B;margin-top:5px;line-height:1.4">s pisanim mišljenjem i primjenom standardiziranih mjernih instrumenata · 60–90 min</p></div>
+          <span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:22px;color:#0f7c8c;white-space:nowrap">130 €</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-top:18px">
+          <div style="flex:1"><p style="font-size:16px;font-weight:700;color:#1F2A44;line-height:1.3">Ponovna procjena i izrada pisanog mišljenja</p><p style="font-size:13px;color:#64748B;margin-top:5px;line-height:1.4">za dijete uključeno u terapiju · 60–90 min</p></div>
+          <span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:22px;color:#1F2A44;white-space:nowrap">90 €</span>
+        </div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid #eef0f4;display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:#475569"><span style="color:#1ea6b6;font-weight:900">✓</span> Detaljna procjena i razgovor</div>
+          <div style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:#475569"><span style="color:#1ea6b6;font-weight:900">✓</span> Pisano mišljenje i nalaz</div>
+          <div style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:#475569"><span style="color:#1ea6b6;font-weight:900">✓</span> Individualni plan i smjernice</div>
+        </div>
+        <a href="#narucivanje" style="margin-top:28px;text-align:center;padding:14px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:16px" style-hover="background:#16899a">Rezerviraj procjenu</a>
+        <div style="margin-top:14px;display:flex;gap:11px;align-items:center;background:#f4faf9;border-radius:12px;padding:13px 15px">
+          <span style="flex:none;width:32px;height:32px;border-radius:9px;background:#e7f6f8;color:#0f7c8c;display:flex;align-items:center;justify-content:center;font-size:16px">♥</span>
+          <span style="font-size:13px;line-height:1.45;color:#5a6472">Niste sigurni je li potrebno? Nazovite nas — <strong style="color:#0f7c8c">prvi savjet je besplatan i bez obveze.</strong></span>
+        </div>
+      </div>
+      <div data-reveal style="background:#fff;border-radius:22px;padding:34px 30px;box-shadow:0 14px 34px rgba(80,110,150,0.12);display:flex;flex-direction:column">
+        <h3 style="font-size:22px;font-weight:700;color:#1F2A44;margin-bottom:6px">Terapija i podrška</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5a6472;margin-bottom:14px">Nakon procjene, prema planu skrojenom za dijete.</p>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #eef0f4"><span style="font-size:15px;color:#334155">Individualna logopedska terapija <span style="color:#94A3B8">· 45 min</span></span><span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:19px;color:#1F2A44;white-space:nowrap">40 €</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #eef0f4"><span style="font-size:15px;color:#334155">Online logopedska terapija <span style="color:#94A3B8">· 45 min</span></span><span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:19px;color:#1F2A44;white-space:nowrap">40 €</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid #eef0f4"><div style="padding-right:8px"><span style="font-size:15px;color:#334155;line-height:1.35;display:block">Terapija ranog razvoja</span><span style="font-size:13px;color:#94A3B8">45 min</span></div><span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:19px;color:#1F2A44;white-space:nowrap">40 €</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0"><div><span style="font-size:15px;color:#334155">Logopedsko savjetovanje</span><span style="font-size:13px;color:#94A3B8;display:block">uživo ili online · 45–60 min</span></div><span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:19px;color:#1F2A44;white-space:nowrap">50 €</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px;background:#F0FAFA;border-radius:14px;margin-top:8px"><div><span style="font-size:15.5px;font-weight:700;color:#1F2A44">Paket 8 individualnih terapija</span><span style="font-size:13px;color:#0f7c8c;font-weight:600;display:block;margin-top:2px">37,50 € / termin · ušteda 20 €</span></div><span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:22px;color:#0f7c8c;white-space:nowrap">300 €</span></div>
+        </div>
+        <a href="#narucivanje" style="margin-top:24px;text-align:center;padding:14px;border-radius:12px;background:#fff;color:#0f7c8c;font-weight:800;font-size:16px;border:1.5px solid #2BB5B0" style-hover="background:#eafafc">Dogovori termin</a>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:14px;line-height:1.7;color:#d6f1f5;margin:28px auto 0;max-width:640px" data-reveal>Rezervirani termini namijenjeni su isključivo Vašem djetetu te se smatraju unaprijed dogovorenima. U slučaju spriječenosti dolaska potrebno je obavijestiti centar najmanje 24 sata unaprijed. · Cjenik važeći od 1. kolovoza 2026. · PDV uključen</p>
+  </div>
+</section>
+
+
+<!-- ================= BLOG ================= -->
+<section id="blog" style="padding:92px 22px;background:linear-gradient(180deg,#eef3fb 0%,#e7f6f8 100%)">
+  <div style="max-width:1160px;margin:0 auto">
+    <div style="margin-bottom:40px" data-reveal>
+      <span style="color:#7AA3D6;font-weight:800;letter-spacing:0.14em;font-size:13px;text-transform:uppercase">Blog · Savjeti</span>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:10px">
+        <div>
+          <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;letter-spacing:-0.01em">Savjeti za roditelje</h2>
+          <p style="font-size:17px;color:#6B7A90;margin-top:10px">Praktični tekstovi koje pišu vaše logopedinje — bez stručnih izraza.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:stretch">
+      <sc-for list="{{ posts }}" as="b" hint-placeholder-count="3">
+        <a href="{{ b.link }}" data-reveal style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px rgba(18,38,58,0.06);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 16px 34px rgba(18,38,58,0.12)">
+          <sc-if value="{{ b.img }}" hint-placeholder-val="{{ false }}"><div style="height:210px;overflow:hidden"><img src="{{ b.img }}" alt="{{ b.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center"></div></sc-if>
+          <sc-if value="{{ b.noImg }}" hint-placeholder-val="{{ true }}"><div style="height:180px;background:{{ b.cover }};display:flex;align-items:center;justify-content:center;padding:22px;text-align:center"><span style="font-family:'Lora',Georgia,serif;font-weight:700;font-size:19px;color:{{ b.coverInk }};line-height:1.3">{{ b.coverText }}</span></div></sc-if>
+          <div style="padding:24px;display:flex;flex-direction:column;flex:1">
+            <div style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#94A8BE;margin-bottom:12px"><span>{{ b.read }}</span><span style="width:3px;height:3px;border-radius:50%;background:#CBD5E1"></span><span>{{ b.date }}</span></div>
+            <span style="font-size:12px;font-weight:800;color:{{ b.tag }};letter-spacing:0.06em;text-transform:uppercase">{{ b.cat }}</span>
+            <h3 style="font-size:19px;font-weight:800;margin:8px 0 10px;color:#12263A;line-height:1.3">{{ b.title }}</h3>
+            <p style="font-size:14.5px;line-height:1.6;color:#6B7A90">{{ b.excerpt }}</p>
+            <span style="margin-top:auto;padding-top:18px;font-size:14.5px;font-weight:700;color:#0f7c8c;display:inline-flex;align-items:center;gap:6px">Pročitaj <span style="font-size:16px">→</span></span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:40px" data-reveal>
+      <a href="#blog" style="display:inline-flex;align-items:center;padding:13px 26px;border-radius:12px;border:1.5px solid rgba(15,124,140,0.35);color:#0f7c8c;font-weight:700;font-size:15px;background:transparent" style-hover="background:#fff">Pogledaj sve savjete</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIJA ================= -->
+<section id="galerija" style="padding:92px 22px;background:#fff">
+  <div style="max-width:1160px;margin:0 auto">
+    <div style="text-align:center;max-width:600px;margin:0 auto 44px" data-reveal>
+      <span style="color:#0f7c8c;font-weight:800;letter-spacing:0.08em;font-size:14px">GALERIJA</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 14px">Naš prostor i radionice</h2>
+      <p style="font-size:18px;line-height:1.6">Mjesto po mjeri djece: svijetlo, toplo i puno poticaja za igru i učenje.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:14px">
+      <sc-for list="{{ gallery }}" as="im" hint-placeholder-count="6">
+        <div data-reveal onClick="{{ im.onOpen }}" style="grid-column:span {{ im.col }};grid-row:span {{ im.row }};border-radius:18px;overflow:hidden;box-shadow:0 8px 22px rgba(80,110,150,0.08);position:relative;cursor:zoom-in">
+          <img src="{{ im.img }}" alt="{{ im.label }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease" style-hover="transform:scale(1.07)">
+          <span style="position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:700;color:#fff;background:rgba(30,45,70,0.55);padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px);pointer-events:none">{{ im.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RECENZIJE ================= -->
+<section id="recenzije" style="padding:92px 22px;background:linear-gradient(180deg,#f7fafd 0%,#eef4fb 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;top:30px;right:-40px;width:170px;height:170px;border-radius:50%;background:rgba(226,149,58,0.06);pointer-events:none"></div>
+  <div style="position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(30,166,182,0.06);pointer-events:none"></div>
+  <div style="max-width:1160px;margin:0 auto;position:relative">
+    <div style="text-align:center;max-width:620px;margin:0 auto 46px" data-reveal>
+      <span style="color:#e2953a;font-weight:800;letter-spacing:0.08em;font-size:14px">ISKUSTVA RODITELJA</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:700;margin:12px 0 14px">Što kažu roditelji</h2>
+      <p style="font-size:18px;line-height:1.6">Povjerenje obitelji naša je najveća potvrda. Evo dijela njihovih iskustava.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:820px;margin:0 auto">
+      <div data-reveal style="background:linear-gradient(160deg,#1ea6b6 0%,#16899a 100%);border-radius:24px;padding:34px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center;box-shadow:0 16px 38px rgba(22,137,154,0.28)">
+        <div style="color:#ffd88a;font-size:20px;letter-spacing:3px;margin-bottom:10px">★★★★★</div>
+        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:clamp(46px,6vw,60px);line-height:1">500+</div>
+        <p style="font-size:16px;line-height:1.5;margin-top:10px;color:#eafafc;font-weight:600">djece kojoj smo pomogli da lakše govore i komuniciraju — od 2018. godine.</p>
+        <a href="recenzije.html" style="margin-top:18px;display:inline-flex;align-items:center;gap:6px;color:#fff;font-weight:800;font-size:15px" style-hover="gap:10px">Pročitaj iskustva <span>→</span></a>
+      </div>
+      <sc-for list="{{ reviews }}" as="rv" hint-placeholder-count="3">
+        <div data-reveal style="background:#fff;border-radius:24px;padding:30px 28px;box-shadow:0 12px 32px rgba(80,110,150,0.1);display:flex;flex-direction:column">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#1ea6b6" aria-hidden="true" style="margin-bottom:12px;opacity:0.9"><path d="M9.5 5C6.5 6 4.5 8.8 4.5 12.2V19h6.6v-6.6H7.9c0-2 1.2-3.6 3-4.2L9.5 5zm9 0c-3 1-5 3.8-5 7.2V19h6.6v-6.6h-3.2c0-2 1.2-3.6 3-4.2L18.5 5z"/></svg>
+          <p style="font-size:16px;line-height:1.6;color:#1A2E3B;font-weight:500;flex:1">{{ rv.text }}</p>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:22px">
+            <span style="flex:none;width:46px;height:46px;border-radius:50%;background:#E6F4F6;color:#167D8E;border:1px solid rgba(22,125,142,0.15);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px">{{ rv.initials }}</span>
+            <div><strong style="color:#1F2A44;font-size:15px;display:block">{{ rv.name }}</strong><span style="font-size:13px;color:#6B7A90">{{ rv.role }}</span></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:36px" data-reveal>
+      <a href="recenzije.html" style="display:inline-block;padding:14px 30px;border-radius:14px;background:#fff;color:#0f7c8c;font-weight:800;font-size:16px;border:1.5px solid #cfe0ee;box-shadow:0 8px 20px rgba(80,110,150,0.1)" style-hover="border-color:#1ea6b6;color:#1ea6b6">Pročitaj sve recenzije →</a>
+    </div>
+    <div data-reveal style="margin-top:32px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 22px;color:#6B7A90;font-size:14px;font-weight:600">
+      <span style="color:#e2953a;letter-spacing:1px">★★★★★</span>
+      <span>500+ djece od 2018.</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:#cbd5e1"></span>
+      <span>Individualni pristup svakom djetetu</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NARUČIVANJE ================= -->
+<section id="narucivanje" style="padding:92px 22px;background:#EEF6FF;position:relative;overflow:hidden">
+  <div style="position:absolute;top:8%;left:-4%;width:420px;height:420px;border-radius:50%;background:rgba(74,139,223,0.4);filter:blur(80px);pointer-events:none"></div>
+  <div style="max-width:1040px;margin:0 auto;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:start">
+    <div data-reveal>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:800;color:#12263A;letter-spacing:-0.01em">Započnimo razgovor</h2>
+      <p style="font-size:18px;line-height:1.65;margin:16px 0 28px;color:#3B4D66">Recite nam koliko dijete ima i što vas brine. Javljamo se u roku od par sati sa prijedlogom termina — prvi savjet je besplatan.</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px;align-items:center;background:rgba(20,160,183,0.1);border:1px solid rgba(20,160,183,0.2);padding:12px 16px;border-radius:12px"><span style="flex:none;width:30px;height:30px;border-radius:999px;background:#14A0B7;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px">1</span><span style="font-size:15.5px;font-weight:600;color:#1A2E3B">Odgovaramo isti dan</span></div>
+        <div style="display:flex;gap:12px;align-items:center;background:rgba(20,160,183,0.1);border:1px solid rgba(20,160,183,0.2);padding:12px 16px;border-radius:12px"><span style="flex:none;width:30px;height:30px;border-radius:999px;background:#14A0B7;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px">2</span><span style="font-size:15.5px;font-weight:600;color:#1A2E3B">Termini radnim danom 13–20 h</span></div>
+        <div style="display:flex;gap:12px;align-items:center;background:rgba(20,160,183,0.1);border:1px solid rgba(20,160,183,0.2);padding:12px 16px;border-radius:12px"><span style="flex:none;width:30px;height:30px;border-radius:999px;background:#14A0B7;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px">3</span><span style="font-size:15.5px;font-weight:600;color:#1A2E3B">Prve smjernice bez naplate</span></div>
+      </div>
+    </div>
+    <div data-reveal style="background:#fff;border-radius:22px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,0.12);border:1px solid #E6EDF5">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:30px 10px">
+          <div style="width:64px;height:64px;border-radius:50%;background:#e7f6f8;color:#14A0B7;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;margin:0 auto 18px">✓</div>
+          <h3 style="font-size:23px;font-weight:800;margin-bottom:8px;color:#12263A">Hvala na upitu!</h3>
+          <p style="font-size:16px;line-height:1.55;color:#3B4D66">Zaprimili smo vašu poruku i javit ćemo vam se isti dan sa prijedlogom termina.</p>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submitForm }}">
+          <label style="display:block;font-weight:700;color:#1A2E3B;font-size:14px;margin-bottom:6px">Ime i prezime</label>
+          <input required placeholder="Vaše ime i prezime" style="width:100%;padding:14px 15px;border:1.5px solid #E6EDF5;border-radius:12px;font-size:15px;margin-bottom:16px;outline:none;background:#fff" style-focus="border-color:#14A0B7">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <label style="display:block;font-weight:700;color:#1A2E3B;font-size:14px;margin-bottom:6px">Telefon</label>
+              <input required placeholder="091 123 4567" style="width:100%;padding:14px 15px;border:1.5px solid #E6EDF5;border-radius:12px;font-size:15px;outline:none;background:#fff" style-focus="border-color:#14A0B7">
+              <span style="display:block;font-size:12px;color:#6B7A90;margin:5px 2px 16px">Koristimo samo za dogovor termina.</span>
+            </div>
+            <div>
+              <label style="display:block;font-weight:700;color:#1A2E3B;font-size:14px;margin-bottom:6px">E-mail</label>
+              <input type="email" required placeholder="vas@email.com" style="width:100%;padding:14px 15px;border:1.5px solid #E6EDF5;border-radius:12px;font-size:15px;outline:none;background:#fff" style-focus="border-color:#14A0B7">
+            </div>
+          </div>
+          <label style="display:block;font-weight:700;color:#1A2E3B;font-size:14px;margin-bottom:6px">Dob djeteta</label>
+          <select required style="width:100%;padding:14px 15px;border:1.5px solid #E6EDF5;border-radius:12px;font-size:15px;margin-bottom:16px;outline:none;background:#fff;color:#1A2E3B;-webkit-appearance:none;appearance:none" style-focus="border-color:#14A0B7">
+            <option value="" disabled selected>Odaberite dob</option>
+            <option>0–2 godine</option>
+            <option>2–3 godine</option>
+            <option>3–4 godine</option>
+            <option>4–6 godina</option>
+            <option>6+ godina</option>
+          </select>
+          <label style="display:block;font-weight:700;color:#1A2E3B;font-size:14px;margin-bottom:6px">Poruka</label>
+          <textarea rows="3" placeholder="Npr. Dječak 3,5 g, slabo spaja riječi u rečenice, razumije sve. Vrtić je preporučio pregled." style="width:100%;padding:14px 15px;border:1.5px solid #E6EDF5;border-radius:12px;font-size:15px;margin-bottom:16px;outline:none;resize:vertical;background:#fff" style-focus="border-color:#14A0B7"></textarea>
+          <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#6B7A90;margin-bottom:18px;cursor:pointer"><input type="checkbox" required style="margin-top:2px;accent-color:#14A0B7;width:16px;height:16px;flex:none"><span>Slažem se da me kontaktirate povodom upita.</span></label>
+          <button type="submit" style="width:100%;height:52px;border:none;border-radius:12px;background:#14A0B7;color:#fff;font-weight:800;font-size:16px;cursor:pointer;box-shadow:0 8px 20px rgba(20,160,183,0.32)" style-hover="background:#0f8898">Pošalji upit</button>
+          <p style="font-size:12px;color:#6B7A90;opacity:0.85;text-align:center;margin-top:12px;line-height:1.5">✓ Bez obveze · ✓ Odgovor danas do 18h · Podaci su zaštićeni prema GDPR-u</p>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section id="kontakt" style="padding:92px 22px;background:#fff">
+  <div style="max-width:1120px;margin:0 auto">
+    <div style="text-align:center;max-width:560px;margin:0 auto 44px" data-reveal>
+      <span style="color:#0f7c8c;font-weight:800;letter-spacing:0.08em;font-size:14px">KONTAKT</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);font-weight:900;margin:12px 0 14px">Gdje nas možete pronaći</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:stretch">
+      <div data-reveal style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;gap:16px;align-items:flex-start;background:#f5f9fe;padding:22px;border-radius:16px">
+          <span style="flex:none;width:44px;height:44px;border-radius:12px;background:#6d8ed6;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900">◉</span>
+          <div><strong style="color:#2f3945;font-size:17px">Lokacija</strong><br><span style="font-size:15.5px;line-height:1.5">Ozaljska 13, Trešnjevka<br>10 000 Zagreb</span></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:#e7f6f8;padding:22px;border-radius:16px">
+          <span style="flex:none;width:44px;height:44px;border-radius:12px;background:#1ea6b6;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900">@</span>
+          <div><strong style="color:#2f3945;font-size:17px">E-mail</strong><br><a href="mailto:udruga.prosano@gmail.com" style="font-size:15.5px">udruga.prosano@gmail.com</a></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:#fbf6ee;padding:22px;border-radius:16px">
+          <span style="flex:none;width:44px;height:44px;border-radius:12px;background:#e2953a;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900">☎</span>
+          <div><strong style="color:#2f3945;font-size:17px">Telefon / WhatsApp</strong><br><a href="tel:+38598841680" style="font-size:15.5px">+385 98 841 680</a></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;background:#eef2f8;padding:22px;border-radius:16px">
+          <span style="flex:none;width:44px;height:44px;border-radius:12px;background:#4c5f7e;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900">◷</span>
+          <div style="width:100%">
+            <strong style="color:#2f3945;font-size:17px">Radno vrijeme</strong>
+            <div style="display:flex;justify-content:space-between;font-size:15px;margin-top:8px"><span>Ponedjeljak – petak</span><strong style="color:#0f7c8c">13:00 – 20:00</strong></div>
+            <div style="display:flex;justify-content:space-between;font-size:15px;margin-top:5px;color:#6B7A90"><span>Subota i nedjelja</span><span>Zatvoreno</span></div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal style="min-height:340px;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(80,110,150,0.14)">
+        <iframe title="Karta: Ozaljska 13, Zagreb" src="https://www.google.com/maps?q=Ozaljska%2013,%2010000%20Zagreb&output=embed" style="width:100%;height:100%;min-height:340px;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer style="background:#2f3945;color:#c7cfda;padding:52px 22px 30px">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
+    <div>
+      <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:26px;color:#fff;letter-spacing:0.02em"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
+      <p style="font-size:14.5px;line-height:1.6;margin-top:12px;max-width:280px;color:#a7b1bf">Logopedski centar SANO. Mali glasovi, veliki koraci. Podrška govorno-jezičnom razvoju djece.</p>
+    </div>
+    <div>
+      <strong style="color:#fff;font-family:'Lora',Georgia,serif;font-size:16px;display:block;margin-bottom:14px">Navigacija</strong>
+      <div style="display:flex;flex-direction:column;gap:9px;font-size:14.5px">
+        <a href="#o-nama" style="color:#c7cfda" style-hover="color:#fff">O nama</a>
+        <a href="#usluge" style="color:#c7cfda" style-hover="color:#fff">Usluge</a>
+        <a href="#penjalica" style="color:#c7cfda" style-hover="color:#fff">Proizvodi</a>
+        <a href="#cjenik-usluga" style="color:#c7cfda" style-hover="color:#fff">Cjenik</a>
+        <a href="#blog" style="color:#c7cfda" style-hover="color:#fff">Blog</a>
+      </div>
+    </div>
+    <div>
+      <strong style="color:#fff;font-family:'Lora',Georgia,serif;font-size:16px;display:block;margin-bottom:14px">Kontakt</strong>
+      <div style="font-size:14.5px;line-height:1.7;color:#a7b1bf">Ozaljska 13, Trešnjevka<br>10 000 Zagreb<br><a href="tel:+38598841680" style="color:#7fd4df">+385 98 841 680</a><br><a href="mailto:udruga.prosano@gmail.com" style="color:#7fd4df">udruga.prosano@gmail.com</a><br><span style="color:#c7cfda">Pon–pet 13–20 h · vikendom zatvoreno</span></div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:36px auto 0;padding-top:20px;border-top:1px solid #3f4a58;font-size:13px;color:#8c96a4;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between">
+    <span>© 2026 Logopedski centar SANO. Sva prava pridržana.</span>
+    <span>Mali glasovi, veliki koraci ♡</span>
+  </div>
+</footer>
+
+<sc-if value="{{ lightbox }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:100;background:rgba(24,34,52,0.86);display:flex;align-items:center;justify-content:center;padding:28px;cursor:zoom-out;backdrop-filter:blur(6px)">
+    <img src="{{ lightbox }}" alt="Uvećana fotografija" loading="lazy" style="max-width:94vw;max-height:90vh;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,0.5)">
+    <button onClick="{{ closeLightbox }}" aria-label="Zatvori" style="position:fixed;top:22px;right:24px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,0.9);color:#2f3945;font-size:24px;cursor:pointer;font-weight:700">×</button>
+  </div>
+</sc-if>
+
+<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" style="position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:14px 20px 14px 16px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 10px 26px rgba(37,211,102,0.4);animation:waPulse 2.4s ease-out infinite" style-hover="background:#1fb857">
+  <svg width="26" height="26" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.7.7-3.4-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C6.6 9.9 10.9 5.6 16 5.6S25.4 9.9 25.4 15 21.1 24.8 16 24.8zm5.3-6.9c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+  WhatsApp
+</a>
+
+<sc-if value="{{ showCookies }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:20px;right:20px;bottom:20px;z-index:120;max-width:560px;margin:0 auto;background:#fff;border:1px solid #E6EDF5;border-radius:18px;box-shadow:0 18px 50px rgba(24,34,52,0.22);padding:22px 24px">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <span style="flex:none;width:42px;height:42px;border-radius:12px;background:#e7f6f8;color:#0f7c8c;display:flex;align-items:center;justify-content:center;font-size:22px">🍪</span>
+      <div>
+        <strong style="display:block;color:#1A2E3B;font-size:16px;font-family:'Lora',Georgia,serif">Kolačići (cookies)</strong>
+        <p style="font-size:13.5px;line-height:1.6;color:#6B7A90;margin:6px 0 0">Koristimo kolačiće kako bi stranica ispravno radila i kako bismo poboljšali Vaše iskustvo. Možete ih prihvatiti ili odbiti.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+      <button onClick="{{ acceptCookies }}" style="flex:1;min-width:130px;height:46px;border:none;border-radius:12px;background:#14A0B7;color:#fff;font-weight:800;font-size:14.5px;cursor:pointer;box-shadow:0 8px 18px rgba(20,160,183,0.28)" style-hover="background:#0f7c8c">Prihvaćam</button>
+      <button onClick="{{ declineCookies }}" style="flex:1;min-width:130px;height:46px;border:1.5px solid #E6EDF5;border-radius:12px;background:#fff;color:#4b5563;font-weight:700;font-size:14.5px;cursor:pointer" style-hover="background:#f5f9fe">Odbijam</button>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { navOpen: false, resOpen: false, sent: false, activeCat: 'SVE', lightbox: null, winW: (typeof window !== 'undefined' ? window.innerWidth : 1200), cookies: (typeof localStorage !== 'undefined' ? localStorage.getItem('sano_cookies') : 'set') };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ winW: window.innerWidth, navOpen: window.innerWidth > 980 ? false : this.state.navOpen });
+    window.addEventListener('resize', this._onResize);
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) this._reveal(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    this._armReveal();
+  }
+
+  componentDidUpdate() { this._armReveal(); }
+
+  _reveal(el) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    if (this._io) this._io.unobserve(el);
+  }
+
+  _armReveal() {
+    if (!this._root) return;
+    const els = this._root.querySelectorAll('[data-reveal]:not([data-armed])');
+    const vh = window.innerHeight || 800;
+    els.forEach((el, i) => {
+      el.setAttribute('data-armed', '1');
+      el.style.transition = 'opacity .6s cubic-bezier(.22,.61,.36,1), transform .6s cubic-bezier(.22,.61,.36,1)';
+      el.style.transitionDelay = ((i % 4) * 0.06) + 's';
+      const r = el.getBoundingClientRect();
+      const inView = r.top < vh * 0.92 && r.bottom > 0;
+      if (inView) {
+        // already visible on load — show immediately (no dependence on IO)
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      } else {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        if (this._io) this._io.observe(el);
+        else this._reveal(el);
+      }
+    });
+    // failsafe: if the observer never fires, reveal everything shortly after
+    clearTimeout(this._failsafe);
+    this._failsafe = setTimeout(() => {
+      this._root.querySelectorAll('[data-reveal]').forEach(el => {
+        if (getComputedStyle(el).opacity !== '1') this._reveal(el);
+      });
+    }, 1400);
+  }
+
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+    if (this._io) this._io.disconnect();
+  }
+
+  renderVals() {
+    const desktop = this.state.winW > 980;
+    const activeCat = this.state.activeCat;
+    const shop = [
+        { cat: 'KARTICE', name: 'Kartice – Moje prve rečenice', variant: 'Tiskano izdanje', price: '30 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok4glthkmcppp1fiu1mbn1urdh.jpg', link: 'https://payhip.com/b/67uZr', badge: false },
+        { cat: 'JEZIČNA PENJALICA', name: 'Zamjenice', variant: 'Tiskana verzija', price: '30 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok6368arkd39412tu19hs8c7h.jpg', link: 'https://payhip.com/b/lfLPm', badge: false },
+        { cat: 'JEZIČNA PENJALICA', name: 'Zamjenice', variant: 'Digitalna verzija', price: '25 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1job7g5oj16eepar6td1j6f1t7s1a.jpg', link: 'https://payhip.com/b/FzdBE', badge: false },
+        { cat: 'JEZIČNA PENJALICA', name: 'Ljetna Jezična penjalica', variant: 'Digitalna verzija', price: '15 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok0e6osv9seb017hte419qg1a.png', link: 'https://payhip.com/b/28ZIj', badge: false },
+        { cat: 'PREDVJEŠTINE', name: 'Predvještine čitanja i pisanja', variant: 'Tiskano izdanje', price: '35 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jqr51brn8vqia31p151kof1mu0h.jpg', link: 'https://payhip.com/b/fm37d', badge: true, badgeText: 'NOVO!' },
+        { cat: 'PREDVJEŠTINE', name: 'Predvještine čitanja i pisanja', variant: 'Digitalno izdanje', price: '28 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jpdm3jss3k519p01oda13p2avc1a.jpg', link: 'https://payhip.com/b/y20Lq', badge: true, badgeText: 'NOVO!' },
+        { cat: 'VJEŽBENICA', name: 'Početno čitanje i pisanje', variant: 'Tiskano izdanje', price: '25 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jolljntb158o1i3c1blm1oht15oth.png', link: 'https://payhip.com/b/sfquD', badge: false },
+        { cat: 'VJEŽBENICA', name: 'Početno čitanje i pisanje', variant: 'Digitalno izdanje', price: '20 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joiqpesj1da7gmq1pqud3fho41c.png', link: 'https://payhip.com/b/PqobF', badge: false },
+        { cat: 'VJEŽBENICA', name: 'Predmatematička vježbenica 3–5 god.', variant: 'Tiskano izdanje', price: '25 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok6urfu1kfhv0i1pp518tm18adn.png', link: 'https://payhip.com/b/97q1u', badge: false },
+        { cat: 'VJEŽBENICA', name: 'Predmatematička vježbenica 3–5 god.', variant: 'Digitalno izdanje', price: '20 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joipfe9h4e08ie1bvt1vmc1lr61f.jpg', link: 'https://payhip.com/b/UwVNQ', badge: false },
+        { cat: 'VJEŽBENICA', name: 'Predmatematička vježbenica 5–7 god.', variant: 'Digitalno izdanje', price: '20 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joiq4l7g11pq5pht42149218v91a.jpg', link: 'https://payhip.com/b/ckwt7', badge: false },
+        { cat: 'SET', name: 'Temelji za školu – set vježbenica', variant: 'Digitalno izdanje', price: '39 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jpmrg44njn21q4vk77c4oipg1f.jpg', link: 'https://payhip.com/b/SVMhq', badge: true, badgeText: 'SET' },
+        { cat: 'SET', name: 'Početno čitanje i pisanje + Predmat. 5–7', variant: 'Digitalni set', price: '34 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jolepr5r16uv1113b771jim7iq7.jpg', link: 'https://payhip.com/b/GKMzf', badge: true, badgeText: 'SET' },
+        { cat: 'SET', name: 'Sve vježbenice – Početno + Predmat. 3–5 i 5–7', variant: 'Digitalni set', price: '45 €', img: 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joka922r12n5gj41o9g5mjcen7.png', link: 'https://payhip.com/b/L9XzU', badge: true, badgeText: 'SET' },
+    ];
+    return {
+      setRoot: (el) => { this._root = el; },
+      showDesktopNav: desktop,
+      showBurger: !desktop,
+      navOpen: this.state.navOpen && !desktop,
+      toggleNav: () => this.setState(s => ({ navOpen: !s.navOpen })),
+      closeNav: () => this.setState({ navOpen: false }),
+      resOpen: this.state.resOpen,
+      openRes: () => this.setState({ resOpen: true }),
+      closeRes: () => this.setState({ resOpen: false }),
+      toggleRes: () => this.setState(s => ({ resOpen: !s.resOpen })),
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submitForm: (e) => { e.preventDefault(); this.setState({ sent: true }); },
+      team: [
+        { name: 'Ana Bilić Topić', title: 'mag. logopedije', photo: 'uploads/image_1 (1)-c905e112.webp', accent: '#6d8ed6', tint: '#eef3fb', offset: '0px' },
+        { name: 'Zrinka Vrljić', title: 'mag. logopedije', photo: 'uploads/image (1)-a461f61e.webp', accent: '#1ea6b6', tint: '#e7f6f8', offset: '28px' },
+        { name: 'Lana Rozić', title: 'mag. logopedije', photo: 'uploads/image_2 (1)-a22c99c7.webp', accent: '#e2953a', tint: '#fbf1e2', offset: '0px' },
+      ],
+      catTabs: [['Sve','SVE'],['Kartice','KARTICE'],['Jezična penjalica','JEZIČNA PENJALICA'],['Predvještine','PREDVJEŠTINE'],['Vježbenice','VJEŽBENICA'],['Setovi','SET']].map(([label,val]) => {
+        const active = this.state.activeCat === val;
+        return { label, onClick: () => this.setState({ activeCat: val }),
+          style: "padding:10px 18px;border-radius:999px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Mulish',sans-serif;transition:all .2s;border:1.5px solid " + (active ? '#1ea6b6' : '#dbe3ee') + ";background:" + (active ? '#1ea6b6' : '#fff') + ";color:" + (active ? '#fff' : '#5a6472') };
+      }),
+      visibleShop: (activeCat === 'SVE' ? shop : shop.filter(p => p.cat === activeCat)),
+      featuredShop: [shop[0], shop[4], shop[6], shop[11]].filter(Boolean),
+      shop,
+      reviews: [
+        { text: 'Sin je nakon nekoliko mjeseci terapije napokon progovorio u rečenicama. Zahvalni smo cijelom timu na strpljenju i toplini.', name: 'Marija K.', role: 'mama dječaka (4)', initials: 'MK', accent: '#6d8ed6', tint: '#eef3fb' },
+        { text: 'Profesionalan pristup i jasne upute za rad kod kuće. Napredak se vidi iz tjedna u tjedan.', name: 'Ivan P.', role: 'tata djevojčice (5)', initials: 'IP', accent: '#1ea6b6', tint: '#e7f6f8' },
+        { text: 'Djeca jedva čekaju terapiju jer je sve kroz igru. Preporučujem svakom roditelju.', name: 'Ana M.', role: 'mama blizanaca', initials: 'AM', accent: '#e2953a', tint: '#fbf1e2' },
+      ],
+      cjenikUsluga: [
+        { name: 'Inicijalna logopedska procjena s pisanim mišljenjem i primjenom standardiziranih mjernih instrumenata', dur: '60–90 min', price: '130 €' },
+        { name: 'Ponovna procjena i izrada pisanog mišljenja za dijete uključeno u logopedsku terapiju', dur: '60–90 min', price: '90 €' },
+        { name: 'Individualna logopedska terapija', dur: '45 min', price: '40 €' },
+        { name: 'Online logopedska terapija', dur: '45 min', price: '40 €' },
+        { name: 'Terapija ranog komunikacijskog i jezično-govornog razvoja', dur: '45 min', price: '40 €' },
+        { name: 'Logopedsko savjetovanje (uživo ili online)', dur: '45–60 min', price: '50 €' },
+      ],
+      napomene: [
+        'Rezervirani termini namijenjeni su isključivo Vašem djetetu te se smatraju unaprijed dogovorenima.',
+        'U slučaju spriječenosti dolaska potrebno je obavijestiti centar najmanje 24 sata unaprijed.',
+        'Pravovremeno otkazani termini mogu se nadoknaditi tijekom tekućeg ili sljedećeg mjeseca, ovisno o dostupnosti slobodnih termina.',
+      ],
+      services: (this._svc = [
+        { num: '1', iconBg: '#E0F2FE', pillBg: '#E0F2FE', pillInk: '#1F6FA6', svg: React.createElement('svg', { width: 24, height: 24, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('rect', { x: 5, y: 3, width: 14, height: 18, rx: 2 }), React.createElement('path', { d: 'M9 3h6v3H9z' }), React.createElement('path', { d: 'M8.5 13l2 2 4-4' })), title: 'Logopedska dijagnostika', desc: 'Jasna slika gdje je vaše dijete sada i što je sljedeći korak. Dobivate pisani nalaz i konkretan plan.', bullet: 'Traje ~60 min · uzrast 1,5–7 god.' },
+        { num: '2', iconBg: '#CCFBF1', pillBg: '#CCFBF1', pillInk: '#0F766E', svg: React.createElement('svg', { width: 24, height: 24, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('path', { d: 'M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9 9 0 0 1-3.9-.9L3 21l1.9-5.6A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z' }), React.createElement('path', { d: 'M12.5 8.3c1-1.1 2.8-.5 2.8 1 0 1.3-2.8 3-2.8 3s-2.8-1.7-2.8-3c0-1.5 1.8-2.1 2.8-1z' })), title: 'Logopedska terapija', desc: 'Individualni rad prilagođen vašem djetetu — igrom, strpljenjem i jasnim ciljevima do vidljivog napretka.', bullet: 'Individualno · 45 min po terapiji' },
+        { num: '3', iconBg: '#FFEDD5', pillBg: '#FFEDD5', pillInk: '#B5701F', svg: React.createElement('svg', { width: 24, height: 24, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('circle', { cx: 9, cy: 8, r: 3 }), React.createElement('circle', { cx: 17, cy: 9, r: 2.3 }), React.createElement('path', { d: 'M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5' }), React.createElement('path', { d: 'M15 14.2c2.4.2 4.3 2 4.3 4.8' })), title: 'Savjetovanje roditelja', desc: 'Konkretni, primjenjivi savjeti kako poticati govor kod kuće — bez stručnog žargona, uz preporuku sljedećih koraka.', bullet: 'Za roditelje koji sumnjaju u razvoj' },
+        { num: '4', svgBig: React.createElement('svg', { width: 40, height: 40, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round', strokeLinejoin: 'round' }, React.createElement('path', { d: 'M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5z' }), React.createElement('path', { d: 'M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5z' }), React.createElement('path', { d: 'M16 8.5l2.5-2.5' })), title: 'Priprema za školu', desc: 'Program „Spremni za školu" — kroz igru gradimo predvještine čitanja, pisanja i matematike za siguran polazak u školu.', bullet: '8 susreta · male skupine · za predškolce' },
+      ]),
+      services3: this._svc.slice(0, 3),
+      service4: this._svc[3],
+      signsGovor: [
+        { n: '1', t: 'Vaše dvogodišnje dijete još ne govori ili koristi svega par riječi' },
+        { n: '2', t: 'Razumiju ga samo ukućani, drugima je nerazumljiv' },
+        { n: '3', t: 'Ispušta ili miješa glasove, npr. kaže „tava" umjesto „krava"' },
+        { n: '4', t: 'Zastajkuje, ponavlja glasove ili slogove' },
+      ],
+      signsUcenje: [
+        { n: '5', t: 'Teško razumije upute i pitanja u odnosu na vršnjake' },
+        { n: '6', t: 'Ima poteškoća s pripremom za školu, npr. ne prepoznaje slova ni brojeve' },
+      ],
+      penjalica: [
+        { t: 'Bogaćenje rječnika', d: 'Različite vrste riječi kroz ilustrirane materijale.' },
+        { t: 'Morfologija i sintaksa', d: 'Pravilno označavanje riječi i prve rečenice.' },
+        { t: 'AAC simboli', d: 'Podrška razumijevanju i komunikaciji.' },
+        { t: 'Predvještine', d: 'Predmatematičke i grafomotoričke vještine.' },
+      ],
+      wsCards: [
+        { t: 'Kartice – Moje prve rečenice', sub: '', p: '30 €', novo: false },
+        { t: 'Jezična penjalica – Zamjenice', sub: '(tiskana verzija)', p: '30 €', novo: false },
+        { t: 'Jezična penjalica – Zamjenice', sub: '(digitalna verzija)', p: '25 €', novo: false },
+        { t: 'Ljetna Jezična penjalica', sub: '(digitalna verzija)', p: '15 €', novo: false },
+        { t: 'Predvještine čitanja i pisanja', sub: '(tiskano izdanje)', p: '35 €', novo: true },
+        { t: 'Predvještine čitanja i pisanja', sub: '(digitalno izdanje)', p: '28 €', novo: true },
+      ],
+      wsBooks: [
+        { name: 'Predmatematička vježbenica 3–5 godina', tisk: '25 €', dig: '20 €' },
+        { name: 'Početno čitanje i pisanje', tisk: '25 €', dig: '20 €' },
+      ],
+      wsStock: [
+        { name: 'Predmatematička vježbenica 3–5 godina (tiskano izdanje)', status: 'DOSTUPNO ✓', bg: '#e5efd6', fg: '#5a7028' },
+      ],
+      posts: [
+        { cat: 'RANA INTERVENCIJA', tag: '#b0475a', img: 'uploads/751388803_870230165845341_4561274024712763483_n.webp', noImg: false, cover: '', coverInk: '#8a3546', coverText: '', read: '5 min čitanja', date: '12. kol 2026.', title: 'Zašto ne čekati do 3. godine?', excerpt: 'Mit „progovorit će sam" zna odgoditi važnu ranu podršku. Objašnjavamo zašto su prve godine ključne i kada se javiti.', link: 'blog.html' },
+        { cat: 'UČENJE', tag: '#0f7c8c', img: 'uploads/754960955_889709530390971_2489442148118295665_n.webp', noImg: false, cover: '', coverInk: '#0f7c8c', coverText: '', read: '6 min čitanja', date: '08. kol 2026.', title: 'Radno pamćenje: skriveni temelj učenja', excerpt: 'Dijete može znati puno, ali ako teško zadržava informacije, učenje je teže. Što je radno pamćenje i kako ga poticati kod kuće.', link: 'blog2.html' },
+        { cat: 'MATEMATIKA', tag: '#3f5aa6', img: 'uploads/751413987_2147078056239468_8975626536076021330_n.webp', noImg: false, cover: '', coverInk: '#3f5aa6', coverText: '', read: '4 min čitanja', date: '02. kol 2026.', title: 'Predmatematičke vještine: rani temelj', excerpt: 'Zašto su rane matematičke vještine snažan prediktor školskog uspjeha i kako prepoznati teškoće već u vrtićkoj dobi.', link: 'blog3.html' },
+      ],
+      gallery: [
+        { label: 'Terapijska soba', img: 'uploads/753904844_1025295220479548_9046608377394379576_n.webp', col: 3, row: 2 },
+        { label: 'Čekaonica za roditelje', img: 'uploads/753241510_1553917959749975_2221328405200743535_n.webp', col: 3, row: 2 },
+        { label: 'Igraonica', img: 'uploads/scandinavian_playroom_daylight.webp', col: 2, row: 2 },
+        { label: 'Montessori kutak', img: 'uploads/754462554_1552974156373557_2662977597516594389_n.webp', col: 2, row: 2 },
+        { label: 'Materijali', img: 'uploads/752509135_1692343412000769_3332774130212258942_n.webp', col: 2, row: 2 },
+      ].map(g => ({ ...g, onOpen: () => this.setState({ lightbox: g.img }) })),
+      lightbox: this.state.lightbox,
+      closeLightbox: () => this.setState({ lightbox: null }),
+      showCookies: !this.state.cookies,
+      acceptCookies: () => { try { localStorage.setItem('sano_cookies', 'accepted'); } catch(e){} this.setState({ cookies: 'accepted' }); },
+      declineCookies: () => { try { localStorage.setItem('sano_cookies', 'declined'); } catch(e){} this.setState({ cookies: 'declined' }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

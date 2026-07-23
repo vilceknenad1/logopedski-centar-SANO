@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#0f7c8c;text-decoration:none}
+  a:hover{color:#1ea6b6}
+  h1,h2,h3{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.2;letter-spacing:-0.01em}
+  @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  @media (max-width:680px){
+    html{scroll-padding-top:86px}
+    section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
+    article{padding-left:18px!important;padding-right:18px!important}
+  }
+</style>
+</helmet>
+
+<div style="overflow-x:clip">
+
+<header style="position:sticky;top:0;z-index:60;padding:14px 16px 0">
+  <div style="max-width:1200px;margin:0 auto;background:#fff;border:1px solid #e6ecf3;border-radius:18px;box-shadow:0 10px 34px rgba(47,73,110,0.13);padding:6px 12px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html#blog" style="padding:9px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">← Blog</a>
+      <a href="index.html#narucivanje" style="padding:11px 20px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezerviraj termin</a>
+    </div>
+  </div>
+</header>
+
+<article style="max-width:760px;margin:0 auto;padding:44px 22px 80px">
+  <span style="color:#0f7c8c;font-weight:800;letter-spacing:0.08em;font-size:13px">UČENJE</span>
+  <h1 style="font-size:clamp(30px,5vw,46px);font-weight:700;margin:14px 0 22px">Radno pamćenje: skriveni temelj uspješnog učenja</h1>
+  <img src="uploads/child_thoughtful_memory.webp" alt="Dijete razmišlja, ilustracija radnog pamćenja" style="width:100%;border-radius:22px;aspect-ratio:16/9;object-fit:cover;display:block;box-shadow:0 16px 38px rgba(80,110,150,0.16);margin-bottom:32px">
+
+  <div style="border-radius:24px;background:linear-gradient(155deg,#1ea6b6 0%,#6d8ed6 100%);padding:40px 32px;margin-bottom:36px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-30px;right:-20px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.14)"></div>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:clamp(19px,3vw,24px);color:#ffffff;line-height:1.45;position:relative">Dijete može biti pametno i znati puno, ali ako teško zadržava informacije, učenje može biti puno zahtjevnije.</p>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 14px">Što je radno pamćenje?</h2>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:34px">Radno pamćenje omogućuje nam da zadržimo informacije dovoljno dugo da ih možemo koristiti i njima manipulirati tijekom učenja, razumijevanja jezika i svakodnevnih zadataka.</p>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 14px">Kako je povezano s čitanjem i pisanjem?</h2>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:18px">Da bi dijete spojilo glasove u riječ ili rastavilo riječ na glasove, mora ih zadržati u pamćenju i njima manipulirati.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;background:#eef4fb;border-radius:16px;padding:22px;margin-bottom:18px">
+    <sc-for list="{{ mama }}" as="m" hint-placeholder-count="5">
+      <span style="font-family:'Lora',Georgia,serif;font-weight:700;font-size:22px;color:#2f3945;background:#fff;border:1px solid #cfe0ee;border-radius:10px;padding:8px 16px">{{ m }}</span>
+    </sc-for>
+  </div>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:34px">Ako dijete teško zadržava glasove u pamćenju, čitanje i pisanje mogu postati zahtjevniji. Zato je dobro razvijeno radno pamćenje jedan od važnih temelja čitanja i pisanja.</p>
+
+  <div style="background:#eef4fb;border-left:5px solid #0f7c8c;border-radius:0 16px 16px 0;padding:24px 26px;margin-bottom:34px">
+    <p style="font-size:18px;line-height:1.6;color:#2f3945"><strong>Radno pamćenje nije važno samo za čitanje i pisanje.</strong> Sudjeluje u gotovo svim aktivnostima učenja i svakodnevnog funkcioniranja: pomaže pratiti upute, razumjeti razgovor, učiti nove informacije, rješavati probleme i organizirati aktivnosti.</p>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 18px">Kako prepoznati teškoće?</h2>
+  <p style="font-size:17px;line-height:1.6;margin-bottom:16px;color:#5a6472">Dijete s teškoćama radnog pamćenja često:</p>
+  <div style="display:grid;gap:10px;margin-bottom:20px">
+    <sc-for list="{{ signs }}" as="s" hint-placeholder-count="9">
+      <div style="display:flex;gap:12px;align-items:center;background:{{ s.bg }};border-radius:12px;padding:14px 16px">
+        <span style="flex:none;width:12px;height:12px;border-radius:50%;background:{{ s.dot }}"></span>
+        <span style="font-size:16px;line-height:1.45;color:#41505f">{{ s.t }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <p style="font-size:16px;line-height:1.6;color:#8a3546;font-weight:600;margin-bottom:36px">Teškoće s radnim pamćenjem mogu utjecati na učenje, praćenje nastave, čitanje, pisanje, matematiku i svakodnevno funkcioniranje.</p>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 18px">Kako poticati radno pamćenje?</h2>
+  <div style="display:grid;gap:14px;margin-bottom:40px">
+    <sc-for list="{{ tips }}" as="t" hint-placeholder-count="8">
+      <div style="display:flex;gap:16px;align-items:flex-start;background:{{ t.bg }};border-radius:16px;padding:20px 22px;border-left:5px solid {{ t.chip }}">
+        <span style="flex:none;width:40px;height:40px;border-radius:50%;background:{{ t.chipBg }};color:{{ t.chip }};display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900;font-size:18px">{{ t.n }}</span>
+        <div><strong style="color:#2f3945;font-size:17px;display:block;margin-bottom:4px">{{ t.title }}</strong><span style="font-size:15.5px;line-height:1.55;color:#41505f">{{ t.desc }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="background:linear-gradient(155deg,#5b79c4 0%,#1ea6b6 100%);border-radius:22px;padding:38px 30px;text-align:center;color:#fff">
+    <h2 style="color:#fff;font-size:25px;font-weight:700;margin-bottom:10px">Trebate podršku?</h2>
+    <p style="font-size:17px;line-height:1.6;color:#eaf3ff;max-width:480px;margin:0 auto 24px">Radno pamćenje razvija se kroz svakodnevne aktivnosti, igru i postupno povećavanje zahtjeva. Rado ćemo vam pomoći procjenom i planom.</p>
+    <a href="index.html#narucivanje" style="display:inline-block;padding:15px 30px;border-radius:14px;background:#fff;color:#16899a;font-weight:800;font-size:17px" style-hover="background:#eafafc">Rezerviraj termin</a>
+  </div>
+</article>
+
+<footer style="background:#2f3945;color:#c7cfda;padding:40px 22px 28px;text-align:center">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px">
+    <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#fff"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
+    <p style="font-size:14px;color:#a7b1bf">Ozaljska 13, Trešnjevka, 10 000 Zagreb · <a href="tel:+38598841680" style="color:#7fd4df">+385 98 841 680</a> · <a href="mailto:udruga.prosano@gmail.com" style="color:#7fd4df">udruga.prosano@gmail.com</a></p>
+    <a href="index.html" style="margin-top:6px;color:#7fd4df;font-weight:700">← Natrag na početnu</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" style="position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:14px 20px 14px 16px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 10px 26px rgba(37,211,102,0.4);animation:waPulse 2.4s ease-out infinite" style-hover="background:#1fb857">
+  <svg width="26" height="26" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.7.7-3.4-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C6.6 9.9 10.9 5.6 16 5.6S25.4 9.9 25.4 15 21.1 24.8 16 24.8zm5.3-6.9c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+  WhatsApp
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      mama: ['M', 'A', 'M', 'A', 'MAMA'],
+      signs: [
+        'zaboravlja upute koje je upravo čulo',
+        'traži da ponovite što ste rekli',
+        'teško prati upute s više koraka',
+        'preskače dijelove zadatka ili zaboravi što treba napraviti',
+        'teško pamti informacije dovoljno dugo da ih iskoristi',
+        'gubi se tijekom duljih objašnjenja',
+        'teško planira i organizira aktivnosti',
+        'zaboravlja što je trebalo ponijeti ili napraviti',
+        'odustaje od složenijih zadataka jer ne može zadržati sve informacije u mislima',
+      ].map((t, i) => ({ t, ...[
+        { bg: '#f5f8fe', dot: '#6d8ed6' },
+        { bg: '#eafafb', dot: '#1ea6b6' },
+        { bg: '#fbf1ea', dot: '#b0475a' },
+        { bg: '#f2f5e9', dot: '#6b7a3f' },
+      ][i % 4] })),
+      tips: [
+        { n: '1', title: 'Višestruki nalozi', desc: 'Zadajte djetetu više naloga i postupno povećavajte njihov broj i složenost (npr. uzmi bojicu → nacrtaj krug → oboji ga plavo).' },
+        { n: '2', title: 'Ponavljanje nizova', desc: 'Vježbajte ponavljanje nizova riječi, brojeva i rečenica; krenite od jednostavnijih i postupno produljujte.' },
+        { n: '3', title: 'Ponavljanje unatrag', desc: 'Kad dijete uspješno ponavlja niz istim redoslijedom, potaknite ga da ga ponovi obrnutim redoslijedom.' },
+        { n: '4', title: 'Izdvajanje po kriteriju', desc: 'Zadaci u kojima dijete pamti kriterij i izdvaja samo tražene informacije (npr. samo crveno voće, ili po više kriterija).' },
+        { n: '5', title: 'Vježbe memorije', desc: 'Igrajte memory i slične igre koje potiču zadržavanje i prisjećanje informacija.' },
+        { n: '6', title: 'Društvene igre', desc: 'Čovječe ne ljuti se, šah, domine i slične igre traže praćenje pravila, planiranje i pamćenje.' },
+        { n: '7', title: 'Vizualni podsjetnici i rutine', desc: 'Slike, popisi i rasporedi te ustaljene rutine pomažu djetetu lakše pamtiti i organizirati informacije.' },
+        { n: '8', title: 'Pohvala i podrška', desc: 'Pohvalite trud i korištenje strategija, a ne samo rezultat. Podrška i strpljenje grade samopouzdanje.' },
+      ].map((t, i) => ({ ...t, ...[
+        { bg: '#f5f8fe', chipBg: '#dfe9fb', chip: '#3f5aa6' },
+        { bg: '#eafafb', chipBg: '#cdeef1', chip: '#0f7c8c' },
+        { bg: '#fbf1ea', chipBg: '#f4dccd', chip: '#b0475a' },
+        { bg: '#f2f5e9', chipBg: '#e2ead0', chip: '#6b7a3f' },
+      ][i % 4] })),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#0f7c8c;text-decoration:none}
+  a:hover{color:#1ea6b6}
+  h1,h2,h3{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.2;letter-spacing:-0.01em}
+  @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  @media (max-width:680px){
+    html{scroll-padding-top:86px}
+    section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
+    article{padding-left:18px!important;padding-right:18px!important}
+  }
+</style>
+</helmet>
+
+<div style="overflow-x:clip">
+
+<header style="position:sticky;top:0;z-index:60;padding:14px 16px 0">
+  <div style="max-width:1200px;margin:0 auto;background:#fff;border:1px solid #e6ecf3;border-radius:18px;box-shadow:0 10px 34px rgba(47,73,110,0.13);padding:6px 12px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html#blog" style="padding:9px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">← Blog</a>
+      <a href="index.html#narucivanje" style="padding:11px 20px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezerviraj termin</a>
+    </div>
+  </div>
+</header>
+
+<article style="max-width:760px;margin:0 auto;padding:44px 22px 80px">
+  <span style="color:#3f5aa6;font-weight:800;letter-spacing:0.08em;font-size:13px">MATEMATIKA · RANI RAZVOJ</span>
+  <h1 style="font-size:clamp(30px,5vw,46px);font-weight:700;margin:14px 0 22px">Predmatematičke vještine: rani temelj matematike</h1>
+  <img src="uploads/child_counting_blocks.webp" alt="Dijete slaže drvene kocke, predmatematičke vještine" style="width:100%;border-radius:22px;aspect-ratio:16/9;object-fit:cover;display:block;box-shadow:0 16px 38px rgba(80,110,150,0.16);margin-bottom:32px">
+
+  <div style="border-radius:24px;background:linear-gradient(155deg,#3f5aa6 0%,#6d8ed6 100%);padding:40px 32px;margin-bottom:36px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-30px;right:-20px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.13)"></div>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:clamp(19px,3vw,24px);color:#ffffff;line-height:1.45;position:relative">Što se događa kada se teškoće u predmatematičkim vještinama ne prepoznaju na vrijeme? Posljedice se često vide tek kasnije, u školi.</p>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 14px">Teškoće ne nestaju same od sebe</h2>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:14px">Razlike u predmatematičkim vještinama često su vidljive već u vrtićkoj dobi. Bez ciljane podrške one se spontano ne smanjuju.</p>
+  <p style="font-size:14px;color:#8a93a1;margin-bottom:34px">Izvor: Aunola i sur. (2015)</p>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 14px">Rane matematičke vještine grade uspjeh</h2>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:18px">Rane matematičke vještine među najsnažnijim su prediktorima kasnijeg školskog uspjeha. U predškolskoj dobi one postavljaju čvrste temelje za uspjeh u školi i životu.</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#f5f8fe;border-radius:16px;padding:20px;margin-bottom:12px">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+      <span style="font-weight:700;font-size:14px;color:#3f5aa6;background:#fff;border:1px solid #dbe7f7;border-radius:999px;padding:8px 14px">{{ s }}</span>
+    </sc-for>
+  </div>
+  <p style="font-size:14px;color:#8a93a1;margin-bottom:34px">Izvor: Duncan i sur. (2007)</p>
+
+  <div style="background:#eef4fb;border-radius:18px;padding:26px;margin-bottom:34px">
+    <h3 style="font-size:20px;font-weight:700;margin-bottom:10px;color:#2f3945">Što je kardinalnost?</h3>
+    <p style="font-size:17px;line-height:1.65;margin-bottom:14px">Kardinalnost znači razumijevanje da zadnji izgovoreni broj pri brojenju označava ukupnu količinu skupa.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:#fff;border-radius:12px;padding:14px 16px">
+      <span style="font-size:22px">🍎🍎🍎🍎🍎</span>
+      <span style="font-size:15.5px;color:#41505f;flex:1;min-width:200px">Ako dijete prebroji 5 jabuka, razumije da broj <strong style="color:#3f5aa6">5</strong> znači da ukupno ima <strong style="color:#3f5aa6">pet</strong> jabuka.</span>
+    </div>
+    <p style="font-size:14px;color:#8a93a1;margin-top:12px">Izvor: Nguyen i sur. (2016)</p>
+  </div>
+
+  <h2 style="font-size:25px;font-weight:700;margin:0 0 6px">Kako prepoznati teškoće (3–5 godina)?</h2>
+  <p style="font-size:16px;line-height:1.6;margin-bottom:18px;color:#5a6472">Dijete često ima poteškoća, a evo i primjera iz svakodnevice:</p>
+  <div style="display:grid;gap:12px;margin-bottom:36px">
+    <sc-for list="{{ premath }}" as="p" hint-placeholder-count="6">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;background:{{ p.bg }};border-radius:14px;padding:16px 18px">
+        <span style="font-size:15.5px;font-weight:700;color:#2f3945;line-height:1.4">{{ p.a }}</span>
+        <span style="font-size:15px;color:#41505f;line-height:1.4;border-left:2px solid {{ p.dot }};padding-left:12px">{{ p.b }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="font-size:25px;font-weight:700;margin:0 0 18px">Kada obratiti pažnju na brojenje?</h2>
+  <div style="display:grid;gap:12px;margin-bottom:20px">
+    <sc-for list="{{ counting }}" as="c" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;background:{{ c.bg }};border-radius:14px;padding:16px 18px">
+        <span style="font-size:15.5px;font-weight:700;color:#2f3945;line-height:1.4">{{ c.a }}</span>
+        <span style="font-size:15px;color:#41505f;line-height:1.4;border-left:2px solid {{ c.dot }};padding-left:12px">{{ c.b }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <p style="font-size:16px;line-height:1.6;color:#5a6472;margin-bottom:8px">Vještine brojenja razvijaju se postupno tijekom predškolske dobi kroz igru, svakodnevne aktivnosti i manipulaciju konkretnim predmetima.</p>
+  <p style="font-size:14px;color:#8a93a1;margin-bottom:40px">Izvor: Grden (2018)</p>
+
+  <div style="background:linear-gradient(155deg,#5b79c4 0%,#1ea6b6 100%);border-radius:22px;padding:38px 30px;text-align:center;color:#fff">
+    <h2 style="color:#fff;font-size:25px;font-weight:700;margin-bottom:10px">Primijetili ste nešto od navedenog?</h2>
+    <p style="font-size:17px;line-height:1.6;color:#eaf3ff;max-width:480px;margin:0 auto 24px">Rano prepoznavanje i podrška značajno olakšavaju kasnije usvajanje matematike i školskih vještina. Javite nam se za procjenu.</p>
+    <a href="index.html#narucivanje" style="display:inline-block;padding:15px 30px;border-radius:14px;background:#fff;color:#16899a;font-weight:800;font-size:17px" style-hover="background:#eafafc">Rezerviraj termin</a>
+  </div>
+</article>
+
+<footer style="background:#2f3945;color:#c7cfda;padding:40px 22px 28px;text-align:center">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px">
+    <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#fff"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
+    <p style="font-size:14px;color:#a7b1bf">Ozaljska 13, Trešnjevka, 10 000 Zagreb · <a href="tel:+38598841680" style="color:#7fd4df">+385 98 841 680</a> · <a href="mailto:udruga.prosano@gmail.com" style="color:#7fd4df">udruga.prosano@gmail.com</a></p>
+    <a href="index.html" style="margin-top:6px;color:#7fd4df;font-weight:700">← Natrag na početnu</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" style="position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:14px 20px 14px 16px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 10px 26px rgba(37,211,102,0.4);animation:waPulse 2.4s ease-out infinite" style-hover="background:#1fb857">
+  <svg width="26" height="26" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.7.7-3.4-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C6.6 9.9 10.9 5.6 16 5.6S25.4 9.9 25.4 15 21.1 24.8 16 24.8zm5.3-6.9c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+  WhatsApp
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const P = [
+      { bg: '#f5f8fe', dot: '#6d8ed6' },
+      { bg: '#eafafb', dot: '#1ea6b6' },
+      { bg: '#fbf1ea', dot: '#b0475a' },
+      { bg: '#f2f5e9', dot: '#6b7a3f' },
+    ];
+    const premathRaw = [
+      ['teško razvrstava predmete', 'ne može odvojiti sve crvene ili sve velike predmete'],
+      ['teško uspoređuje količine', 'ne razumije gdje ima više, a gdje manje'],
+      ['teško slijedi upute u više koraka', 'zbuni se kod: „Uzmi kocku i stavi je na stol."'],
+      ['ne razumije prostorne odnose', 'ne razlikuje pojmove: u, na, ispod, iza'],
+      ['teško prepoznaje obrasce i nizove', 'ne može nastaviti jednostavan niz'],
+      ['teško uočava što pripada skupini', 'ne prepoznaje „uljeza" među predmetima'],
+    ];
+    const countingRaw = [
+      ['ne usvaja da svakom objektu odgovara jedna brojna riječ', 'preskače predmete ili isti predmet broji više puta'],
+      ['ne razumije stalan redoslijed brojnih riječi', 'tijekom brojenja preskače ili mijenja brojeve'],
+      ['ne razumije da posljednja izgovorena brojna riječ označava ukupnu količinu', 'nakon brojenja ne zna koliko ukupno ima predmeta'],
+      ['teško broji automatizmom do 5 ili 10', 'zastaje, kreće ispočetka ili odustaje tijekom brojenja'],
+    ];
+    return {
+      steps: ['brojenje', 'razumijevanje količine', 'prepoznavanje brojeva', 'osnovne matematičke vještine', 'školski uspjeh'],
+      premath: premathRaw.map((r, i) => ({ a: r[0], b: r[1], ...P[i % 4] })),
+      counting: countingRaw.map((r, i) => ({ a: r[0], b: r[1], ...P[i % 4] })),
+    };
+  }
+}
+</script>
+</body>
+</html>
