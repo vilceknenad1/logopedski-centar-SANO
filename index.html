@@ -33,6 +33,9 @@
     #galerija-grid{grid-template-columns:1fr 1fr!important;grid-auto-rows:200px!important}
     #galerija-grid>div{grid-column:auto!important;grid-row:auto!important}
     #galerija-grid span{font-size:13px!important;padding:6px 13px!important}
+    #korak4-card{padding:28px 22px!important;gap:18px!important;text-align:center}
+    #korak4-card>div:first-child{flex-direction:column!important;align-items:center!important;gap:14px!important}
+    #korak4-card a{margin:0 auto}
   }
   @media (max-width:440px){
     #galerija-grid{grid-template-columns:1fr!important;grid-auto-rows:230px!important}
@@ -195,7 +198,7 @@
         </div>
       </sc-for>
     </div>
-    <div data-reveal style="margin-top:22px;background:#FFFBEB;border:1px solid #f0e6c8;border-radius:22px;padding:34px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;align-items:center;box-shadow:0 12px 30px rgba(160,120,50,0.08)">
+    <div id="korak4-card" data-reveal style="margin-top:22px;background:#FFFBEB;border:1px solid #f0e6c8;border-radius:22px;padding:34px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;align-items:center;box-shadow:0 12px 30px rgba(160,120,50,0.08)">
       <div style="display:flex;align-items:center;gap:22px">
         <div style="flex:none;width:84px;height:84px;border-radius:22px;background:#EDE9FE;color:#7c5cc4;display:flex;align-items:center;justify-content:center">{{ service4.svgBig }}</div>
         <div>
