@@ -541,8 +541,18 @@
           </div>
         </div>
       </div>
-      <div data-reveal style="min-height:340px;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(80,110,150,0.14)">
-        <iframe title="Karta: Ozaljska 13, Zagreb" src="https://www.google.com/maps?q=Ozaljska%2013,%2010000%20Zagreb&output=embed" style="width:100%;height:100%;min-height:340px;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div data-reveal style="min-height:340px;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(80,110,150,0.14);position:relative">
+        <sc-if value="{{ mapAllowed }}" hint-placeholder-val="{{ false }}">
+          <iframe title="Karta: Ozaljska 13, Zagreb" src="https://www.google.com/maps?q=Ozaljska%2013,%2010000%20Zagreb&output=embed" style="width:100%;height:100%;min-height:340px;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </sc-if>
+        <sc-if value="{{ mapBlocked }}" hint-placeholder-val="{{ true }}">
+          <div style="height:100%;min-height:340px;background:#eef2f8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 26px">
+            <span style="width:56px;height:56px;border-radius:16px;background:#dbe4f1;display:flex;align-items:center;justify-content:center;font-size:26px">🗺️</span>
+            <p style="font-size:14.5px;line-height:1.55;color:#5a6472;max-width:320px;margin:0">Karta se učitava preko Google Mapsa, koji postavlja kolačiće. Prikažite je uz Vaš pristanak.</p>
+            <button onClick="{{ allowMap }}" style="border:none;background:#1ea6b6;color:#fff;font-weight:800;font-size:14.5px;padding:12px 22px;border-radius:12px;cursor:pointer;box-shadow:0 8px 18px rgba(30,166,182,0.28)" style-hover="background:#16899a">Prikaži kartu</button>
+            <a href="https://www.google.com/maps?q=Ozaljska+13,+10000+Zagreb" target="_blank" rel="noopener" style="font-size:13.5px;font-weight:700;color:#0f7c8c">Otvori u Google Maps →</a>
+          </div>
+        </sc-if>
       </div>
     </div>
   </div>
@@ -594,7 +604,7 @@
       <span style="flex:none;width:42px;height:42px;border-radius:12px;background:#e7f6f8;color:#0f7c8c;display:flex;align-items:center;justify-content:center;font-size:22px">🍪</span>
       <div>
         <strong style="display:block;color:#1A2E3B;font-size:16px;font-family:'Lora',Georgia,serif">Kolačići (cookies)</strong>
-        <p style="font-size:13.5px;line-height:1.6;color:#6B7A90;margin:6px 0 0">Koristimo kolačiće kako bi stranica ispravno radila i kako bismo poboljšali Vaše iskustvo. Možete ih prihvatiti ili odbiti.</p>
+        <p style="font-size:13.5px;line-height:1.6;color:#6B7A90;margin:6px 0 0">Nužni kolačići potrebni su za rad stranice. Ugrađenu Google kartu i njezine kolačiće učitavamo tek uz Vaš pristanak. Možete prihvatiti ili odbiti.</p>
       </div>
     </div>
     <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
@@ -782,6 +792,9 @@ class Component extends DCLogic {
       lightbox: this.state.lightbox,
       closeLightbox: () => this.setState({ lightbox: null }),
       showCookies: !this.state.cookies,
+      mapAllowed: this.state.cookies === 'accepted',
+      mapBlocked: this.state.cookies !== 'accepted',
+      allowMap: () => { try { localStorage.setItem('sano_cookies', 'accepted'); } catch(e){} this.setState({ cookies: 'accepted' }); },
       acceptCookies: () => { try { localStorage.setItem('sano_cookies', 'accepted'); } catch(e){} this.setState({ cookies: 'accepted' }); },
       declineCookies: () => { try { localStorage.setItem('sano_cookies', 'declined'); } catch(e){} this.setState({ cookies: 'declined' }); },
     };
