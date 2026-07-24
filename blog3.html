@@ -19,6 +19,13 @@
   a:hover{color:#1ea6b6}
   h1,h2,h3{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.2;letter-spacing:-0.01em}
   @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .wa-fab{position:fixed;right:0;bottom:118px;z-index:80;display:flex;align-items:center;text-decoration:none;background:#25d366;color:#fff;height:52px;padding:0 13px;border-radius:26px 0 0 26px;box-shadow:0 6px 18px rgba(20,60,40,0.28);overflow:hidden;transition:padding .38s cubic-bezier(.22,.61,.36,1),box-shadow .3s,background .2s}
+  .wa-fab svg{flex:none}
+  .wa-fab .wa-label{max-width:0;opacity:0;margin-left:0;white-space:nowrap;font-weight:800;font-size:15px;overflow:hidden;transition:max-width .38s cubic-bezier(.22,.61,.36,1),opacity .3s,margin-left .38s;animation:waPeek 16s ease-in-out infinite}
+  .wa-fab:hover{padding-right:20px;background:#1fb857;box-shadow:0 10px 26px rgba(20,60,40,0.4)}
+  .wa-fab:hover .wa-label{max-width:130px;opacity:1;margin-left:9px;animation:none}
+  @keyframes waPeek{0%,90%,100%{max-width:0;opacity:0;margin-left:0}93%,97%{max-width:130px;opacity:1;margin-left:9px}}
+  @media (max-width:680px){.wa-fab{bottom:96px;height:48px;padding:0 12px}}
   @media (max-width:680px){
     html{scroll-padding-top:86px}
     section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
@@ -110,9 +117,9 @@
   </div>
 </footer>
 
-<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" style="position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:14px 20px 14px 16px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 10px 26px rgba(37,211,102,0.4);animation:waPulse 2.4s ease-out infinite" style-hover="background:#1fb857">
+<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" class="wa-fab">
   <svg width="26" height="26" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.7.7-3.4-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C6.6 9.9 10.9 5.6 16 5.6S25.4 9.9 25.4 15 21.1 24.8 16 24.8zm5.3-6.9c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
-  WhatsApp
+  <span class="wa-label">WhatsApp</span>
 </a>
 
 </div>
