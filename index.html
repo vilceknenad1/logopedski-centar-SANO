@@ -38,13 +38,15 @@
     #hero-badge>div:first-child{width:26px;height:26px;font-size:13px}
     #hero-badge>div:last-child{font-size:12px}
     #hero-badge span{font-size:10px!important}
-    #pocetna{padding-bottom:132px!important}
-    #stats-wrap{margin-top:-100px!important}
-    #stats-bar>div{padding:14px 6px;min-width:0;align-items:center;text-align:center}
-    #stats-bar>div>div:first-child{gap:7px}
-    #stats-bar>div>div:first-child>span{width:28px!important;height:28px!important;font-size:14px!important}
-    #stats-bar>div>div:first-child>div{font-size:21px!important}
-    #stats-bar>div>div:last-child{font-size:11px!important;line-height:1.25;text-align:center}
+    #pocetna{padding-bottom:36px!important}
+    #stats-wrap{margin-top:26px!important;margin-bottom:0!important}
+    #stats-bar{border-radius:16px!important}
+    #stats-bar>div:nth-child(odd){flex-direction:column!important;padding:16px 4px!important;gap:7px!important;min-width:0}
+    #stats-bar>div:nth-child(odd)>span{width:34px!important;height:34px!important;font-size:15px!important}
+    #stats-bar>div:nth-child(odd)>div{text-align:center!important}
+    #stats-bar>div:nth-child(odd)>div>div:first-child{font-size:20px!important}
+    #stats-bar>div:nth-child(odd)>div>div:last-child{font-size:11px!important;line-height:1.2}
+    #stats-bar>div:nth-child(even){margin:12px 0!important}
     section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
     #pocetna{padding-top:96px!important}
     article{padding-left:18px!important;padding-right:18px!important}
@@ -134,27 +136,29 @@
 
 <!-- ================= STATISTIKA (traka ispod heroa) ================= -->
 <section id="stats-wrap" style="padding:0 22px;margin-top:-116px;margin-bottom:20px;position:relative;z-index:5">
-  <div id="stats-bar" data-reveal style="max-width:1020px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 22px 50px rgba(30,60,90,0.12);display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden">
-    <div style="display:flex;flex-direction:column;gap:5px;padding:16px 22px">
-      <div style="display:flex;align-items:center;gap:14px">
-        <span style="width:42px;height:42px;flex:none;border-radius:12px;background:#eef3fb;color:#6d8ed6;display:flex;align-items:center;justify-content:center;font-size:20px">★</span>
-        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:clamp(26px,2.3vw,32px);color:#1A2B4C;line-height:1">10+</div>
+  <div id="stats-bar" data-reveal style="max-width:720px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 12px 34px rgba(30,60,90,0.10);display:flex;align-items:stretch;justify-content:center">
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:11px;padding:14px 12px">
+      <span style="width:36px;height:36px;flex:none;border-radius:50%;background:#eef3fb;color:#6d8ed6;display:flex;align-items:center;justify-content:center;font-size:16px">★</span>
+      <div style="text-align:left">
+        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:22px;color:#1A2B4C;line-height:1.05">10+</div>
+        <div style="font-size:12px;font-weight:700;color:#5a6472">godina iskustva</div>
       </div>
-      <div style="font-size:13px;font-weight:700;color:#5a6472">godina iskustva</div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:5px;padding:16px 22px;border-left:1px solid #eef1f6">
-      <div style="display:flex;align-items:center;gap:14px">
-        <span style="width:42px;height:42px;flex:none;border-radius:12px;background:#e7f6f8;color:#1ea6b6;display:flex;align-items:center;justify-content:center;font-size:20px">♥</span>
-        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:clamp(26px,2.3vw,32px);color:#1A2B4C;line-height:1">500+</div>
+    <div style="width:1px;background:#eef1f6;margin:14px 0"></div>
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:11px;padding:14px 12px">
+      <span style="width:36px;height:36px;flex:none;border-radius:50%;background:#e7f6f8;color:#1ea6b6;display:flex;align-items:center;justify-content:center;font-size:16px">♥</span>
+      <div style="text-align:left">
+        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:22px;color:#1A2B4C;line-height:1.05">500+</div>
+        <div style="font-size:12px;font-weight:700;color:#5a6472">sretne djece</div>
       </div>
-      <div style="font-size:13px;font-weight:700;color:#5a6472">sretne djece</div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:5px;padding:16px 22px;border-left:1px solid #eef1f6">
-      <div style="display:flex;align-items:center;gap:14px">
-        <span style="width:42px;height:42px;flex:none;border-radius:12px;background:#fbf1e2;color:#e2953a;display:flex;align-items:center;justify-content:center;font-size:20px">☺</span>
-        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:clamp(26px,2.3vw,32px);color:#1A2B4C;line-height:1">1:1</div>
+    <div style="width:1px;background:#eef1f6;margin:14px 0"></div>
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:11px;padding:14px 12px">
+      <span style="width:36px;height:36px;flex:none;border-radius:50%;background:#fbf1e2;color:#e2953a;display:flex;align-items:center;justify-content:center;font-size:16px">☺</span>
+      <div style="text-align:left">
+        <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:22px;color:#1A2B4C;line-height:1.05">1:1</div>
+        <div style="font-size:12px;font-weight:700;color:#5a6472">individualni rad</div>
       </div>
-      <div style="font-size:13px;font-weight:700;color:#5a6472">individualni rad</div>
     </div>
   </div>
 </section>
