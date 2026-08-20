@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#0f7c8c;text-decoration:none}
+  a:hover{color:#1ea6b6}
+  h1,h2,h3{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.2;letter-spacing:-0.01em}
+  @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .wa-fab{position:fixed;right:0;bottom:118px;z-index:80;display:flex;align-items:center;text-decoration:none;background:#25d366;color:#fff;height:52px;padding:0 13px;border-radius:26px 0 0 26px;box-shadow:0 6px 18px rgba(20,60,40,0.28);overflow:hidden;transition:padding .38s cubic-bezier(.22,.61,.36,1),box-shadow .3s,background .2s}
+  .wa-fab svg{flex:none}
+  .wa-fab .wa-label{max-width:0;opacity:0;margin-left:0;white-space:nowrap;font-weight:800;font-size:15px;overflow:hidden;transition:max-width .38s cubic-bezier(.22,.61,.36,1),opacity .3s,margin-left .38s;animation:waPeek 16s ease-in-out infinite}
+  .wa-fab:hover{padding-right:20px;background:#1fb857;box-shadow:0 10px 26px rgba(20,60,40,0.4)}
+  .wa-fab:hover .wa-label{max-width:130px;opacity:1;margin-left:9px;animation:none}
+  @keyframes waPeek{0%,90%,100%{max-width:0;opacity:0;margin-left:0}93%,97%{max-width:130px;opacity:1;margin-left:9px}}
+  @media (max-width:680px){.wa-fab{bottom:96px;height:48px;padding:0 12px}}
+  @media (max-width:680px){
+    html{scroll-padding-top:86px}
+    section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
+    article{padding-left:18px!important;padding-right:18px!important}
+  }
+</style>
+</helmet>
+
+<div style="overflow-x:clip">
+
+<header style="position:sticky;top:0;z-index:60;padding:14px 16px 0">
+  <div style="max-width:1160px;margin:0 auto;background:#fff;border:1px solid #e6ecf3;border-radius:18px;box-shadow:0 10px 34px rgba(47,73,110,0.13);padding:6px 12px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
+    <div style="display:flex;align-items:center;gap:10px;flex:none">
+      <a href="index.html#blog" style="padding:9px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px;white-space:nowrap" style-hover="background:#f1f5fa;color:#0f7c8c">← Blog</a>
+      <a href="index.html#narucivanje" style="padding:11px 20px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezerviraj termin</a>
+    </div>
+  </div>
+</header>
+
+<article style="max-width:760px;margin:0 auto;padding:44px 22px 80px">
+  <span style="color:#1c7a52;font-weight:800;letter-spacing:0.08em;font-size:13px">JEZIK · PREDŠKOLA</span>
+  <h1 style="font-size:clamp(30px,5vw,46px);font-weight:700;margin:14px 0 12px">Što smo koristili ovog ljeta?</h1>
+  <p style="font-size:20px;line-height:1.5;color:#5a6472;margin:0 0 26px">Razvrstavanje pojmova: jednostavna igra s velikim učinkom.</p>
+  <img src="uploads/blog4-ljeto-naslov.png" alt="Što smo koristili ovog ljeta: naše omiljene igre i aktivnosti za predškolca" style="width:100%;max-width:580px;margin:0 auto 32px;border-radius:22px;border:1px solid #e6e2d6;display:block;box-shadow:0 16px 38px rgba(80,110,150,0.16)">
+
+  <div style="border-radius:24px;background:linear-gradient(155deg,#1c7a52 0%,#4fa87a 100%);padding:40px 32px;margin-bottom:36px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-30px;right:-20px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.13)"></div>
+    <p style="font-family:'Lora',Georgia,serif;font-style:italic;font-size:clamp(19px,3vw,24px);color:#ffffff;line-height:1.45;position:relative">Jedna od aktivnosti kojoj smo se ovog ljeta najčešće vraćali bilo je razvrstavanje pojmova prema semantičkim kategorijama. Naizgled jednostavna igra, a razvija brojne vještine potrebne za uspješno učenje.</p>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 14px">Što je razvrstavanje prema semantičkim kategorijama?</h2>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:14px">To je svrstavanje pojmova u skupine koje pripadaju zajedno: voće, povrće, odjeća, životinje, biljke, vozila. Dijete pritom ne uči samo nazive predmeta, nego i <strong style="color:#2f3945">nadređeni pojam</strong> koji ih povezuje: mrkva, paprika i luk zajedno su povrće.</p>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:34px">Upravo taj korak, od pojedinačne riječi do kategorije, organizira djetetov rječnik i omogućuje mu da nove riječi lakše pamti i brže pronalazi.</p>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 18px">Što dijete razvija ovom igrom</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:36px">
+    <sc-for list="{{ skills }}" as="s" hint-placeholder-count="4">
+      <div style="{{ s.cardStyle }}">
+        <span style="{{ s.iconStyle }}">✓</span>
+        <strong style="display:block;font-size:16px;color:#2f3945;line-height:1.3;margin-bottom:6px">{{ s.title }}</strong>
+        <span style="font-size:14.5px;line-height:1.5;color:#5a6472">{{ s.desc }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="font-size:26px;font-weight:700;margin:0 0 14px">Kako igrati kod kuće</h2>
+  <p style="font-size:18px;line-height:1.7;margin-bottom:18px">Nisu vam potrebni posebni materijali. Dovoljne su slikovnice, letak iz trgovine ili predmeti koje već imate.</p>
+  <div style="display:grid;gap:12px;margin-bottom:36px">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;gap:16px;align-items:flex-start;background:#f3f9f5;border:1px solid #dcece3;border-radius:16px;padding:18px 20px">
+        <span style="flex:none;width:30px;height:30px;border-radius:50%;background:#1c7a52;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center">{{ s.n }}</span>
+        <span style="font-size:16.5px;line-height:1.6;color:#41505f">{{ s.text }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="font-size:25px;font-weight:700;margin:0 0 6px">Primjeri zadataka</h2>
+  <p style="font-size:16px;line-height:1.6;margin-bottom:20px;color:#5a6472">Zadaci iz naše vježbenice <strong style="color:#2f3945">Predvještine čitanja i pisanja</strong>, kojima ove vještine dodatno uvježbavamo.</p>
+  <figure style="margin:0 0 20px">
+    <img src="uploads/blog4-primjeri-zadataka.png" alt="Primjeri zadataka: razvrstavanje, semantičke kategorije i radno pamćenje" loading="lazy" style="width:100%;display:block;border-radius:20px;border:1px solid #e6e2d6;box-shadow:0 14px 34px rgba(80,110,150,0.14)">
+    <figcaption style="font-size:13.5px;color:#8a93a1;margin-top:10px;text-align:center">Iz vježbenice „Predvještine čitanja i pisanja"</figcaption>
+  </figure>
+  <div style="display:grid;gap:16px;margin-bottom:36px">
+    <sc-for list="{{ taskGroups }}" as="g" hint-placeholder-count="2">
+      <div style="{{ g.boxStyle }}">
+        <div style="{{ g.headStyle }}">
+          <span style="{{ g.badgeStyle }}">{{ g.count }}</span>
+          <h3 style="font-size:18.5px;font-weight:700;color:#fff;margin:0">{{ g.title }}</h3>
+        </div>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+            <div style="{{ it.rowStyle }}" style-hover="background:#fbfcfd">
+              <span style="{{ it.numStyle }}">{{ it.n }}</span>
+              <span style="font-size:15.5px;line-height:1.55;color:#41505f">{{ it.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:flex;gap:16px;align-items:flex-start;background:#f6f2fc;border:1px solid #e4dcf5;border-radius:18px;padding:24px 26px;margin-bottom:40px">
+    <span style="flex:none;width:38px;height:38px;border-radius:50%;background:#584593;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px">☀</span>
+    <div>
+      <strong style="display:block;font-family:'Lora',Georgia,serif;font-size:18px;color:#2f3945;margin-bottom:8px">Savjet logopedinje</strong>
+      <p style="font-size:16.5px;line-height:1.65;color:#41505f">Postupno povećavajte težinu: počnite s dvije jasno različite kategorije, pa dodajte treću. Kad dijete sigurno razvrstava, uvedite pitanja radnog pamćenja: „ponovi unatrag", „koje je bilo najveće". Kratko i često je bolje od dugo i rijetko.</p>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(155deg,#1c7a52 0%,#1ea6b6 100%);border-radius:22px;padding:38px 30px;text-align:center;color:#fff">
+    <h2 style="color:#fff;font-size:25px;font-weight:700;margin-bottom:10px">Želite iste zadatke kod kuće?</h2>
+    <p style="font-size:17px;line-height:1.6;color:#e7f7f0;max-width:500px;margin:0 auto 24px">Vježbenica „Predvještine čitanja i pisanja" sadrži zadatke za rječnik, semantičke kategorije, radno pamćenje i logičko zaključivanje, kroz igru i postupno povećavanje težine.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a href="materijali.html" style="display:inline-block;padding:15px 30px;border-radius:14px;background:#fff;color:#16794f;font-weight:800;font-size:17px" style-hover="background:#eafaf2">Pogledaj vježbenicu</a>
+      <a href="index.html#narucivanje" style="display:inline-block;padding:15px 30px;border-radius:14px;background:rgba(255,255,255,0.16);color:#fff;font-weight:800;font-size:17px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,0.5)" style-hover="background:rgba(255,255,255,0.26)">Rezerviraj termin</a>
+    </div>
+  </div>
+</article>
+
+<footer style="background:#2f3945;color:#c7cfda;padding:40px 22px 28px;text-align:center">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px">
+    <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#fff"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
+    <p style="font-size:14px;color:#a7b1bf">Ozaljska 13, Trešnjevka, 10 000 Zagreb · <a href="tel:+38598841680" style="color:#7fd4df">+385 98 841 680</a> · <a href="mailto:udruga.prosano@gmail.com" style="color:#7fd4df">udruga.prosano@gmail.com</a></p>
+    <a href="index.html" style="margin-top:6px;color:#7fd4df;font-weight:700">← Natrag na početnu</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" class="wa-fab">
+  <svg width="26" height="26" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.7.7-3.4-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C6.6 9.9 10.9 5.6 16 5.6S25.4 9.9 25.4 15 21.1 24.8 16 24.8zm5.3-6.9c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+  <span class="wa-label">WhatsApp</span>
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const skillRaw = [
+      ['#1c7a52', '#eaf6ef', '#d7ebe0', 'Rječnik', 'Dijete usvaja nove riječi i lakše ih doziva kad su povezane u skupine.'],
+      ['#0d7180', '#e6f5f7', '#cfe9ec', 'Semantičke kategorije', 'Uči nadređene pojmove: mrkva, paprika i luk zajedno su povrće.'],
+      ['#33488f', '#eaf0ff', '#d8e3fa', 'Radno pamćenje', 'Zadržava niz riječi i istovremeno radi s njima, temelj za učenje.'],
+      ['#a9660f', '#fdf1dc', '#f4e2c4', 'Logičko zaključivanje', 'Prepoznaje što pripada skupini, a što je „uljez" među pojmovima.'],
+    ];
+    const skills = skillRaw.map(([accent, bg, border, title, desc]) => ({
+      title, desc,
+      cardStyle: 'background:' + bg + ';border:1px solid ' + border + ';border-radius:18px;padding:20px 20px 22px',
+      iconStyle: 'display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:' + accent + ';color:#fff;font-size:16px;font-weight:800;margin-bottom:14px',
+    }));
+
+    const steps = [
+      'Odaberite dvije jasno različite kategorije, na primjer voće i vozila, i pomiješajte 6 do 8 slika ili predmeta.',
+      'Neka dijete razvrstava naglas: „Jabuka je voće." Imenovanje je važnije od brzine.',
+      'Kad je razvrstalo, pitajte za nadređeni pojam: „Kako jednim imenom nazivamo jabuku, jagodu i šljivu?"',
+      'Dodajte treću kategoriju ili tražite „uljeza" u skupini kad dijete postane sigurno.',
+    ].map((text, i) => ({ n: i + 1, text }));
+
+    const groupRaw = [
+      ['#1c7a52', '#f3f9f5', '#dcece3', 'Razvrstavanje i nadređeni pojmovi', [
+        'Zaokruži svo voće.',
+        'Kako jednim imenom nazivamo mrkvu, papriku i luk?',
+        'Kako jednim imenom nazivamo jabuku, jagodu, šljivu, naranču i breskvu?',
+      ]],
+      ['#33488f', '#f2f6fd', '#dde7f7', 'Radno pamćenje', [
+        'Ponovi niz riječi unatrag: jabuka, kruška, šljiva.',
+        'Izdvoji iz niza riječ koja odgovara zadanom obilježju, na primjer crveno voće.',
+        'Prisjeti se koje je voće bilo najveće, a koje najmanje.',
+      ]],
+    ];
+    const taskGroups = groupRaw.map(([accent, bg, border, title, items]) => ({
+      title,
+      count: items.length + ' zadatka',
+      boxStyle: 'background:#fff;border:1px solid ' + border + ';border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(80,110,150,0.1)',
+      headStyle: 'display:flex;align-items:center;gap:14px;background:' + accent + ';padding:18px 22px',
+      badgeStyle: 'flex:none;background:rgba(255,255,255,0.18);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.4)',
+      items: items.map((text, i) => ({
+        text, n: i + 1,
+        rowStyle: 'display:flex;gap:14px;align-items:flex-start;padding:16px 22px;transition:background .2s;' + (i ? 'border-top:1px solid ' + border : ''),
+        numStyle: 'flex:none;width:26px;height:26px;border-radius:50%;background:' + bg + ';color:' + accent + ';font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px ' + border,
+      })),
+    }));
+
+    return { skills, steps, taskGroups };
+  }
+}
+</script>
+</body>
+</html>

@@ -19,10 +19,16 @@
   a:hover{color:#1ea6b6}
   h1,h2,h3{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.15;letter-spacing:-0.01em}
   @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .wa-fab{position:fixed;right:0;bottom:118px;z-index:80;display:flex;align-items:center;text-decoration:none;background:#25d366;color:#fff;height:52px;padding:0 13px;border-radius:26px 0 0 26px;box-shadow:0 6px 18px rgba(20,60,40,0.28);overflow:hidden;transition:padding .38s cubic-bezier(.22,.61,.36,1),box-shadow .3s,background .2s}
+  .wa-fab svg{flex:none}
+  .wa-fab .wa-label{max-width:0;opacity:0;margin-left:0;white-space:nowrap;font-weight:800;font-size:15px;overflow:hidden;transition:max-width .38s cubic-bezier(.22,.61,.36,1),opacity .3s,margin-left .38s;animation:waPeek 16s ease-in-out infinite}
+  .wa-fab:hover{padding-right:20px;background:#1fb857;box-shadow:0 10px 26px rgba(20,60,40,0.4)}
+  .wa-fab:hover .wa-label{max-width:130px;opacity:1;margin-left:9px;animation:none}
+  @keyframes waPeek{0%,90%,100%{max-width:0;opacity:0;margin-left:0}93%,97%{max-width:130px;opacity:1;margin-left:9px}}
+  @media (max-width:680px){.wa-fab{bottom:96px;height:48px;padding:0 12px}}
   @media (max-width:680px){
     html{scroll-padding-top:86px}
-    section{padding-top:60px!important;padding-bottom:60px!important;padding-left:16px!important;padding-right:16px!important}
-    article{padding-left:18px!important;padding-right:18px!important}
+    section{padding-top:56px!important;padding-bottom:56px!important;padding-left:16px!important;padding-right:16px!important}
   }
 </style>
 </helmet>
@@ -30,58 +36,64 @@
 <div ref="{{ setRoot }}" style="overflow-x:clip">
 
 <header style="position:sticky;top:0;z-index:60;padding:14px 16px 0">
-  <div style="max-width:1200px;margin:0 auto;background:#fff;border:1px solid #e6ecf3;border-radius:18px;box-shadow:0 10px 34px rgba(47,73,110,0.13);padding:6px 12px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+  <div style="max-width:1200px;margin:0 auto;background:#ffffff;border:1px solid #e6ecf3;border-radius:18px;box-shadow:0 10px 34px rgba(47,73,110,0.13);padding:6px 10px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
     <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
-    <div style="display:flex;align-items:center;gap:10px">
-      <a href="index.html" style="padding:9px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px" style-hover="background:#f1f5fa;color:#0f7c8c">← Početna</a>
+    <div style="display:flex;align-items:center;gap:8px;flex:none">
+      <a href="index.html" style="padding:9px 13px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px;white-space:nowrap" style-hover="background:#f1f5fa;color:#0f7c8c">← Početna</a>
       <a href="index.html#narucivanje" style="padding:11px 20px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezerviraj termin</a>
     </div>
   </div>
 </header>
 
-<section style="position:relative;overflow:hidden;padding:70px 22px 60px;background:linear-gradient(155deg,#5b79c4 0%,#1ea6b6 100%);text-align:center;margin-top:-72px;padding-top:120px">
-  <div style="position:absolute;top:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.08)"></div>
-  <div style="position:absolute;bottom:-60px;right:-30px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.07)"></div>
-  <div style="max-width:700px;margin:0 auto;position:relative">
-    <span style="display:inline-block;background:rgba(255,255,255,0.18);color:#fff;font-weight:800;letter-spacing:0.06em;font-size:13px;padding:8px 16px;border-radius:999px">JEZIČNA PENJALICA · WEBSHOP</span>
-    <h1 style="font-size:clamp(34px,5.5vw,54px);font-weight:700;margin:18px 0 14px;color:#fff">Materijali i vježbenice</h1>
-    <p style="font-size:18px;line-height:1.6;color:#eaf3ff;max-width:600px;margin:0 auto">Provjereni logopedski materijali za jezično-govorni razvoj djece: kartice, jezične penjalice i vježbenice u tiskanom i digitalnom izdanju. Kupnja putem naše web trgovine.</p>
+<section style="position:relative;overflow:hidden;background:#f6ebd9;margin-top:-72px;padding:126px 22px 62px">
+  <div style="position:absolute;top:-70px;right:-70px;width:280px;height:280px;border-radius:50%;background:#e2953a;opacity:0.16;pointer-events:none"></div>
+  <div style="position:absolute;bottom:-90px;left:-80px;width:240px;height:240px;border-radius:50%;background:#1ea6b6;opacity:0.12;pointer-events:none"></div>
+  <div style="max-width:700px;margin:0 auto;position:relative;text-align:center">
+    <span style="color:#a9660f;font-weight:800;letter-spacing:0.08em;font-size:14px">MATERIJALI ZA KUPNJU</span>
+    <h1 style="font-size:clamp(32px,5vw,50px);font-weight:900;margin:12px 0 14px;color:#2f3945">Materijali i vježbenice</h1>
+    <p style="font-size:18px;line-height:1.6;color:#5f6455;max-width:620px;margin:0 auto">Provjereni logopedski materijali „Jezične penjalice": kartice, penjalice i vježbenice u tiskanom i digitalnom izdanju.</p>
   </div>
 </section>
 
-<section style="padding:44px 22px 88px;background:#fff">
-  <div style="max-width:1180px;margin:0 auto">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:36px">
+<section style="padding:52px 22px 88px;background:#fff">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px">
       <sc-for list="{{ catTabs }}" as="t" hint-placeholder-count="6">
         <button onClick="{{ t.onClick }}" style="{{ t.style }}">{{ t.label }}</button>
       </sc-for>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px;align-items:stretch">
       <sc-for list="{{ visibleShop }}" as="p" hint-placeholder-count="8">
-        <div data-reveal style="background:#fff;border:1px solid #eef0e6;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(90,110,70,0.08);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-6px);box-shadow:0 20px 40px rgba(90,110,70,0.16)">
-          <div style="position:relative;height:220px;background:#f7f6f0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px">
-            <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:12px;left:12px;z-index:2;background:#b0475a;color:#fff;font-weight:800;font-size:11px;letter-spacing:0.04em;padding:4px 9px;border-radius:6px">{{ p.badgeText }}</span></sc-if>
-            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain">
+        <div data-reveal style="background:#fff;border:1px solid #eceee6;border-radius:20px;overflow:hidden;box-shadow:0 10px 26px rgba(90,110,70,0.07);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px rgba(90,110,70,0.15)">
+          <div style="position:relative;flex:none;background:#F9F6F1;height:240px;padding:20px;display:flex;align-items:center;justify-content:center">
+            <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:12px;right:12px;z-index:2;background:#F1E7D6;color:#42280a;font-weight:800;font-size:10.5px;letter-spacing:0.09em;text-transform:uppercase;padding:5px 10px;border-radius:6px">{{ p.badgeText }}</span></sc-if>
+            <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block">
           </div>
           <div style="padding:20px 20px 22px;display:flex;flex-direction:column;flex:1">
-            <span style="font-size:11.5px;font-weight:800;color:#7a8b4a;letter-spacing:0.05em">{{ p.cat }}</span>
-            <h3 style="font-size:17.5px;font-weight:800;margin:7px 0 5px;color:#2f3945;line-height:1.25">{{ p.name }}</h3>
-            <span style="font-size:13.5px;color:#8a8d80;margin-bottom:16px">{{ p.variant }}</span>
-            <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px">
-              <span style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#b0475a">{{ p.price }}</span>
-              <a href="{{ p.link }}" target="_blank" rel="noopener" style="padding:10px 16px;border-radius:11px;background:#6b7a3f;color:#fff;font-weight:800;font-size:14px" style-hover="background:#586632">Kupi</a>
+            <span style="font-size:11px;font-weight:800;color:#9aa08e;letter-spacing:0.09em;text-transform:uppercase">{{ p.cat }}</span>
+            <h3 style="font-size:18px;font-weight:800;margin:8px 0 6px;color:#2f3945;line-height:1.3">{{ p.name }}</h3>
+            <span style="font-size:14px;line-height:1.5;color:#8a8d80">{{ p.variant }}</span>
+            <div style="margin-top:auto;padding-top:20px;display:flex;flex-direction:column;gap:12px">
+              <a href="{{ p.link }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 18px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:15.5px;text-decoration:none;box-shadow:0 8px 20px rgba(30,166,182,0.28);transition:background .2s,gap .25s" style-hover="background:#16899a;gap:13px">Naruči <span style="font-size:16px">→</span></a>
+              <span style="display:flex;align-items:baseline;gap:8px;font-size:13.5px;color:#8a8d80">
+                <span style="font-weight:800;color:#5f6455">{{ p.price }}</span>
+                <span style="font-size:12px;color:#a2a698">{{ p.ship }}</span>
+              </span>
             </div>
+            <span style="display:flex;align-items:center;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid #f2f2ec;font-size:12px;font-weight:700;color:#9aa08e"><span style="color:#e2953a;font-size:12px">★</span>{{ p.trust }}</span>
           </div>
         </div>
       </sc-for>
     </div>
-    <div style="margin-top:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#f7faf4;border:1px solid #eef0e6;border-radius:16px;padding:18px 24px">
-      <span style="width:44px;height:44px;flex:none;border-radius:50%;background:#6b7a3f;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900;font-size:15px">RH</span>
+
+    <div data-reveal style="margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:#F9F6F1;border:1px solid #eceee6;border-radius:20px;padding:20px 24px">
+      <span style="width:44px;height:44px;flex:none;border-radius:50%;background:#1ea6b6;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-weight:900;font-size:15px">RH</span>
       <strong style="font-family:'Lora',Georgia,serif;font-size:18px;color:#2f3945">Poštarina</strong>
-      <span style="font-size:16px;color:#6a6d60">Poštarina unutar RH</span>
-      <span style="margin-left:auto;font-family:'Lora',Georgia,serif;font-weight:900;font-size:18px;background:#6b7a3f;color:#fff;padding:8px 18px;border-radius:8px">5 €</span>
+      <span style="font-size:16px;color:#8a8d80">Poštarina unutar Hrvatske · digitalna izdanja bez poštarine</span>
+      <span style="margin-left:auto;font-family:'Lora',Georgia,serif;font-weight:900;font-size:18px;background:#1ea6b6;color:#fff;padding:8px 18px;border-radius:10px">5 €</span>
     </div>
-    <p style="text-align:center;font-family:'Lora',Georgia,serif;font-weight:700;font-size:17px;color:#8a3546;margin-top:24px">Hvala što podržavate logopedski rad! ♡</p>
+    <p style="text-align:center;font-family:'Lora',Georgia,serif;font-weight:700;font-size:17px;color:#a9660f;margin-top:24px">Hvala što podržavate logopedski rad! ♡</p>
   </div>
 </section>
 
@@ -93,9 +105,9 @@
   </div>
 </footer>
 
-<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" style="position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:14px 20px 14px 16px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 10px 26px rgba(37,211,102,0.4);animation:waPulse 2.4s ease-out infinite" style-hover="background:#1fb857">
+<a href="https://wa.me/38598841680" target="_blank" rel="noopener" aria-label="WhatsApp kontakt" class="wa-fab">
   <svg width="26" height="26" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.5.7.7-3.4-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C6.6 9.9 10.9 5.6 16 5.6S25.4 9.9 25.4 15 21.1 24.8 16 24.8zm5.3-6.9c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2 .8 2.7.9 3.7.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
-  WhatsApp
+  <span class="wa-label">WhatsApp</span>
 </a>
 
 </div>
@@ -135,8 +147,8 @@ class Component extends DCLogic {
       ['JEZIČNA PENJALICA','Zamjenice','Tiskana verzija','30 €','o_1jok6368arkd39412tu19hs8c7h.jpg','lfLPm',null],
       ['JEZIČNA PENJALICA','Zamjenice','Digitalna verzija','25 €','o_1job7g5oj16eepar6td1j6f1t7s1a.jpg','FzdBE',null],
       ['JEZIČNA PENJALICA','Ljetna Jezična penjalica','Digitalna verzija','15 €','o_1jok0e6osv9seb017hte419qg1a.png','28ZIj',null],
-      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Tiskano izdanje','35 €','o_1jqr51brn8vqia31p151kof1mu0h.jpg','fm37d','NOVO!'],
-      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Digitalno izdanje','28 €','o_1jpdm3jss3k519p01oda13p2avc1a.jpg','y20Lq','NOVO!'],
+      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Tiskano izdanje','35 €','o_1jqr51brn8vqia31p151kof1mu0h.jpg','fm37d','NOVO'],
+      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Digitalno izdanje','28 €','o_1jpdm3jss3k519p01oda13p2avc1a.jpg','y20Lq','NOVO'],
       ['VJEŽBENICA','Početno čitanje i pisanje','Tiskano izdanje','25 €','o_1jolljntb158o1i3c1blm1oht15oth.png','sfquD',null],
       ['VJEŽBENICA','Početno čitanje i pisanje','Digitalno izdanje','20 €','o_1joiqpesj1da7gmq1pqud3fho41c.png','PqobF',null],
       ['VJEŽBENICA','Predmatematička vježbenica 3–5 god.','Tiskano izdanje','25 €','o_1jok6urfu1kfhv0i1pp518tm18adn.png','97q1u',null],
@@ -146,13 +158,21 @@ class Component extends DCLogic {
       ['SET','Početno čitanje i pisanje + Predmat. 5–7','Digitalni set','34 €','o_1jolepr5r16uv1113b771jim7iq7.jpg','GKMzf','SET'],
       ['SET','Sve vježbenice – Početno + Predmat. 3–5 i 5–7','Digitalni set','45 €','o_1joka922r12n5gj41o9g5mjcen7.png','L9XzU','SET'],
     ];
-    const shop = raw.map(([cat,name,variant,price,img,slug,bt]) => ({
-      cat, name, variant, price, img: P + img, link: 'https://payhip.com/b/' + slug, badge: !!bt, badgeText: bt || ''
-    }));
+    const shop = raw.map(([cat, name, variant, price, img, slug, bt]) => {
+      const digital = /[Dd]igital/.test(variant);
+      return {
+        cat, name, variant, price,
+        img: P + img,
+        link: 'https://payhip.com/b/' + slug,
+        badge: !!bt, badgeText: bt || '',
+        ship: digital ? '· bez poštarine' : '· + 5 € poštarina',
+        trust: digital ? 'Preuzimanje odmah nakon kupnje' : 'Tiskano izdanje · šaljemo poštom',
+      };
+    });
     const activeCat = this.state.activeCat;
     return {
       setRoot: (el) => { this._root = el; },
-      catTabs: [['Sve','SVE'],['Kartice','KARTICE'],['Jezična penjalica','JEZIČNA PENJALICA'],['Predvještine','PREDVJEŠTINE'],['Vježbenice','VJEŽBENICA'],['Setovi','SET']].map(([label,val]) => {
+      catTabs: [['Sve','SVE'],['Kartice','KARTICE'],['Jezična penjalica','JEZIČNA PENJALICA'],['Predvještine','PREDVJEŠTINE'],['Vježbenice','VJEŽBENICA'],['Setovi','SET']].map(([label, val]) => {
         const active = activeCat === val;
         return { label, onClick: () => this.setState({ activeCat: val }),
           style: "padding:10px 18px;border-radius:999px;font-weight:800;font-size:14px;cursor:pointer;font-family:'Mulish',sans-serif;transition:all .2s;border:1.5px solid " + (active ? '#1ea6b6' : '#dbe3ee') + ";background:" + (active ? '#1ea6b6' : '#fff') + ";color:" + (active ? '#fff' : '#5a6472') };

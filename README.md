@@ -1,17 +1,19 @@
-# Logopedski centar SANO — web stranica
+# Logopedski centar SANO
 
-Statička web stranica spremna za GitHub Pages.
+Statična web stranica. Hostanje na GitHub Pages: Settings → Pages → Branch `main`, folder `/ (root)`.
 
-## Objava na GitHub Pages
-1. Napravi novi repozitorij na GitHubu.
-2. Prenesi SVE datoteke iz ove mape (index.html, ostale .html, support.js, uploads/, .nojekyll).
-3. U repozitoriju: Settings → Pages → Source: "Deploy from a branch" → grana `main`, mapa `/ (root)`.
-4. Za nekoliko minuta stranica je dostupna na https://<korisnik>.github.io/<repo>/
+## Stranice
 
-## Datoteke
-- index.html — početna stranica
-- materijali.html — trgovina / materijali
-- recenzije.html — sve recenzije
-- blog.html, blog2.html, blog3.html — članci
-- support.js — runtime (nužan, ne brisati)
-- uploads/ — sve slike
+| Datoteka | Sadržaj |
+| --- | --- |
+| `index.html` | Naslovnica (hero, usluge, cjenik, Jezična penjalica, blog, recenzije, kontakt) |
+| `materijali.html` | Web trgovina · tiskani i digitalni materijali |
+| `blog.html` – `blog4.html` | Blog članci |
+| `recenzije.html` | Recenzije roditelja |
+
+`support.js` i `uploads/` moraju ostati uz HTML datoteke.
+
+## Kontakt u kodu
+
+- Obrazac i FAB šalju mail na `udruga.prosano@gmail.com`
+- Obavijest o slanju tiskanih materijala prikazuje se pri prvom otvaranju; zatvaranje se pamti pod ključem `sano-notice-tisak-2026-08` u `localStorage`. Za novu sezonu promijenite tekst i ključ.
