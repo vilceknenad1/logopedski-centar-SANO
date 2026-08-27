@@ -17,6 +17,11 @@
   body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#fff;-webkit-font-smoothing:antialiased}
   a{color:#0f7c8c;text-decoration:none}
   a:hover{color:#1ea6b6}
+  #shop-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;align-items:stretch}
+  #shop-grid>*:nth-child(-n+2){grid-column:span 2}
+  #shop-grid>*:nth-child(-n+2) [data-shop-media]{height:320px}
+  @media (max-width:1080px){#shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#shop-grid>*:nth-child(-n+2){grid-column:span 1}#shop-grid>*:nth-child(-n+2) [data-shop-media]{height:240px}}
+  @media (max-width:620px){#shop-grid{grid-template-columns:1fr}}
   h1,h2,h3{font-family:'Lora',Georgia,serif;color:#2f3945;line-height:1.15;letter-spacing:-0.01em}
   @keyframes waPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
   .wa-fab{position:fixed;right:0;bottom:118px;z-index:80;display:flex;align-items:center;text-decoration:none;background:#25d366;color:#fff;height:52px;padding:0 13px;border-radius:26px 0 0 26px;box-shadow:0 6px 18px rgba(20,60,40,0.28);overflow:hidden;transition:padding .38s cubic-bezier(.22,.61,.36,1),box-shadow .3s,background .2s}
@@ -63,10 +68,10 @@
       </sc-for>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px;align-items:stretch">
+    <div id="shop-grid">
       <sc-for list="{{ visibleShop }}" as="p" hint-placeholder-count="8">
         <div data-reveal style="background:#fff;border:1px solid #eceee6;border-radius:20px;overflow:hidden;box-shadow:0 10px 26px rgba(90,110,70,0.07);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px rgba(90,110,70,0.15)">
-          <div style="position:relative;flex:none;background:#F9F6F1;height:240px;padding:20px;display:flex;align-items:center;justify-content:center">
+          <div data-shop-media style="position:relative;flex:none;background:#F9F6F1;height:240px;padding:20px;display:flex;align-items:center;justify-content:center">
             <sc-if value="{{ p.badge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:12px;right:12px;z-index:2;background:#F1E7D6;color:#42280a;font-weight:800;font-size:10.5px;letter-spacing:0.09em;text-transform:uppercase;padding:5px 10px;border-radius:6px">{{ p.badgeText }}</span></sc-if>
             <img src="{{ p.img }}" alt="{{ p.name }}" loading="lazy" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block">
           </div>
