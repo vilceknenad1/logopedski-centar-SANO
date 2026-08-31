@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#0f7c8c;text-decoration:none}
+  a:hover{color:#1ea6b6}
+  h1,h2{font-family:'Lora',Georgia,serif;color:#1F2A44;line-height:1.15;letter-spacing:-0.01em}
+  @media (max-width:980px){#ter-grid{grid-template-columns:1fr!important}#oprema-mat{grid-template-columns:110px minmax(0,1fr)!important;gap:18px!important}#oprema-mat>a{grid-column:1 / -1;justify-self:start}}
+  #ter-grid>div{transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s}
+  #ter-grid>div:nth-child(1){background:linear-gradient(180deg,#F8FCFC 0%,#EBF6F7 100%)!important}
+  #ter-grid>div:nth-child(2){background:linear-gradient(180deg,#FEFBF4 0%,#F7EFE0 100%)!important}
+  #ter-grid>div:nth-child(3){background:linear-gradient(180deg,#F9F8FD 0%,#EEECF9 100%)!important}
+  #ter-grid>div:nth-child(2) span[data-kicker]{color:#B07A28!important}
+  #ter-grid>div:nth-child(3) span[data-kicker]{color:#6b5aa8!important}
+  #prog-carousel [data-chip],#oprema-carousel [data-chip]{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 20px;border-radius:999px;font-family:inherit;font-weight:800;font-size:14px;letter-spacing:0.02em;white-space:nowrap;cursor:pointer;text-align:center;border:1px solid rgba(255,255,255,0.30);background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.82);opacity:.82;z-index:2}
+  #prog-carousel [data-chip][data-active="1"],#oprema-carousel [data-chip][data-active="1"]{border-color:#fff;background:#fff;color:#0d6f7c;opacity:1;z-index:5}
+  #prog-carousel [data-card],#oprema-carousel [data-card]{position:absolute;left:34px;right:34px;background:#fff;border-radius:24px;padding:34px 34px 36px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.12),0 18px 40px rgba(30,80,90,0.12);display:flex;flex-direction:column;opacity:0;filter:blur(3px);pointer-events:none;z-index:1}
+  #prog-carousel [data-card][data-state="prev"],#oprema-carousel [data-card][data-state="prev"]{transform:translateX(-70px) scale(.92) rotate(-2.5deg);opacity:.1}
+  #prog-carousel [data-card][data-state="next"],#oprema-carousel [data-card][data-state="next"]{transform:translateX(70px) scale(.92) rotate(2.5deg);opacity:.1}
+  #prog-carousel [data-card][data-state="active"],#oprema-carousel [data-card][data-state="active"]{position:relative;left:auto;right:auto;width:100%;transform:none;opacity:1;filter:none;pointer-events:auto;z-index:3}
+  #prog-carousel [data-chip],#prog-carousel [data-card],#oprema-carousel [data-chip],#oprema-carousel [data-card]{transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .6s cubic-bezier(.22,1,.36,1),background .4s,color .4s,border-color .4s,filter .5s}
+  @media (prefers-reduced-motion:reduce){#prog-carousel [data-chip],#prog-carousel [data-card],#oprema-carousel [data-chip],#oprema-carousel [data-card]{transition:none}}
+  #oprema-carousel [data-wheel]{min-height:430px}
+  @keyframes terListIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  #ter-list>li{transition:padding-left .35s cubic-bezier(.22,1,.36,1),background .35s,border-color .35s}
+  #ter-list[data-armed]>li{opacity:0}
+  #ter-list[data-in]>li{animation:terListIn .7s cubic-bezier(.22,1,.36,1) forwards}
+  #ter-list>li:nth-child(1){animation-delay:.05s}
+  #ter-list>li:nth-child(2){animation-delay:.13s}
+  #ter-list>li:nth-child(3){animation-delay:.21s}
+  #ter-list>li:nth-child(4){animation-delay:.29s}
+  #ter-list>li:nth-child(5){animation-delay:.37s}
+  #ter-list>li:nth-child(6){animation-delay:.45s}
+  #ter-list>li>span:first-child{transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s}
+  @media (hover:hover) and (pointer:fine){
+    #ter-list>li:hover{padding-left:12px;background:rgba(18,144,159,0.045);border-color:rgba(18,144,159,0.32)}
+    #ter-list>li:hover>span:first-child{transform:scale(1.55);background:#12909f}
+  }
+  @media (prefers-reduced-motion:reduce){#ter-list>li{opacity:1;animation:none;transition:none}}
+  #ter-grid>div [data-rule]{transition:width .55s cubic-bezier(.22,1,.36,1),background .45s}
+  #ter-grid>div:nth-child(2) [data-rule]{background:rgba(176,122,40,0.42)}
+  #ter-grid>div:nth-child(3) [data-rule]{background:rgba(107,90,168,0.42)}
+  @media (hover:hover) and (pointer:fine){
+    #ter-grid>div:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.16),0 20px 44px rgba(30,80,90,0.12)}
+    #ter-grid>div:hover [data-rule]{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){#ter-grid>div [data-rule]{transition:none}}
+  @media (prefers-reduced-motion:reduce){#ter-grid>div{transition:none}}
+  @media (max-width:860px){#ter-list{grid-template-columns:1fr!important}#prog-carousel{grid-template-columns:1fr!important}#prog-carousel>div:first-child{min-height:250px!important}#prog-carousel [data-stage]{min-height:320px!important}#oprema-carousel{grid-template-columns:1fr!important}#oprema-carousel [data-wheel]{min-height:380px!important}#oprema-carousel [data-stage]{min-height:360px!important}}
+  @media (max-width:560px){#oprema-mat{padding:26px 22px!important}#oprema-carousel [data-stage]{padding:26px 20px!important}#oprema-carousel [data-card]{left:20px!important;right:20px!important;padding:26px 24px 28px!important}#oprema-carousel [data-mat]{grid-template-columns:120px minmax(0,1fr)!important;gap:16px!important}#oprema-carousel [data-stage]{min-height:360px!important}}
+  html{scroll-padding-top:96px}
+  @media (max-width:900px){#ter-hero,#ter-cilj{grid-template-columns:1fr!important;gap:34px!important}}
+  @media (max-width:820px){section{padding-left:16px!important;padding-right:16px!important}}
+</style>
+</helmet>
+
+<div style="overflow-x:clip">
+
+<header style="position:sticky;top:0;z-index:60;padding:20px 22px 0">
+  <div style="max-width:1340px;margin:0 auto;background:rgba(255,255,255,0.96);backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(18,144,159,0.20);border-radius:18px;box-shadow:0 10px 30px rgba(12,85,99,0.14);padding:6px 12px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html" style="padding:9px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px;white-space:nowrap" style-hover="background:#f1f5fa;color:#0f7c8c">← Početna</a>
+      <a href="index.html#narucivanje" style="padding:11px 20px;border-radius:12px;background:#12909f;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(18,144,159,0.32);white-space:nowrap" style-hover="background:#0f7c8c">Rezerviraj termin</a>
+    </div>
+  </div>
+</header>
+
+<section style="position:relative;overflow:hidden;padding:92px 22px 74px;background:#E7F0EE;background-image:radial-gradient(58% 50% at 10% 6%,rgba(18,144,159,0.13) 0%,rgba(18,144,159,0) 70%),radial-gradient(50% 46% at 94% 96%,rgba(226,149,58,0.12) 0%,rgba(232,187,106,0) 72%)">
+  <div aria-hidden="true" style="position:absolute;top:-90px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(226,149,58,0.14);pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-140px;left:-120px;width:340px;height:340px;border-radius:50%;background:rgba(18,144,159,0.10);pointer-events:none"></div>
+  <div id="ter-hero" style="max-width:1340px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,0.92fr) minmax(0,1.18fr);gap:40px;align-items:center">
+  <div>
+    <span style="display:block;color:#0f7c8c;font-weight:800;letter-spacing:0.16em;font-size:12.5px;text-transform:uppercase">Usluge</span>
+    <h1 style="font-size:clamp(34px,5vw,52px);font-weight:600;margin:16px 0 0;color:#12435A">Logopedska terapija</h1>
+    <span style="display:block;width:56px;height:2px;background:rgba(18,144,159,0.45);margin:28px 0"></span>
+    <p style="font-size:18.5px;line-height:1.72;color:#3C5A63;max-width:640px;text-wrap:pretty">Logopedska terapija individualno je prilagođen proces koji se temelji na potrebama, sposobnostima i razvojnim osobitostima svakog djeteta.</p>
+    <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:10px">
+      <span style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.78);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.20);color:#0f7c8c;font-weight:700;font-size:13.5px;white-space:nowrap">Individualni plan</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.78);box-shadow:inset 0 0 0 1px rgba(226,149,58,0.30);color:#B07A28;font-weight:700;font-size:13.5px;white-space:nowrap">Roditelji su dio procesa</span>
+      <a href="#oprema" style="display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:#12909f;color:#fff;font-weight:700;font-size:13.5px;white-space:nowrap;box-shadow:0 8px 20px rgba(18,144,159,0.28);transition:gap .25s,background .25s" style-hover="gap:12px;background:#0f7c8c">Suvremena oprema <span style="font-size:15px">→</span></a>
+    </div>
+  </div>
+  <div style="position:relative">
+    <img src="uploads/hero-terapija2.png" alt="Logopedinja i dječak vježbaju izgovor pred ogledalom" style="width:100%;max-width:none;height:auto;object-fit:contain;display:block;margin-right:-3%">
+  </div>
+  </div>
+</section>
+
+<section style="padding:74px 22px 80px;background:#fff">
+  <div id="ter-grid" style="max-width:1340px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch">
+    <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="4">
+      <div style="background:#FBF9F4;border-radius:22px;padding:28px 30px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.06)">
+        <span data-kicker style="display:block;font-size:12.5px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#0f7c8c">{{ b.k }}</span>
+        <span data-rule aria-hidden="true" style="display:block;width:38px;height:2px;margin:14px 0 0;border-radius:2px;background:rgba(18,144,159,0.42)"></span>
+        <p style="margin:16px 0 0;font-size:16.5px;line-height:1.72;color:#4b5563;text-wrap:pretty">{{ b.t }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;padding:76px 22px 84px;background:#fff;background-image:radial-gradient(52% 44% at 96% 4%,rgba(18,144,159,0.07) 0%,rgba(18,144,159,0) 70%),radial-gradient(46% 40% at 2% 96%,rgba(226,149,58,0.09) 0%,rgba(226,149,58,0) 72%)">
+  <div style="max-width:1340px;margin:0 auto">
+    <h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:600;margin:0;color:#12435A">Terapija iz područja poremećaja komunikacije</h2>
+    <ul id="ter-list" ref="{{ setList }}" style="margin:32px 0 0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px">
+      <sc-for list="{{ areas }}" as="a" hint-placeholder-count="7">
+        <li style="display:flex;align-items:flex-start;gap:14px;padding:16px 2px;border-bottom:1px solid rgba(18,144,159,0.14);border-radius:10px">
+          <span aria-hidden="true" style="flex:none;width:7px;height:7px;margin-top:9px;border-radius:50%;background:rgba(18,144,159,0.55)"></span>
+          <span style="flex:1;font-size:16.5px;line-height:1.5;color:#123F47;text-wrap:pretty">{{ a }}</span>
+        </li>
+      </sc-for>
+    </ul>
+
+    <div style="margin-top:64px">
+      <span style="display:block;color:#0f7c8c;font-weight:800;letter-spacing:0.16em;font-size:12.5px;text-transform:uppercase">Dodatne edukacije</span>
+      <h2 style="font-size:clamp(26px,3.2vw,36px);font-weight:600;margin:14px 0 0;color:#12435A">Specijalizirani pristupi i programi</h2>
+      <p style="margin:20px 0 0;max-width:720px;font-size:17.5px;line-height:1.72;color:#3C5A63;text-wrap:pretty">Uz logopedsku terapiju, u radu primjenjujemo i specijalizirane pristupe i programe za koje su naši stručnjaci dodatno educirani i certificirani.</p>
+      <div id="prog-carousel" style="margin-top:36px;display:grid;grid-template-columns:minmax(240px,36%) minmax(0,1fr);border-radius:28px;overflow:hidden;box-shadow:0 22px 54px rgba(30,80,90,0.16)">
+        <div style="position:relative;overflow:hidden;background:#12909f;background-image:radial-gradient(60% 50% at 20% 8%,rgba(255,255,255,0.16) 0%,rgba(255,255,255,0) 70%);padding:34px 26px;display:flex;align-items:center;justify-content:center">
+          <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:74px;background:linear-gradient(to bottom,#12909f 0%,rgba(18,144,159,0.7) 55%,rgba(18,144,159,0) 100%);z-index:4;pointer-events:none"></span>
+          <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:74px;background:linear-gradient(to top,#12909f 0%,rgba(18,144,159,0.7) 55%,rgba(18,144,159,0) 100%);z-index:4;pointer-events:none"></span>
+          <div onClick="{{ progClick }}" onMouseEnter="{{ progPause }}" onMouseLeave="{{ progResume }}" style="position:relative;width:100%;height:56px">
+            <sc-for list="{{ progChips }}" as="c" hint-placeholder-count="3">
+              <button type="button" data-chip data-i="{{ c.i }}" data-active="{{ c.on }}" style="transform:translateY({{ c.off }}px)">{{ c.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div data-stage style="position:relative;background:#F7FAFB;min-height:340px;padding:38px 34px;display:flex;align-items:center;justify-content:center">
+          <sc-for list="{{ progCards }}" as="p" hint-placeholder-count="3">
+            <div data-card data-state="{{ p.state }}">
+              <span style="display:inline-flex;align-items:center;gap:9px;align-self:flex-start;padding:7px 14px;border-radius:999px;background:rgba(18,144,159,0.09);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.20);color:#0f7c8c;font-weight:800;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase">{{ p.num }} · {{ p.label }}</span>
+              <strong style="display:block;margin-top:20px;font-family:'Lora',Georgia,serif;font-size:clamp(22px,2.4vw,28px);font-weight:600;color:#1F2A44;line-height:1.24">{{ p.title }}</strong>
+              <span style="display:block;width:38px;height:2px;margin:18px 0 0;background:rgba(18,144,159,0.42)"></span>
+              <p style="margin:18px 0 0;font-size:16.5px;line-height:1.7;color:#4A6470;text-wrap:pretty">{{ p.t }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="oprema" style="padding:80px 22px 88px;position:relative;overflow:hidden;background:linear-gradient(180deg,#dde7f4 0%,#eaf1fa 100%)">
+  <div aria-hidden="true" style="position:absolute;top:-80px;right:-70px;width:280px;height:280px;border-radius:50%;background:rgba(46,181,176,0.10);pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;bottom:-110px;left:-100px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.55);pointer-events:none"></div>
+  <div style="max-width:1340px;margin:0 auto">
+    <span style="display:block;color:#0f7c8c;font-weight:800;letter-spacing:0.16em;font-size:12.5px;text-transform:uppercase">Suvremena podrška terapiji</span>
+    <h2 style="font-size:clamp(28px,3.6vw,40px);font-weight:600;margin:14px 0 0;color:#12435A">Oprema koju biramo prema potrebama djeteta.</h2>
+    <p style="margin:22px 0 0;max-width:720px;font-size:17.5px;line-height:1.72;color:#3C5A63;text-wrap:pretty">U logopedskom radu koristimo suvremenu i specijaliziranu opremu te stručno odabrane didaktičke i edukativne materijale koji nam omogućuju prilagodbu terapije individualnim potrebama svakog djeteta. Ne koristimo ih kao cilj same terapije, već kao podršku individualno postavljenim terapijskim ciljevima.</p>
+
+    <div id="oprema-carousel" style="margin-top:44px;display:grid;grid-template-columns:minmax(240px,36%) minmax(0,1fr);border-radius:28px;overflow:hidden;box-shadow:0 22px 54px rgba(30,80,90,0.16)">
+      <div data-wheel style="position:relative;overflow:hidden;background:#12909f;background-image:radial-gradient(60% 50% at 20% 8%,rgba(255,255,255,0.16) 0%,rgba(255,255,255,0) 70%);padding:34px 26px;display:flex;align-items:center;justify-content:center">
+        <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:74px;background:linear-gradient(to bottom,#12909f 0%,rgba(18,144,159,0.7) 55%,rgba(18,144,159,0) 100%);z-index:4;pointer-events:none"></span>
+        <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:74px;background:linear-gradient(to top,#12909f 0%,rgba(18,144,159,0.7) 55%,rgba(18,144,159,0) 100%);z-index:4;pointer-events:none"></span>
+        <div onClick="{{ opClick }}" onMouseEnter="{{ opPause }}" onMouseLeave="{{ opResume }}" style="position:relative;width:100%;height:56px">
+          <sc-for list="{{ opChips }}" as="c" hint-placeholder-count="4">
+            <button type="button" data-chip data-i="{{ c.i }}" data-active="{{ c.on }}" style="transform:translateY({{ c.off }}px)">{{ c.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div data-stage style="position:relative;background:#F7FAFB;min-height:360px;padding:38px 34px;display:flex;align-items:center;justify-content:center">
+        <sc-for list="{{ opCards }}" as="o" hint-placeholder-count="4">
+          <div data-card data-state="{{ o.state }}">
+            <span style="display:inline-flex;align-items:center;gap:9px;align-self:flex-start;padding:7px 14px;border-radius:999px;background:rgba(18,144,159,0.09);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.20);color:#0f7c8c;font-weight:800;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase">{{ o.n }} · Oprema</span>
+            <strong style="display:block;margin-top:20px;font-family:'Lora',Georgia,serif;font-size:clamp(21px,2.3vw,27px);font-weight:600;color:#1F2A44;line-height:1.24">{{ o.title }}</strong>
+            <span style="display:block;width:38px;height:2px;margin:18px 0 0;background:rgba(18,144,159,0.42)"></span>
+            <p style="margin:18px 0 0;font-size:16.5px;line-height:1.55;color:#2A4E54;font-weight:700;text-wrap:pretty">{{ o.t }}</p>
+            <p style="margin:14px 0 0;font-size:15.5px;line-height:1.7;color:#5A6D80;text-wrap:pretty">{{ o.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div id="oprema-mat" style="margin-top:20px;background:#fff;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.06);display:grid;grid-template-columns:132px minmax(0,1fr) auto;gap:26px;align-items:center;padding:22px 28px">
+      <img src="uploads/penjalica-box.png" alt="Jezična penjalica, didaktički materijal izrađen u SANO centru" loading="lazy" style="width:100%;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 14px 26px rgba(40,60,80,0.16))">
+      <div style="min-width:0">
+        <strong style="display:block;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:600;color:#1F2A44;line-height:1.3">Materijali izrađeni u SANO centru</strong>
+        <p style="margin:8px 0 0;font-size:15.5px;line-height:1.6;color:#5A6D80;text-wrap:pretty">Jezična penjalica i ostali didaktički materijali koje koristimo u terapiji.</p>
+      </div>
+      <a href="materijali.html" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;background:#12909f;color:#fff;font-weight:800;font-size:15px;white-space:nowrap;box-shadow:0 10px 24px rgba(18,144,159,0.28);transition:gap .25s,background .25s" style-hover="gap:14px;background:#0f7c8c">Pogledaj materijale <span style="font-size:16px">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;padding:78px 22px 88px;background:#EBE4D4">
+  <div aria-hidden="true" style="position:absolute;top:30px;right:-90px;width:300px;height:300px;border-radius:50%;background:rgba(226,149,58,0.16);pointer-events:none"></div>
+  <div id="ter-cilj" style="max-width:1340px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,0.75fr);gap:48px;align-items:center">
+    <div>
+      <span style="display:block;color:#8A6A2E;font-weight:800;letter-spacing:0.16em;font-size:12.5px;text-transform:uppercase">Cilj terapije</span>
+      <p style="margin:20px 0 0;font-family:'Lora',Georgia,serif;font-size:clamp(24px,2.9vw,34px);line-height:1.34;font-weight:600;color:#1F2A44;text-wrap:pretty">Cilj terapije nije samo usvajanje i uvježbavanje pojedinih vještina, već njihova primjena u svakodnevnoj komunikaciji, učenju i životu djeteta.</p>
+      <span aria-hidden="true" style="display:block;width:64px;height:2px;margin:28px 0 0;background:rgba(18,144,159,0.5)"></span>
+    </div>
+    <div style="background:#fff;border-radius:24px;padding:30px 30px 32px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.12),0 16px 38px rgba(60,50,30,0.10);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <strong style="font-family:'Lora',Georgia,serif;font-size:21px;font-weight:600;color:#1F2A44;line-height:1.3">Krenimo od procjene</strong>
+      <p style="margin:0;font-size:15.5px;line-height:1.65;color:#5A6D80;text-wrap:pretty">Dogovorite termin i zajedno postavljamo ciljeve prilagođene vašem djetetu.</p>
+      <a href="index.html#narucivanje" style="display:inline-flex;align-items:center;gap:11px;padding:16px 28px;border-radius:14px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 10px 28px rgba(18,144,159,0.30);transition:gap .3s,background .25s" style-hover="gap:16px;background:#0f7c8c">Naručite termin <span style="font-size:16px">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#2f3945;color:#c7cfda;padding:40px 22px 28px;text-align:center">
+  <div style="max-width:1340px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px">
+    <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#fff"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
+    <span style="font-size:14px">Logopedski centar SANO</span>
+    <a href="index.html" style="margin-top:6px;color:#7fd4df;font-weight:700">← Natrag na početnu</a>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { progIdx: 0, progPaused: false, opIdx: 0, opPaused: false };
+  componentDidMount() {
+    this._t = setInterval(() => {
+      if (!this.state.progPaused) this.setState(s => ({ progIdx: s.progIdx + 1 }));
+    }, 5000);
+    this._t2 = setInterval(() => {
+      if (!this.state.opPaused) this.setState(s => ({ opIdx: s.opIdx + 1 }));
+    }, 6000);
+  }
+  componentWillUnmount() { clearInterval(this._t); clearInterval(this._t2); clearTimeout(this._safety); if (this._io) this._io.disconnect(); }
+  setList = (el) => {
+    if (!el || el === this._ul) return;
+    this._ul = el;
+    if (!('IntersectionObserver' in window)) return;
+    const reveal = () => { el.removeAttribute('data-armed'); el.setAttribute('data-in', ''); };
+    el.setAttribute('data-armed', '');
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && e.boundingClientRect.top < window.innerHeight * 0.95) { reveal(); this._io.disconnect(); }
+      });
+    }, { threshold: 0.12 });
+    requestAnimationFrame(() => setTimeout(() => { if (this._io) this._io.observe(el); }, 300));
+    clearTimeout(this._safety);
+    this._safety = setTimeout(reveal, 4000);
+  };
+  pick(key) { return (e) => { const b = e.target.closest ? e.target.closest('[data-chip]') : null; if (b) this.setState({ [key]: +b.dataset.i }); }; }
+  hover(pausedKey, on) { return () => this.setState({ [pausedKey]: on }); }
+  wheel(list, idx, key, pausedKey, chipH) {
+    const n = list.length;
+    const cur = ((idx % n) + n) % n;
+    const rel = (i) => { let d = i - cur; if (d > n / 2) d -= n; if (d < -n / 2) d += n; return d; };
+    const chips = list.map((p, i) => {
+      const d = rel(i);
+      return { label: p.label, i, on: d === 0 ? '1' : '0', off: d * chipH };
+    });
+    const cards = list.map((p, i) => {
+      const d = rel(i);
+      return Object.assign({}, p, { state: d === 0 ? 'active' : (d === -1 ? 'prev' : (d === 1 ? 'next' : 'hidden')) });
+    });
+    return { chips, cards };
+  }
+  renderVals() {
+    const prog = [
+      { num: '01', label: 'LSVT LOUD®', title: 'LSVT LOUD®', t: 'Specijalizirani terapijski program usmjeren na poboljšanje glasa i govorne komunikacije kod osoba s Parkinsonovom bolešću i drugim neurološkim oboljenjima.' },
+      { num: '02', label: 'More Than Words®', title: 'More Than Words® – The Hanen Program®', t: 'Program namijenjen roditeljima djece s poremećajem iz spektra autizma i teškoćama socijalne komunikacije. Roditelje podučava kako kroz svakodnevne aktivnosti i interakcije poticati djetetovu komunikaciju, socijalnu interakciju i jezično-govorni razvoj.' },
+      { num: '03', label: 'PECS®', title: 'PECS® – Picture Exchange Communication System', t: 'Augmentativni i alternativni komunikacijski sustav koji kroz strukturiranu razmjenu slikovnih simbola potiče razvoj funkcionalne i samostalne komunikacije.' },
+    ];
+    const progWheel = this.wheel(prog, this.state.progIdx, 'progIdx', 'progPaused', 62);
+    const oprema = [
+      { n: '01', label: 'DLS', title: 'Digitalni logopedski set (DLS)', t: 'Dinamička obrada zvučnog signala i ciljana auditivna povratna informacija.',
+        d: 'Specijalizirani logopedski uređaj koji omogućuje dinamičko procesiranje i ciljanu obradu zvučnog signala. Koristi se kao podrška u terapiji artikulacijskih i fonoloških poremećaja, poremećaja tečnosti govora, glasa i slušnog procesiranja. Omogućuje prilagodbu zvučnog signala potrebama korisnika i pruža ciljanu auditivnu povratnu informaciju tijekom terapijskog rada.' },
+      { n: '02', label: 'Vibrofon', title: 'Vibrofon', t: 'Ciljana stimulacija govornih organa u radu na artikulaciji.',
+        d: 'Specijalizirano logopedsko pomagalo koje se koristi u terapiji artikulacijskih poremećaja, osobito pri korekciji izgovora glasa R i glasova kod sigmatizma. Pomoću vibracija i posebno oblikovanih sondi omogućuje ciljanu stimulaciju govornih organa, a može se koristiti i u području logomotorike, masaže mekog nepca i izazivanja vanjskih vibracija na larinksu.' },
+      { n: '03', label: 'Logopedske sonde', title: 'Logopedske sonde', t: 'Taktilna podrška pri pravilnom pozicioniranju artikulatora.',
+        d: 'Koriste se kao taktilna pomoć pri postavljanju artikulatora u odgovarajući položaj, primjerice jezika, kada dijete ne uspijeva postići potreban položaj samo na temelju verbalne upute i vizualnog modela.' },
+      { n: '04', label: 'Forbrain slušalice', title: 'Forbrain slušalice', t: 'Auditivna povratna informacija kao podrška govoru, slušanju, pažnji i učenju.',
+        d: 'Specijalizirano pomagalo koje putem koštane provodljivosti i dinamičkog filtriranja omogućuje korisniku izmijenjenu auditivnu povratnu informaciju vlastitoga glasa. Koriste se kao podrška u radu na govoru, slušanju, pažnji i učenju.' },
+      { n: '05', label: 'Didaktički materijali', title: 'Didaktički i edukativni materijali', t: 'Biramo ih prema dobi, potrebama i terapijskim ciljevima djeteta.', hasImg: true,
+        d: 'U radu koristimo različite stručno odabrane didaktičke i edukativne materijale, uključujući i materijale osmišljene i izrađene u našem centru, koje biramo i prilagođavamo u skladu s dobi, potrebama i terapijskim ciljevima svakog djeteta.' },
+    ];
+    const opWheel = this.wheel(oprema, this.state.opIdx, 'opIdx', 'opPaused', 62);
+    this._h = this._h || {
+      progClick: this.pick('progIdx'), opClick: this.pick('opIdx'),
+      progPause: this.hover('progPaused', true), progResume: this.hover('progPaused', false),
+      opPause: this.hover('opPaused', true), opResume: this.hover('opPaused', false),
+    };
+    return {
+      ...this._h,
+      setList: this.setList,
+      progChips: progWheel.chips, progCards: progWheel.cards,
+      opChips: opWheel.chips, opCards: opWheel.cards,
+      areas: [
+        'Terapija artikulacijskih i artikulacijsko-fonoloških poremećaja',
+        'Terapija poremećaja jezičnog razumijevanja i izražavanja',
+        'Terapija motoričkih govornih poremećaja',
+        'Terapija poremećaja čitanja, pisanja i računanja',
+        'Terapija poremećaja tečnosti govora (mucanje, brzopletost)',
+        'Terapija poremećaja glasa',
+      ],
+      blocks: [
+      { k: "Plan rada", t: "Nakon logopedske procjene određujemo područja na kojima je potrebno raditi, postavljamo terapijske ciljeve i planiramo dinamiku dolazaka. Terapijski plan tijekom vremena prilagođavamo djetetovu napretku i njegovim aktualnim potrebama." },
+      { k: "Kako radimo", t: "Važno nam je da se dijete tijekom terapije osjeća sigurno, motivirano i uspješno. Stručne terapijske postupke stoga povezujemo s pažljivo odabranim aktivnostima i materijalima prilagođenima dobi, sposobnostima i interesima djeteta." },
+      { k: "Uloga roditelja", t: "Roditelji su važan dio terapijskog procesa. Redovito ih informiramo o napretku djeteta, objašnjavamo na čemu radimo te im, prema potrebi, dajemo smjernice i prijedloge aktivnosti koje mogu jednostavno uključiti u svakodnevne situacije kod kuće." },
+    ] };
+  }
+}
+
+</script>
+</body>
+</html>
