@@ -6,7 +6,11 @@ Statična web stranica. Hostanje na GitHub Pages: Settings → Pages → Branch 
 
 | Datoteka | Sadržaj |
 | --- | --- |
-| `index.html` | Naslovnica (hero, usluge, cjenik, Jezična penjalica, blog, recenzije, kontakt) |
+| `index.html` | Naslovnica (hero, usluge, cjenik, Jezična penjalica, tim, blog, recenzije, kontakt) |
+| `logopedska-dijagnostika.html` | Usluga · logopedska dijagnostika |
+| `logopedska-terapija.html` | Usluga · logopedska terapija |
+| `logopedsko-savjetovanje.html` | Usluga · logopedsko savjetovanje |
+| `ana-bilic-topic.html` | Profil · Ana Bilić Topić |
 | `materijali.html` | Web trgovina · tiskani i digitalni materijali |
 | `blog.html` – `blog4.html` | Blog članci |
 | `recenzije.html` | Recenzije roditelja |
