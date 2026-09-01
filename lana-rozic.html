@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
+  body{font-family:'Mulish',system-ui,sans-serif;color:#4b5563;background:#fff;-webkit-font-smoothing:antialiased}
+  a{color:#0f7c8c;text-decoration:none}
+  a:hover{color:#1ea6b6}
+  h1,h2{font-family:'Lora',Georgia,serif;color:#1F2A44;line-height:1.15;letter-spacing:-0.01em}
+  #la-hero{display:grid;grid-template-columns:minmax(0,0.86fr) minmax(0,1.14fr);gap:40px;align-items:center}
+  #la-bio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 56px;align-items:start}
+  #la-cta{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,0.75fr);gap:48px;align-items:center}
+  #la-cert{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  #la-cert>div{transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s}
+  #la-cert>div [data-rule]{transition:width .55s cubic-bezier(.22,1,.36,1)}
+  @media (hover:hover) and (pointer:fine){
+    #la-cert>div:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(226,149,58,0.26),0 20px 44px rgba(90,60,20,0.13)}
+    #la-cert>div:hover [data-rule]{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){#la-cert>div,#la-cert>div [data-rule]{transition:none}}
+  @media (max-width:980px){#la-cert{grid-template-columns:1fr!important}}
+  @media (max-width:900px){#la-hero,#la-cta{grid-template-columns:1fr!important;gap:34px!important}}
+  @media (max-width:860px){#la-bio{grid-template-columns:1fr!important}}
+  @media (max-width:820px){section{padding-left:16px!important;padding-right:16px!important}}
+</style>
+</helmet>
+
+<div style="overflow-x:clip">
+
+<header style="position:sticky;top:0;z-index:60;padding:20px 22px 0">
+  <div style="max-width:1340px;margin:0 auto;background:rgba(255,255,255,0.96);backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(18,144,159,0.20);border-radius:18px;box-shadow:0 10px 30px rgba(12,85,99,0.14);padding:6px 12px 6px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+    <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="uploads/sano-logo.png" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="index.html#tim" style="padding:9px 14px;border-radius:10px;color:#4b5563;font-weight:700;font-size:14.5px;white-space:nowrap" style-hover="background:#f1f5fa;color:#0f7c8c">← Naš tim</a>
+      <a href="index.html#narucivanje" style="padding:11px 20px;border-radius:12px;background:#12909f;color:#fff;font-weight:800;font-size:14.5px;box-shadow:0 6px 16px rgba(18,144,159,0.32);white-space:nowrap" style-hover="background:#0f7c8c">Rezerviraj termin</a>
+    </div>
+  </div>
+</header>
+
+<section style="position:relative;overflow:hidden;padding:56px 22px 76px;background:#FBF1E2;background-image:radial-gradient(58% 52% at 8% 6%,rgba(255,255,255,0.9) 0%,rgba(255,255,255,0) 70%),radial-gradient(50% 46% at 96% 20%,rgba(226,149,58,0.16) 0%,rgba(226,149,58,0) 72%)">
+  <div aria-hidden="true" style="position:absolute;top:-70px;left:-90px;width:280px;height:280px;border-radius:50%;background:rgba(226,149,58,0.14);filter:blur(10px);pointer-events:none"></div>
+  <div id="la-hero" style="max-width:1340px;margin:0 auto;position:relative;z-index:1">
+    <div>
+      <span style="display:block;color:#8A6A2E;font-weight:800;letter-spacing:0.18em;font-size:12.5px;text-transform:uppercase">Naš tim</span>
+      <h1 style="margin:18px 0 0;font-size:clamp(34px,4.6vw,54px);font-weight:500">Lana Rozić</h1>
+      <p style="margin:14px 0 0;font-size:17px;font-weight:700;color:#8A6A2E;letter-spacing:0.01em">univ. mag. logoped.</p>
+      <p style="margin:24px 0 0;max-width:560px;font-size:18.5px;line-height:1.72;color:#4A4034;text-wrap:pretty">Individualna logopedska terapija s djecom predškolske i školske dobi.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px">
+        <span style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.85);box-shadow:inset 0 0 0 1px rgba(176,122,40,0.26);color:#8A6A2E;font-weight:700;font-size:13.5px;white-space:nowrap">PECS® I. stupanj</span>
+        <span style="display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,0.85);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.26);color:#0f7c8c;font-weight:700;font-size:13.5px;white-space:nowrap">Ovladavanje čitanjem</span>
+      </div>
+    </div>
+    <div style="position:relative">
+      <img src="uploads/lana-hero-cut.webp" alt="Lana Rozić, univ. mag. logoped., za stolom s dijagnostičkim testovima" style="width:100%;height:auto;object-fit:contain;display:block">
+    </div>
+  </div>
+</section>
+
+<section style="padding:82px 22px 84px;background:#fff">
+  <div style="max-width:1340px;margin:0 auto">
+    <h2 style="font-size:clamp(28px,3.6vw,40px);font-weight:600;margin:0 0 34px">Biografija</h2>
+    <div id="la-bio">
+      <div>
+        <span style="display:block;color:#8A6A2E;font-weight:800;letter-spacing:0.16em;font-size:12px;text-transform:uppercase">Obrazovanje</span>
+        <span aria-hidden="true" style="display:block;width:34px;height:2px;margin:12px 0 16px;background:rgba(226,149,58,0.45)"></span>
+        <p style="font-size:17px;line-height:1.75;color:#4b5563;text-wrap:pretty">Lana Rozić diplomirala je 2025. godine na diplomskom studiju logopedije Edukacijsko-rehabilitacijskog fakulteta Sveučilišta u Zagrebu.</p>
+        <p style="margin-top:18px;font-size:17px;line-height:1.75;color:#4b5563;text-wrap:pretty">Tijekom studija stručno iskustvo stjecala je kroz praksu u dječjim vrtićima, osnovnim školama i Poliklinici SUVAG. U sklopu stručne prakse sudjelovala je u radu stručnih suradnika logopeda te u pripremi i provedbi terapijskog rada s djecom s govorno-jezičnim teškoćama.</p>
+      </div>
+      <div>
+        <span style="display:block;color:#0f7c8c;font-weight:800;letter-spacing:0.16em;font-size:12px;text-transform:uppercase">Rad u SANO centru</span>
+        <span aria-hidden="true" style="display:block;width:34px;height:2px;margin:12px 0 16px;background:rgba(18,144,159,0.45)"></span>
+        <p style="font-size:17px;line-height:1.75;color:#4b5563;text-wrap:pretty">Od 2025. godine zaposlena je u Logopedskom centru SANO, gdje provodi individualnu logopedsku terapiju s djecom predškolske i školske dobi.</p>
+        <a href="logopedska-terapija.html" style="margin-top:22px;display:inline-flex;align-items:center;gap:9px;font-size:15.5px;font-weight:800;color:#0f7c8c;transition:gap .25s" style-hover="gap:14px">Kako izgleda logopedska terapija <span style="font-size:16px">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;padding:80px 22px 88px;background:#FDF8F0">
+  <div aria-hidden="true" style="position:absolute;bottom:-80px;right:-70px;width:300px;height:300px;border-radius:50%;background:rgba(226,149,58,0.12);filter:blur(10px);pointer-events:none"></div>
+  <div style="max-width:1340px;margin:0 auto;position:relative;z-index:1">
+    <span style="display:block;color:#8A6A2E;font-weight:800;letter-spacing:0.16em;font-size:12.5px;text-transform:uppercase">Stručna usavršavanja i edukacije</span>
+    <h2 style="margin:18px 0 0;font-size:clamp(26px,3.2vw,36px);font-weight:600;max-width:760px">Završene edukacije</h2>
+    <div id="la-cert" style="margin-top:32px">
+      <div style="background:linear-gradient(180deg,#FEFBF4 0%,#F7EFE0 100%);border-radius:22px;padding:28px 28px 30px;box-shadow:inset 0 0 0 1px rgba(176,122,40,0.16);display:flex;flex-direction:column">
+        <span style="font-size:11.5px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#8A6A2E">Picture Exchange Communication System</span>
+        <strong style="margin-top:14px;font-family:'Lora',Georgia,serif;font-size:23px;font-weight:600;color:#1F2A44;line-height:1.26">PECS I. stupanj</strong>
+        <span data-rule aria-hidden="true" style="display:block;width:38px;height:2px;margin:16px 0;background:rgba(176,122,40,0.45)"></span>
+        <p style="font-size:15.5px;line-height:1.65;color:#5A6D80;text-wrap:pretty">Certificirana za primjenu i provođenje PECS komunikacijskog sustava.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,#F8FCFC 0%,#EBF6F7 100%);border-radius:22px;padding:28px 28px 30px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.14);display:flex;flex-direction:column">
+        <span style="font-size:11.5px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#0f7c8c">Centar Terapika i SLP centar</span>
+        <strong style="margin-top:14px;font-family:'Lora',Georgia,serif;font-size:23px;font-weight:600;color:#1F2A44;line-height:1.26">Ovladavanje čitanjem</strong>
+        <span data-rule aria-hidden="true" style="display:block;width:38px;height:2px;margin:16px 0;background:rgba(18,144,159,0.45)"></span>
+        <p style="font-size:15.5px;line-height:1.65;color:#5A6D80;text-wrap:pretty">Edukacija iz područja predvještina i vještina čitanja.</p>
+      </div>
+    </div>
+    <p style="margin:30px 0 0;max-width:900px;font-size:16.5px;line-height:1.72;color:#4E767D;text-wrap:pretty">Kontinuirano se stručno usavršava sudjelovanjem na edukacijama, stručnim seminarima i radionicama iz različitih područja logopedije.</p>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;padding:78px 22px 88px;background:#EBE4D4">
+  <div id="la-cta" style="max-width:1340px;margin:0 auto;position:relative;z-index:1">
+    <div>
+      <span style="display:block;color:#8A6A2E;font-weight:800;letter-spacing:0.16em;font-size:12.5px;text-transform:uppercase">Rad s Lanom</span>
+      <p style="margin:20px 0 0;font-family:'Lora',Georgia,serif;font-size:clamp(23px,2.8vw,32px);line-height:1.34;font-weight:600;color:#1F2A44;text-wrap:pretty">Individualna terapija uz aktivnosti i materijale prilagođene dobi, sposobnostima i interesima djeteta.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:28px">
+        <a href="logopedska-terapija.html" style="display:inline-flex;align-items:center;gap:9px;font-size:15.5px;font-weight:800;color:#0f7c8c;transition:gap .25s" style-hover="gap:14px">Logopedska terapija <span style="font-size:16px">→</span></a>
+        <a href="logopedska-dijagnostika.html" style="display:inline-flex;align-items:center;gap:9px;font-size:15.5px;font-weight:800;color:#0f7c8c;transition:gap .25s" style-hover="gap:14px">Logopedska dijagnostika <span style="font-size:16px">→</span></a>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:24px;padding:30px 30px 32px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.12),0 16px 38px rgba(60,50,30,0.10);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <strong style="font-family:'Lora',Georgia,serif;font-size:21px;font-weight:600;color:#1F2A44;line-height:1.3">Naručite termin</strong>
+      <p style="margin:0;font-size:15.5px;line-height:1.65;color:#5A6D80;text-wrap:pretty">Javite nam što ste primijetili, a mi ćemo vas usmjeriti na odgovarajući prvi korak.</p>
+      <a href="index.html#narucivanje" style="display:inline-flex;align-items:center;gap:11px;padding:16px 28px;border-radius:14px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 10px 28px rgba(18,144,159,0.30);transition:gap .3s,background .25s" style-hover="gap:16px;background:#0f7c8c">Rezerviraj termin <span style="font-size:16px">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#2f3945;color:#c7cfda;padding:44px 22px">
+  <div style="max-width:1340px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:13.5px">
+    <span>© 2026 Logopedski centar SANO. Sva prava pridržana.</span>
+    <a href="index.html#tim" style="color:#9fd6de">Naš tim →</a>
+  </div>
+</footer>
+
+</div>
+
+</x-dc>
+</body>
+</html>

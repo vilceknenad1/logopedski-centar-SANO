@@ -429,9 +429,10 @@
 
   if(!window.__sanoSigStagger){
     window.__sanoSigStagger=1;
+    var sigTries=0;
     var sigInit=function(){
       var rows=document.querySelectorAll('#kada [data-sigrow]');
-      if(!rows.length)return;
+      if(!rows.length){ if(sigTries++<40) setTimeout(sigInit,150); return; }
       document.documentElement.classList.add('sigjs');
       var show=function(list){
         list.forEach(function(r,i){setTimeout(function(){r.setAttribute('data-sig-in','1');},i*70);});
@@ -446,6 +447,21 @@
         });
       },{threshold:0.15});
       groups.forEach(function(g){io.observe(g);});
+      setTimeout(function(){
+        var hidden=[].slice.call(document.querySelectorAll('#kada [data-sigrow]:not([data-sig-in])'));
+        hidden.forEach(function(r){
+          var t=r.getBoundingClientRect().top;
+          if(t<window.innerHeight*1.2) r.setAttribute('data-sig-in','1');
+        });
+      },1200);
+      window.addEventListener('load',function(){
+        setTimeout(function(){
+          [].slice.call(document.querySelectorAll('#kada [data-siggrid]')).forEach(function(g){
+            var r=g.getBoundingClientRect();
+            if(r.top<window.innerHeight&&r.bottom>0) show([].slice.call(g.querySelectorAll('[data-sigrow]:not([data-sig-in])')));
+          });
+        },300);
+      });
     };
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sigInit);else setTimeout(sigInit,60);
   }
@@ -1526,7 +1542,7 @@
 <!-- ================= NARUČIVANJE ================= -->
 <section id="narucivanje" style="padding:96px 22px 100px;position:relative;overflow:hidden;background-color:#FBF6EC;background-image:url(uploads/narucivanje-bg.webp);background-size:cover;background-position:center;background-repeat:no-repeat">
   <span id="kontakt" style="position:absolute;top:-90px"></span>
-    <div style="max-width:1240px;margin:0 auto;position:relative">
+    <div style="max-width:1340px;margin:0 auto;position:relative">
     <div id="kontakt-cols">
       <div data-k-intro data-reveal>
         <span style="display:block;color:#B07A28;font-weight:800;letter-spacing:0.14em;font-size:11.5px;text-transform:uppercase">Prvi korak</span>
@@ -2409,8 +2425,8 @@ class Component extends DCLogic {
       },
       team: (this._teamRaw || (this._teamRaw = [
         { name: 'Ana Bilić Topić', cta: 'Upoznajte Anu', title: 'mag. logopedije', photo: 'uploads/chatgpt-image-27.-2026.-10-47-11.webp', accent: '#6d8ed6', tint: '#eef3fb', offset: '0px', page: 'ana-bilic-topic.html' },
-        { name: 'Zrinka Vrljić', cta: 'Upoznajte Zrinku', title: 'mag. logopedije', photo: 'uploads/chatgpt-image-27.-2026.-10-26-07.webp', accent: '#1ea6b6', tint: '#e7f6f8', offset: '28px' },
-        { name: 'Lana Rozić', cta: 'Upoznajte Lanu', title: 'mag. logopedije', photo: 'uploads/chatgpt-image-27.-2026.-10-45-00.webp', accent: '#e2953a', tint: '#fbf1e2', offset: '0px' },
+        { name: 'Zrinka Vrljić', cta: 'Upoznajte Zrinku', title: 'mag. logopedije', photo: 'uploads/chatgpt-image-27.-2026.-10-26-07.webp', accent: '#1ea6b6', tint: '#e7f6f8', offset: '28px', page: 'zrinka-vrljic.html' },
+        { name: 'Lana Rozić', cta: 'Upoznajte Lanu', title: 'univ. mag. logoped.', photo: 'uploads/chatgpt-image-27.-2026.-10-45-00.webp', accent: '#e2953a', tint: '#fbf1e2', offset: '0px', page: 'lana-rozic.html' },
       ])).map((m, i) => Object.assign({}, m, {
         i,
         href: m.page || '#narucivanje',
