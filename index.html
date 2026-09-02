@@ -347,6 +347,18 @@
   }
   @media (prefers-reduced-motion:reduce){html.sigjs #kada [data-sigrow]{opacity:1!important;transform:none!important;transition:none}}
   @media (prefers-reduced-motion:reduce){#m-cta{transition:none}}
+  @media (max-width:760px){
+    #galerija-rail{-webkit-mask-image:none!important;mask-image:none!important;perspective:none!important;scroll-snap-type:x mandatory!important;gap:12px!important;padding:14px calc(50% - 43%) 22px!important}
+    #galerija-rail>div{flex:0 0 86%!important;height:clamp(230px,62vw,290px)!important;transform:none!important;opacity:1!important;box-shadow:0 12px 30px rgba(80,110,150,0.18)!important}
+    #galerija-rail~button{display:none!important}
+    #galerija-rail>div>span{font-size:13px!important;left:14px!important;bottom:14px!important;background:rgba(20,35,55,0.62)!important}
+  }
+  @media (max-width:760px){
+    #kada-decak-wrap{justify-content:center!important;padding-right:0!important}
+    #kada-decak-wrap>img:nth-child(2){display:none!important}
+    #kada-decak-wrap>img:first-child{height:clamp(240px,56vw,300px)!important;margin-left:0!important}
+    #kada-decak-wrap>img:last-child{left:auto!important;right:6%!important;top:-4%!important;width:clamp(112px,30vw,140px)!important}
+  }
 </style>
 
 <script>
@@ -1032,9 +1044,9 @@
       <p style="font-size:18px;line-height:1.6">Mjesto po mjeri djece: svijetlo, toplo i puno poticaja za igru i učenje.</p>
     </div>
     <div style="position:relative">
-      <div id="galerija-rail" style="display:flex;gap:16px;perspective:1400px;perspective-origin:50% 50%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-mask-image:linear-gradient(90deg,transparent 0,transparent 60px,#000 150px,#000 calc(100% - 150px),transparent calc(100% - 60px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,transparent 60px,#000 150px,#000 calc(100% - 150px),transparent calc(100% - 60px),transparent 100%);padding:26px calc(50% - 190px) 34px;margin:0 -2px;-webkit-overflow-scrolling:touch;scrollbar-width:none">
+      <div id="galerija-rail" style="display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;padding:18px 20px 30px;margin:0 -2px;-webkit-overflow-scrolling:touch;scrollbar-width:none">
         <sc-for list="{{ galleryLoop }}" as="im" hint-placeholder-count="6">
-          <div data-gal-card onClick="{{ im.onOpen }}" style="flex:0 0 340px;height:250px;scroll-snap-align:center;border-radius:18px;overflow:hidden;background:#E7EEF6;box-shadow:0 10px 26px rgba(80,110,150,0.12);position:relative;cursor:zoom-in;transform-style:preserve-3d;backface-visibility:hidden;transform:rotateY(18deg) scale(0.84);opacity:0.62;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .4s,box-shadow .3s">
+          <div data-gal-card onClick="{{ im.onOpen }}" style="flex:0 0 clamp(280px,30vw,380px);height:clamp(220px,24vw,300px);scroll-snap-align:center;border-radius:18px;overflow:hidden;background:#E7EEF6;box-shadow:0 10px 26px rgba(80,110,150,0.12);position:relative;cursor:zoom-in;transform-style:preserve-3d;backface-visibility:hidden;transition:transform .45s cubic-bezier(.22,.61,.36,1),opacity .4s,box-shadow .3s">
             <sc-if value="{{ im.img }}" hint-placeholder-val="{{ false }}">
               <img src="{{ im.img }}" alt="{{ im.label }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease" style-hover="transform:scale(1.06)">
             </sc-if>
@@ -1951,15 +1963,10 @@ class Component extends DCLogic {
     const focus = () => {
       const mid = rail.scrollLeft + rail.clientWidth / 2;
       rail.querySelectorAll('[data-gal-card]').forEach(c => {
-        const cc = c.offsetLeft + c.offsetWidth / 2;
-        const raw = (cc - mid) / (c.offsetWidth * 1.15);
-        const sd = Math.max(-1.6, Math.min(1.6, raw));
-        const d = Math.min(1, Math.abs(sd));
-        const sc = 1 - 0.17 * d;
-        c.style.transform = 'rotateY(' + (-sd * 18).toFixed(2) + 'deg) translateZ(' + (-d * 90).toFixed(0) + 'px) scale(' + sc.toFixed(3) + ')';
-        c.style.opacity = (1 - 0.42 * d).toFixed(3);
-        c.style.zIndex = String(Math.max(1, Math.round(10 - d * 8)));
-        c.style.boxShadow = d < 0.35 ? '0 26px 54px rgba(80,110,150,0.3)' : '0 10px 26px rgba(80,110,150,0.12)';
+        c.style.transform = 'none';
+        c.style.opacity = '1';
+        c.style.zIndex = '1';
+        c.style.boxShadow = '0 14px 34px rgba(80,110,150,0.18)';
       });
     };
     this._galFocus = focus;

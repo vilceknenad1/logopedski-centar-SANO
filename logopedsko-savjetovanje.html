@@ -59,6 +59,12 @@
     #sav-line{grid-template-columns:repeat(2,minmax(0,1fr))!important}
     #sav-line [data-arrow]{display:none!important}
   }
+  @media (max-width:620px){
+    header>div{padding:6px 8px 6px 10px!important;gap:8px!important}
+    header>div img{height:38px!important}
+    header>div>div>a:first-child:not(:last-child){display:none!important}
+    header>div>div>a:last-child{padding:10px 14px!important;font-size:13.5px!important}
+  }
 </style>
 <script>
   if(!window.__savIO){
