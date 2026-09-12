@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.logopedski-centar-sano.hr/sitemap.xml
