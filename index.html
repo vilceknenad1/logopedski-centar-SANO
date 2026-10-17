@@ -18,12 +18,12 @@
 <meta property="og:title" content="Logopedski centar SANO Zagreb | Procjena i terapija za djecu">
 <meta property="og:description" content="Logopedska procjena i terapija za djecu u Zagrebu. Individualan pristup, stručan tim i jasne smjernice za roditelje. Rezervirajte termin u SANO centru.">
 <meta property="og:url" content="https://www.logopedski-centar-sano.hr/">
-<meta property="og:image" content="https://www.logopedski-centar-sano.hr/images/og-image.jpg">
+<meta property="og:image" content="https://www.logopedski-centar-sano.hr/images/hero/logoped-zagreb-djeca-igra-kartice.webp">
 <meta property="og:image:alt" content="Logopedinja i djeca u radu s materijalima u Logopedskom centru SANO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Logopedski centar SANO Zagreb | Procjena i terapija za djecu">
 <meta name="twitter:description" content="Logopedska procjena i terapija za djecu u Zagrebu. Individualan pristup, stručan tim i jasne smjernice za roditelje. Rezervirajte termin u SANO centru.">
-<meta name="twitter:image" content="https://www.logopedski-centar-sano.hr/images/og-image.jpg">
+<meta name="twitter:image" content="https://www.logopedski-centar-sano.hr/images/hero/logoped-zagreb-djeca-igra-kartice.webp">
 <meta name="twitter:image:alt" content="Logopedinja i djeca u radu s materijalima u Logopedskom centru SANO">
 <!-- TODO(analitika): ovdje dodajte GA4 skriptu i meta oznaku za Google Search Console kad dobijete ID-eve. -->
 <script src="./support.js"></script>
@@ -282,6 +282,168 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
   @media (max-width:820px) and (hover:none){
     #onama-cards>div{transform:none!important}
   }
+  /* po dobi – kompaktni odabir dobi */
+  @media (max-width:760px){
+    #kada-dob{padding-top:88px!important;padding-bottom:56px!important}
+    #kada-dob-grid{margin-top:24px!important;padding:24px 14px 20px!important;border-radius:28px 28px 20px 20px!important;row-gap:16px!important}
+    #kada-dob-sticky{position:static!important}
+    #kada-dob-rail{display:grid!important;grid-template-columns:1fr 1fr;gap:8px!important}
+    #kada-dob-rail [data-agetab]{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important;padding:10px 12px!important;margin:0!important;border:1px solid rgba(14,124,139,0.18)!important;border-radius:14px!important;background:#F4FAFA!important;text-align:left;min-height:0!important}
+    #kada-dob-rail [data-agetab][aria-selected="true"]{background:#0E7C8B!important;border-color:#0E7C8B!important}
+    #kada-dob-rail [data-agetab][aria-selected="true"] *{color:#fff!important}
+    #kada-dob-rail [data-ageord]{display:none!important}
+    #kada-dob-rail [data-agelabel]{font-size:16px!important;line-height:1.2!important;font-style:normal!important}
+    #kada-dob-rail [data-agestage]{font-size:11.5px!important;line-height:1.3!important;margin-top:2px!important}
+    #kada-dob-panel h3{font-size:22px!important}
+    #kada-dob-panel p{margin-top:6px!important;font-size:15px!important}
+    #kada-dob-panel ul{margin-top:12px!important}
+    #kada-dob-panel li{padding:10px 0!important;gap:0 12px!important}
+    #kada-dob-watermark{display:none!important}
+  }
+  /* cjenik – premium mobitel */
+  @media (max-width:700px){
+    #cj-grid{grid-template-columns:minmax(0,1fr)!important;gap:16px!important}
+    #cj-grid>div{border-radius:24px 24px 24px 8px!important;padding:20px 18px 18px!important;box-shadow:0 1px 2px rgba(40,70,78,0.05),0 14px 32px rgba(40,70,78,0.10)!important}
+    #cj-grid>div>div:first-child{gap:12px!important;align-items:flex-start!important}
+    #cj-grid>div>div:first-child>img{width:40px!important;height:40px!important}
+    #cj-grid>div>div:first-child>span>span:nth-child(1){display:none!important}
+    #cj-grid>div>div:first-child>span>span:nth-child(2){font-size:19px!important;margin-top:0!important}
+    #cj-grid>div>div:first-child>span>span:nth-child(3){font-size:14px!important;margin-top:2px!important}
+    #cj-grid>div>div:nth-child(2){margin-top:14px!important;padding-top:14px!important;gap:12px!important}
+    #cj-grid>div:first-child>div:nth-child(2)>div:first-child{display:grid!important;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+    #cj-grid>div:first-child>div:nth-child(2)>div:first-child>span:first-child{grid-row:1 / span 2;font-size:28px!important;padding:10px 14px!important;border-radius:16px 16px 16px 6px!important}
+    #cj-grid>div:first-child>div:nth-child(2)>div:first-child>span:not(:first-child){margin-top:0!important;font-size:14px!important;line-height:1.35}
+    #cj-grid>div [data-cj-more] span[style*="font-size:32px"]{font-size:24px!important;padding:8px 12px!important}
+    #cj-grid>div>div:nth-child(2) [data-cj-more]{padding-left:0!important;border-left:none!important;flex-basis:100%!important}
+    #cj-grid>div a{margin-top:14px!important;min-height:48px}
+    #cj-grid>div [style*="font-size:36px"]{font-size:28px!important}
+    #cj-grid>div span[style*="font-size:24px;font-weight:700"]{font-size:19px!important}
+  }
+  /* hero eyebrow – mobitel */
+  @media (max-width:700px){
+    [data-h1-eyebrow]{letter-spacing:0.10em!important;margin-bottom:12px!important;color:#3A9AA6!important}
+  }
+  /* materijali – istaknuta Penjalica kartica, mobitel */
+  @media (max-width:899px){
+    #materijali [data-g12]:not(#mat-hint + [data-g12])>div:first-child{min-height:0!important;aspect-ratio:4 / 3}
+    #materijali [data-g12]:not(#mat-hint + [data-g12]){border-radius:28px 28px 28px 10px!important}
+  }
+  /* faq – kompaktno */
+  @media (max-width:760px){
+    #faq-grid{gap:20px!important}
+    #faq-left h2{font-size:28px!important;margin-top:10px!important}
+    #faq-left p{margin-top:10px!important;font-size:15px!important}
+    #faq-left>div:last-child{display:none!important}
+    #faq-right button[aria-expanded]{padding:14px 2px!important;gap:12px!important}
+    #faq-right button[aria-expanded]>span:first-child{font-size:13px!important;min-width:20px!important}
+    #faq-right button[aria-expanded]>span:nth-child(2){font-size:16px!important;line-height:1.35!important}
+    #faq-right button[aria-expanded]>span:last-child{width:28px!important;height:28px!important}
+    #faq-right [data-faq-panel]>div{font-size:15px!important}
+    #faq-right>button{margin-top:16px!important}
+    #faq-right>div[data-reveal]{margin-top:24px!important;padding-top:20px!important}
+    #faq-right>div[data-reveal] h3{font-size:20px!important}
+  }
+  /* recenzije – 15+ traka i istaknuta recenzija */
+  @media (max-width:760px){
+    #rec-15{gap:10px!important;padding:8px 16px 8px 8px!important}
+    #rec-15>span:first-child{width:36px!important;height:36px!important;font-size:14px!important}
+    #rec-15>span:last-child{font-size:14px!important;line-height:1.35}
+    #rec-feat{margin-top:24px!important;grid-template-columns:1fr!important;gap:0!important;border-radius:28px 28px 28px 10px!important;padding:22px 20px 20px!important}
+    #rec-feat>span[aria-hidden]{font-size:64px!important;height:30px;line-height:0.9!important}
+    #rec-feat blockquote{font-size:17px!important;line-height:1.55!important}
+    #rec-feat>div{gap:18px!important}
+  }
+  /* po dobi – napomena i CTA kompaktno */
+  @media (max-width:760px){
+    #kada-dob-panel [data-agenote]{margin-top:16px!important;padding-left:14px!important;font-size:16px!important;line-height:1.5!important}
+    #kada-dob-aside{margin-top:20px!important;padding-top:18px!important}
+    #kada-dob-aside>p:first-child{font-size:18px!important}
+    #kada-dob-aside>p:nth-child(2){margin-top:6px!important;font-size:15px!important;line-height:1.55!important}
+    #kada-dob-aside>a{margin-top:14px!important;width:100%;justify-content:center;padding:14px 20px!important}
+    #kada-dob-aside>p:last-child{margin-top:10px!important;text-align:center}
+  }
+  /* kada – dječak bliže karticama */
+  @media (max-width:760px){
+    #kada>div{row-gap:0!important}
+    #kada-decak-wrap{margin:4px 0 -14px!important;z-index:4!important;pointer-events:none}
+    #kada-decak-wrap [data-kada-mob]{height:190px!important;margin:0 18% 0 auto!important}
+  }
+  /* metode – programi kao jedna kompaktna kartica */
+  @media (max-width:700px){
+    #metode [data-prog]{gap:0!important;background:#fff;border-radius:20px 20px 20px 8px;box-shadow:inset 0 0 0 1px #EFE7D6;overflow:hidden}
+    #metode [data-prog]>div{background:transparent!important;box-shadow:none!important;border-radius:0!important;padding:14px 16px!important;gap:4px!important}
+    #metode [data-prog]>div+div{border-top:1px solid #EFE7D6}
+    #metode [data-prog] strong{font-size:16px!important}
+    #metode [data-prog]>div>span:last-child{font-size:14.5px!important;line-height:1.5!important}
+    #metode [data-prog]~*,#metode [data-prog]{}
+  }
+  /* tim → galerija: manje praznog prostora */
+  @media (max-width:700px){
+    #tim{padding-bottom:36px!important}
+    #tim [data-tim-cta]{margin-top:28px!important;padding-top:24px!important;gap:14px!important}
+    #tim [data-tim-cta] p:first-child{font-size:20px!important}
+    #galerija{height:auto!important}
+    #gal-sticky{position:relative!important;height:auto!important;min-height:0!important;justify-content:flex-start!important;padding:36px 0 44px!important;gap:20px!important}
+    #galerija{padding-top:0!important}
+    #gal-sticky{padding-top:12px!important}
+    #gal-sticky>div:first-child{padding:0 4px!important}
+    #tim{padding-bottom:20px!important}
+  }
+  /* metode – kompaktna lista testova */
+  @media (max-width:700px){
+    #metode [data-met-list] summary{padding:14px 0!important;gap:12px!important;align-items:center!important}
+    #metode [data-met-list] summary>span:first-child{min-width:24px!important;font-size:16px!important}
+    #metode [data-met-list] summary>span:nth-child(2)>span:first-child{gap:4px 8px!important}
+    #metode [data-met-list] summary strong{font-size:16px!important;line-height:1.3!important}
+    #metode [data-met-list] summary>span:nth-child(2)>span:last-child{display:none}
+    #metode [data-met-list] details[open] summary>span:nth-child(2)>span:last-child{display:block}
+    #metode [data-met-list] details[open] summary{align-items:flex-start!important}
+    #metode [data-met-list] [data-plus]{width:28px!important;height:28px!important;font-size:18px!important}
+    #metode [data-met-list] details>p{margin:0 0 14px 0!important;font-size:15px!important}
+  }
+  /* materijali – 3 kartice u swipe nizu */
+  @media (max-width:700px){
+    #mat-hint + [data-g12]{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:14px!important;margin:24px -16px 0!important;padding:4px 16px 16px!important;border-radius:0!important}
+    #mat-hint + [data-g12]::-webkit-scrollbar{display:none}
+    #mat-hint + [data-g12]>a{flex:0 0 72vw!important;max-width:300px;scroll-snap-align:start}
+    #mat-hint + [data-g12]>a>span:first-child{aspect-ratio:1 / 1!important}
+    #mat-hint + [data-g12]>a>span:first-child img{inset:16px!important;width:calc(100% - 32px)!important;height:calc(100% - 32px)!important}
+    #mat-hint + [data-g12]>a>span:nth-child(2){padding:16px 18px 0!important}
+    #mat-hint + [data-g12]>a>span:nth-child(2)>span:nth-child(2){font-size:18px!important}
+    #mat-hint + [data-g12]>a>span:last-child{margin:14px 18px 18px!important;padding-top:12px!important}
+    #mat-hint{display:flex!important}
+  }
+  /* tim – vidljivo da ima više članica */
+  @media (max-width:700px){
+    #tim [data-team-grid]>*{flex:0 0 72vw!important;max-width:320px}
+    #tim [data-ph] img{width:100%!important;height:100%!important}
+    #tim [data-ph]{max-height:none!important;border-radius:130px 130px 16px 16px!important}
+    #tim [data-team] h3{font-size:20px!important}
+    #tim-hint{display:flex!important}
+  }
+  @media (max-width:400px){#tim [data-team-grid]>*{flex-basis:74vw!important}}
+  /* kada – kartice signala, mobitel */
+  @media (max-width:700px){
+    #kada [data-sigcard]{border-radius:28px 28px 28px 10px!important;padding:22px 18px 14px!important}
+    #kada [data-sighead]{grid-template-columns:1fr!important;gap:10px!important}
+    #kada [data-sighead]>div:first-child>span:last-child{letter-spacing:0.08em!important;line-height:1.35}
+    #kada [data-sighead]>div:last-child>span:last-child{display:none}
+    #kada [data-siggrid]{margin-top:12px!important}
+    #kada [data-sigrow]{padding:12px 4px!important;min-height:0!important}
+    #kada .sig-toggle{width:100%;justify-content:center}
+  }
+  /* penjalica traka – mobitel (kompaktno) */
+  @media (max-width:720px){
+    #pen-card{display:grid!important;grid-template-columns:104px minmax(0,1fr);align-items:center!important;gap:12px 14px!important;padding:16px 16px 16px!important;border-radius:24px 24px 24px 10px!important;margin-top:8px;text-align:left}
+    #pen-card>span[aria-hidden],#pen-badge{display:none!important}
+    #pen-card>div:nth-of-type(1){grid-column:1;grid-row:1;width:104px!important;margin:-6px 0 -4px!important;transform:rotate(-4deg)}
+    #pen-card>div:nth-of-type(2){grid-column:2;grid-row:1;flex:none!important}
+    #pen-card>div:nth-of-type(2) h3{margin:0!important;font-size:24px!important;line-height:1.05!important}
+    #pen-card>div:nth-of-type(2) p{margin:6px 0 0!important;font-size:14px!important;line-height:1.4!important}
+    #pen-card>div:nth-of-type(3){grid-column:1 / -1;grid-row:2;margin:0!important;padding-top:0!important;width:100%;gap:6px!important}
+    #pen-card>div:nth-of-type(3)>svg,#pen-card>div:nth-of-type(3)>span:first-of-type{display:none!important}
+    #pen-card>div:nth-of-type(3)>a{width:100%;justify-content:center;height:46px!important}
+  }
   /* ===== MOBILE PASS ===== */
   #m-cta{display:none}
   @media (max-width:820px){#materijali>div>div:last-child{grid-template-columns:1fr!important}}
@@ -477,7 +639,6 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
   @media (max-width:760px){[data-mchips]{display:none!important}}
   /* mobilno skraćivanje landinga */
   @media (max-width:760px){
-    #kada [data-siggrid]{display:none!important}
     #kada [data-sigfoot]{display:none!important}
     #galerija-rail>*:nth-child(n+4){display:none!important}
     #rec-cols{max-height:430px!important}
@@ -515,7 +676,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
   @media (max-width:1100px){#o-nama [data-g12] > *{grid-column:1 / -1!important}#o-nama [data-g12-pad]{padding:8px 12px 12px!important}}
 @media (max-width:899px){#o-nama [data-g12] > *{grid-column:1 / -1!important}#o-nama [data-g12]{border-radius:24px!important;padding:12px!important}#onama-imena{padding:0!important;gap:8px!important}#onama-imena a{padding:10px!important}#onama-imena a>span:last-child{display:none}#o-nama [data-g12] > div:first-child{min-height:300px!important}#o-nama [data-g12-pad]{padding:8px 24px 32px!important}}
   @media (max-width:899px){[data-g12]{grid-template-columns:minmax(0,1fr)!important}[data-g12] > *{grid-column:1 / -1!important}[data-g12-pad]{padding-left:24px!important;padding-right:24px!important}[data-usl-img]{min-height:0!important;aspect-ratio:1 / 0.8}#faq-grid{grid-template-columns:minmax(0,1fr)!important}}
-  @media (max-width:899px){#metode [data-g12] > *{grid-column:1 / -1!important;position:static!important}#metode [data-met-list]{grid-template-columns:minmax(0,1fr)!important}}
+  @media (max-width:899px){#metode [data-g12] > *{grid-column:1 / -1!important;position:static!important}#metode [data-met-list]{grid-template-columns:minmax(0,1fr)!important}#metode [data-g12] > figure{position:relative!important;border-radius:120px 24px 24px 24px!important}}
   #rec-grid{display:none}
   @media (max-width:640px){#rec-cols{display:none!important}}
   #rec-cols:focus-within ul{animation-play-state:paused}
@@ -817,7 +978,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
 <section id="pocetna" style="position:relative;background:#EEF4FA;background-image:radial-gradient(62% 56% at 12% 10%,rgba(255,255,255,0.85) 0%,rgba(255,255,255,0) 72%),radial-gradient(54% 50% at 86% 4%,rgba(126,206,214,0.20) 0%,rgba(126,206,214,0) 74%),radial-gradient(46% 44% at 96% 62%,rgba(226,149,58,0.10) 0%,rgba(226,149,58,0) 74%),radial-gradient(58% 52% at 4% 88%,rgba(140,178,232,0.16) 0%,rgba(140,178,232,0) 76%),linear-gradient(178deg,#F2F7FC 0%,#E8F1F8 60%,#EDF4F7 100%);overflow:hidden;margin-top:-72px;padding:128px 24px 72px;min-height:calc(100vh - 132px);display:flex;flex-direction:column;justify-content:center;align-items:center">
   <div style="width:100%;max-width:1340px;margin:0 auto;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:72px;align-items:stretch">
     <div style="display:flex;flex-direction:column;justify-content:center">
-      <h1 style="font-family:'Lora',Georgia,serif;font-size:clamp(40px,5.6vw,64px);font-weight:600;line-height:1.12;letter-spacing:-0.022em;margin:0;max-width:13ch;text-wrap:balance;color:#1F2A44"><span style="display:block;font-family:'Mulish',system-ui,sans-serif;line-height:normal;color:#0f7c8c;font-weight:800;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:20px">LOGOPEDSKI CENTAR SANO · ZAGREB</span>Mjesto gdje mali koraci <span style="color:#12909f;font-weight:600">postaju veliki pomaci.</span></h1>
+      <h1 style="font-family:'Lora',Georgia,serif;font-size:clamp(40px,5.6vw,64px);font-weight:600;line-height:1.12;letter-spacing:-0.022em;margin:0;max-width:13ch;text-wrap:balance;color:#1F2A44"><span style="display:block;font-family:'Mulish',system-ui,sans-serif;line-height:normal;color:#0f7c8c;font-weight:800;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:20px" data-h1-eyebrow="">LOGOPEDSKI CENTAR SANO · ZAGREB</span>Mjesto gdje mali koraci <span style="color:#12909f;font-weight:600">postaju veliki pomaci.</span></h1>
       <p style="font-weight:400;line-height:1.7;margin:28px 0 0;max-width:440px;font-size:18px;color:#5A6D80;text-wrap:pretty">Stručna logopedska procjena i terapija za djecu predškolske i školske dobi, uz individualan pristup svakom djetetu.</p>
       <p style="font-size:16px;font-weight:700;letter-spacing:0.01em;color:#33475A;margin:20px 0 0"><span id="hero-slogan"><span data-txt="">Mali glasovi, veliki koraci.</span></span></p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin-top:40px">
@@ -837,7 +998,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
 
 </section><section style="background:linear-gradient(180deg,#EDF4F7 0%,#EEF6F7 50%,#F0F9FA 100%);padding:48px 24px 24px;position:relative">
   <div id="penjalica-traka" style="max-width:1340px;margin:0 auto;position:relative">
-        <div style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px;padding:20px clamp(24px,4vw,56px) 20px clamp(16px,2vw,32px);background:#FFF1C9;border-radius:160px 160px 160px 24px;box-shadow:0 1px 2px rgba(120,90,20,0.06),0 24px 56px rgba(176,122,40,0.18);border:2px solid #FFD66B">
+        <div id="pen-card" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px;padding:20px clamp(24px,4vw,56px) 20px clamp(16px,2vw,32px);background:#FFF1C9;border-radius:160px 160px 160px 24px;box-shadow:0 1px 2px rgba(120,90,20,0.06),0 24px 56px rgba(176,122,40,0.18);border:2px solid #FFD66B">
       <span aria-hidden="true" style="position:absolute;left:clamp(8px,1.5vw,24px);top:50%;width:clamp(170px,16vw,220px);aspect-ratio:1 / 1;translate:0 -50%;border-radius:50%;background:#FFE3A0;pointer-events:none"></span>
       <div style="position:relative;flex:none;width:clamp(170px,16vw,220px);margin:-44px 0 -20px;transform:rotate(-4deg)">
         <img src="images/materijali/jezicna-penjalica-logopedske-kartice.webp" alt="Jezična penjalica — 100 logopedskih kartica" loading="lazy" style="width:100%;height:auto;display:block;filter:drop-shadow(0 14px 24px rgba(40,60,80,0.18))" width="1154" height="983">
@@ -845,7 +1006,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       </div>
       <div style="flex:1 1 220px;min-width:0">
         
-        <h3 style="font-family:'DM Serif Display',Georgia,serif;font-size:clamp(32px,3.4vw,46px);line-height:1;font-weight:400;color:#1A2E3A;margin:10px 0 0;letter-spacing:-0.01em">Jezična <span style="color:#0F7C8E">penjalica</span></h3>
+        <p role="heading" aria-level="2" style="font-family:'DM Serif Display',Georgia,serif;font-size:clamp(32px,3.4vw,46px);line-height:1;font-weight:400;color:#1A2E3A;margin:10px 0 0;letter-spacing:-0.01em">Jezična <span style="color:#0F7C8E">penjalica</span></p>
         <p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:#3E5163;max-width:460px;text-wrap:pretty">Prve rečenice kroz igru. AAC simboli koje deca vole, logopedi odobravaju.</p>
         
       </div>
@@ -858,7 +1019,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
         <a href="materijali.html" style="display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 26px;border-radius:999px;background:#1A2E3A;color:#fff;font-weight:800;font-size:16px;box-shadow:0 14px 30px rgba(26,46,58,0.26);transition:background .3s,transform .3s;white-space:nowrap" style-hover="background:#0F7C8E;color:#fff;transform:translateY(-2px)">Naručite Penjalicu <span aria-hidden="true">→</span></a>
         <span style="font-size:12px;color:#6A7C8C;white-space:nowrap">Dostava 24h • Plaćanje pouzećem</span>
       </div>
-    <span style="position: absolute; transform: rotate(-6deg); background: #1A2E3A; color: #fff; font-size: 11px; font-weight: 800; padding: 6px 11px; border-radius: 999px; box-shadow: 0 10px 22px rgba(26,46,58,0.28); white-space: nowrap; left: 109px; top: 158px">100 kartica za igru</span></div>
+    <span id="pen-badge" style="position: absolute; transform: rotate(-6deg); background: #1A2E3A; color: #fff; font-size: 11px; font-weight: 800; padding: 6px 11px; border-radius: 999px; box-shadow: 0 10px 22px rgba(26,46,58,0.28); white-space: nowrap; left: 109px; top: 158px">100 kartica za igru</span></div>
   </div>
 </section>
 
@@ -889,8 +1050,8 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       </div>
     </div>
     <div data-reveal="" style="grid-column:5 / 13;min-width:0;display:flex;flex-direction:column;justify-content:flex-start;gap:28px">
-      <div style="background:#FBF9F4;border-radius:64px 64px 64px 14px;padding:28px 28px 12px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.07)">
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:center">
+      <div data-sigcard="" style="background:#FBF9F4;border-radius:64px 64px 64px 14px;padding:28px 28px 12px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.07)">
+        <div data-sighead="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:center">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
             <span style="flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><img src="images/ikone/ikona-rani-govorni-razvoj.webp" alt="" loading="lazy" style="width:40px;height:40px;object-fit:contain;display:block" width="175" height="175"></span>
             <span style="font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#2A4E54;text-wrap:pretty">Rani komunikacijski i jezično-govorni razvoj</span>
@@ -910,8 +1071,8 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
         </div>
         <button type="button" class="sig-toggle" onClick="{{ toggleSigA }}" aria-expanded="{{ sigExpA }}">{{ sigTxtA }}</button>
       </div>
-      <div style="background:#FBF9F4;border-radius:64px 64px 64px 14px;padding:28px 28px 12px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.07)">
-        <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:center">
+      <div data-sigcard="" style="background:#FBF9F4;border-radius:64px 64px 64px 14px;padding:28px 28px 12px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.07)">
+        <div data-sighead="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:center">
           <div style="display:flex;align-items:center;gap:16px;min-width:0">
             <span style="flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><img src="images/ikone/ikona-skolska-dob.webp" alt="" loading="lazy" style="width:40px;height:40px;object-fit:contain;display:block" width="197" height="197"></span>
             <span style="font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#2A4E54;text-wrap:pretty">Predškolska i školska dob</span>
@@ -978,7 +1139,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
                 <button type="button" onClick="{{ g.toggleMore }}" style="margin-top:28px;padding:12px 24px;border:1px solid rgba(42,93,102,0.3);border-radius:999px;background:transparent;color:#1A2E3A;font-family:'Mulish',sans-serif;font-weight:800;font-size:16px;cursor:pointer;transition:background .25s,border-color .25s" style-hover="background:rgba(42,93,102,0.07);border-color:#1A2E3A">{{ g.moreTxt }}</button>
               </sc-if>
               <sc-if value="{{ g.hasNote }}" hint-placeholder-val="{{ false }}">
-                <p style="margin:36px 0 0;padding:0 0 0 24px;border-left:2px solid #0E7C8B;font-family:'Lora',Georgia,serif;font-size:20px;font-style:italic;line-height:1.55;color:#1A2E3A;text-wrap:pretty">{{ g.note }}</p>
+                <p data-agenote="" style="margin:36px 0 0;padding:0 0 0 24px;border-left:2px solid #0E7C8B;font-family:'Lora',Georgia,serif;font-size:20px;font-style:italic;line-height:1.55;color:#1A2E3A;text-wrap:pretty">{{ g.note }}</p>
               </sc-if>
             </div>
           </div>
@@ -1236,7 +1397,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
 
     <div data-reveal="" style="margin-top:40px">
       <h3 style="margin:0 0 16px;font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#0E7C8B">Dodatno educirane za</h3>
-      <div data-met-list="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+      <div data-met-list="" data-prog="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
         <div style="background:#fff;border-radius:24px 24px 24px 8px;padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:inset 0 0 0 1px #EFE7D6">
           <span style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px"><strong style="font-size:18px;color:#132A44;font-weight:800;line-height:1.3">LSVT LOUD®</strong><span style="font-size:11px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:4px 8px;border-radius:5px;white-space:nowrap;background:#E4F6EC;color:#1c7a52">licencirano</span></span>
           <span style="font-size:15.5px;line-height:1.6;color:#5A6D80;text-wrap:pretty">Terapija glasa za osobe s neurološkim poremećajima glasa i govora.</span>
@@ -1340,6 +1501,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       <span style="flex:1;height:1px;background:linear-gradient(to right,rgba(18,144,159,0.30) 0%,rgba(18,144,159,0) 100%)"></span>
     </div>
 
+    <div id="tim-hint" aria-hidden="true" style="display:none;align-items:center;justify-content:space-between;gap:12px;margin:0 0 16px;font-size:14px;font-weight:700;color:#0f7c8c"><span>3 logopedinje</span><span style="display:inline-flex;align-items:center;gap:8px">Povucite za ostale <span style="font-size:18px">→</span></span></div>
     <div data-team-grid="" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:52px 44px;align-items:start">
       <sc-for list="{{ team }}" as="m" hint-placeholder-count="0">
         <div data-reveal="">
@@ -1356,7 +1518,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       </sc-for>
     </div>
 
-    <div data-reveal="" style="margin-top:88px;padding-top:36px;border-top:1px solid rgba(18,144,159,0.24);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
+    <div data-reveal="" data-tim-cta="" style="margin-top:88px;padding-top:36px;border-top:1px solid rgba(18,144,159,0.24);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
       <div style="max-width:520px">
         <p style="margin:0;font-family:'Mulish',system-ui,sans-serif;font-size:24px;font-weight:700;color:#0C5563;line-height:1.3">Niste sigurni kome se obratiti?</p>
         <p style="margin:8px 0 0;font-size:16px;line-height:1.65;color:#4E767D">Javite nam što ste primijetili, a mi ćemo vas usmjeriti.</p>
@@ -1407,7 +1569,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       </div>
     </div>
 
-    <div data-reveal="" style="margin-top:8px;display:flex;align-items:center;gap:14px;padding:14px 24px 14px 14px;background:#fff;border-radius:999px;box-shadow:0 1px 2px rgba(40,70,110,0.04),0 14px 34px rgba(70,105,150,0.10);width:fit-content;max-width:100%">
+    <div data-reveal="" id="rec-15" style="margin-top:8px;display:flex;align-items:center;gap:14px;padding:14px 24px 14px 14px;background:#fff;border-radius:999px;box-shadow:0 1px 2px rgba(40,70,110,0.04),0 14px 34px rgba(70,105,150,0.10);width:fit-content;max-width:100%">
       <span style="flex:none;width:52px;height:52px;border-radius:50%;background:#FFE3A0;color:#1A2E3A;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:600">15+</span>
       <span style="font-size:16px;color:#33465C"><strong style="color:#132A44;font-weight:800">15+ godina iskustva</strong> u radu s djecom i obiteljima</span>
     </div>
@@ -1605,7 +1767,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       <p style="font-size:16px;line-height:1.55;color:#4E767D;margin:12px 0 0;text-wrap:pretty">Jasne cijene i preporuka usluge tek nakon što upoznamo potrebe vašeg djeteta.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:32px;align-items:stretch">
+    <div id="cj-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:32px;align-items:stretch">
       <div data-reveal="" style="display:flex;flex-direction:column;background:#FBF8F1;border-radius:64px 64px 64px 14px;padding:28px 32px 28px;box-shadow:0 26px 60px rgba(40,70,78,0.13)">
         <div style="display:flex;align-items:center;gap:16px">
           <img src="images/ikone/ikona-logopedska-dijagnostika.webp" alt="" loading="lazy" style="flex:none;width:60px;height:60px;object-fit:contain;display:block" width="303" height="303">
@@ -1732,6 +1894,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
         </div>
       </div>
     </div>
+    <div id="mat-hint" aria-hidden="true" style="display:none;align-items:center;justify-content:flex-end;gap:8px;margin:24px 0 0;font-size:14px;font-weight:700;color:#0f7c8c">Povucite za ostale <span style="font-size:18px">→</span></div>
     <div data-reveal="" data-g12="" style="margin-top:32px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:stretch">
       <a href="materijali.html" style="grid-column:span 4;min-width:0;background:#fff;border-radius:28px 28px 28px 8px;overflow:hidden;display:flex;flex-direction:column;color:#132A44;box-shadow:0 1px 2px rgba(20,70,80,0.04),0 14px 36px rgba(20,70,80,0.07);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s" style-hover="transform:translateY(-4px);box-shadow:0 1px 2px rgba(20,70,80,0.04),0 26px 52px rgba(20,70,80,0.13)">
         <span style="position:relative;display:block;overflow:hidden;aspect-ratio:4 / 3;min-height:0;background:#DDF1F3"><img src="https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jpmrg44njn21q4vk77c4oipg1f.jpg" alt="Temelji za školu – set vježbenica" loading="lazy" decoding="async" style="position:absolute;inset:28px;width:calc(100% - 56px);height:calc(100% - 56px);object-fit:contain;display:block;filter:drop-shadow(0 12px 18px rgba(30,50,60,0.14))"></span>
@@ -3078,9 +3241,9 @@ class Component extends DCLogic {
         });
       },
       team: (this._teamRaw || (this._teamRaw = [
-        { name: 'Ana Bilić Topić', cta: 'Upoznajte Anu', title: 'mag. logopedije', photo: 'images/tim/ana-bilic-topic-logoped-zagreb-800.webp', srcset: 'images/tim/ana-bilic-topic-logoped-zagreb-400.webp 400w, images/tim/ana-bilic-topic-logoped-zagreb-800.webp 800w, images/tim/ana-bilic-topic-logoped-zagreb-1200.webp 1200w', alt: 'Ana Bilić Topić, mag. logopedije, logopedinja u Logopedskom centru SANO u Zagrebu, u radu s djetetom', accent: '#6d8ed6', tint: '#eef3fb', offset: '0px', page: 'ana-bilic-topic.html' },
-        { name: 'Zrinka Vrljić', cta: 'Upoznajte Zrinku', title: 'mag. logopedije', photo: 'images/tim/zrinka-vrljic-logoped-zagreb-800.webp', srcset: 'images/tim/zrinka-vrljic-logoped-zagreb-400.webp 400w, images/tim/zrinka-vrljic-logoped-zagreb-800.webp 800w, images/tim/zrinka-vrljic-logoped-zagreb-1200.webp 1200w', alt: 'Zrinka Vrljić, mag. logopedije, logopedinja u Logopedskom centru SANO u Zagrebu, u radu s djetetom', accent: '#1ea6b6', tint: '#e7f6f8', offset: '28px', page: 'zrinka-vrljic.html' },
-        { name: 'Lana Rozić', cta: 'Upoznajte Lanu', title: 'univ. mag. logoped.', photo: 'images/tim/lana-rozic-logoped-zagreb-800.webp', srcset: 'images/tim/lana-rozic-logoped-zagreb-400.webp 400w, images/tim/lana-rozic-logoped-zagreb-800.webp 800w, images/tim/lana-rozic-logoped-zagreb-1200.webp 1200w', alt: 'Lana Rozić, univ. mag. logoped., logopedinja u Logopedskom centru SANO u Zagrebu, u radu s djetetom', accent: '#e2953a', tint: '#fbf1e2', offset: '0px', page: 'lana-rozic.html' },
+        { name: 'Ana Bilić Topić', cta: 'Upoznajte Anu', title: 'mag. logopedije', photo: 'images/tim/ana-bilic-topic-logoped-zagreb-800.webp?v=4', srcset: 'images/tim/ana-bilic-topic-logoped-zagreb-400.webp?v=4 400w, images/tim/ana-bilic-topic-logoped-zagreb-800.webp?v=4 800w, images/tim/ana-bilic-topic-logoped-zagreb-1200.webp?v=4 1200w', alt: 'Ana Bilić Topić, mag. logopedije, logopedinja u Logopedskom centru SANO u Zagrebu, u radu s djetetom', accent: '#6d8ed6', tint: '#eef3fb', offset: '0px', page: 'ana-bilic-topic.html' },
+        { name: 'Zrinka Vrljić', cta: 'Upoznajte Zrinku', title: 'mag. logopedije', photo: 'images/tim/zrinka-vrljic-logoped-zagreb-800.webp?v=4', srcset: 'images/tim/zrinka-vrljic-logoped-zagreb-400.webp?v=4 400w, images/tim/zrinka-vrljic-logoped-zagreb-800.webp?v=4 800w, images/tim/zrinka-vrljic-logoped-zagreb-1200.webp?v=4 1200w', alt: 'Zrinka Vrljić, mag. logopedije, logopedinja u Logopedskom centru SANO u Zagrebu, u radu s djetetom', accent: '#1ea6b6', tint: '#e7f6f8', offset: '28px', page: 'zrinka-vrljic.html' },
+        { name: 'Lana Rozić', cta: 'Upoznajte Lanu', title: 'univ. mag. logoped.', photo: 'images/tim/lana-rozic-logoped-zagreb-800.webp?v=4', srcset: 'images/tim/lana-rozic-logoped-zagreb-400.webp?v=4 400w, images/tim/lana-rozic-logoped-zagreb-800.webp?v=4 800w, images/tim/lana-rozic-logoped-zagreb-1200.webp?v=4 1200w', alt: 'Lana Rozić, univ. mag. logoped., logopedinja u Logopedskom centru SANO u Zagrebu, u radu s djetetom', accent: '#e2953a', tint: '#fbf1e2', offset: '0px', page: 'lana-rozic.html' },
       ])).map((m, i) => Object.assign({}, m, {
         i,
         href: m.page || '#narucivanje',
@@ -3419,11 +3582,51 @@ class Component extends DCLogic {
 <script type="application/ld+json">{
  "@context": "https://schema.org",
  "@graph": [
-  {"@type":"MedicalTest","name":"Reynell ljestvica","alternateName":"NRDLS-HR","description":"Mjeri koliko dijete razumije i koliko samo govori u odnosu na vršnjake.","provider":{"@id":"https://www.logopedski-centar-sano.hr/#organizacija"}},
-  {"@type":"MedicalTest","name":"Test razumijevanja gramatike","alternateName":"TROG-2:HR","description":"Pokazuje razumije li dijete gramatičke odnose u rečenici.","provider":{"@id":"https://www.logopedski-centar-sano.hr/#organizacija"}},
-  {"@type":"MedicalTest","name":"Peabody slikovni test rječnika","alternateName":"PPVT-III-HR","description":"Procjenjuje veličinu rječnika koji dijete razumije.","provider":{"@id":"https://www.logopedski-centar-sano.hr/#organizacija"}},
-  {"@type":"MedicalTest","name":"Komunikacijske razvojne ljestvice","alternateName":"KORALJE","description":"Rani razvoj komunikacije, gesta i prvih riječi.","provider":{"@id":"https://www.logopedski-centar-sano.hr/#organizacija"}},
-  {"@type":"MedicalTest","name":"Predvještine čitanja i pisanja","alternateName":"PredČiP","description":"Procjena predvještina potrebnih za čitanje i pisanje.","provider":{"@id":"https://www.logopedski-centar-sano.hr/#organizacija"}},
+  {
+   "@type": "MedicalTest",
+   "name": "Reynell ljestvica",
+   "alternateName": "NRDLS-HR",
+   "description": "Mjeri koliko dijete razumije i koliko samo govori u odnosu na vršnjake.",
+   "provider": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   }
+  },
+  {
+   "@type": "MedicalTest",
+   "name": "Test razumijevanja gramatike",
+   "alternateName": "TROG-2:HR",
+   "description": "Pokazuje razumije li dijete gramatičke odnose u rečenici.",
+   "provider": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   }
+  },
+  {
+   "@type": "MedicalTest",
+   "name": "Peabody slikovni test rječnika",
+   "alternateName": "PPVT-III-HR",
+   "description": "Procjenjuje veličinu rječnika koji dijete razumije.",
+   "provider": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   }
+  },
+  {
+   "@type": "MedicalTest",
+   "name": "Komunikacijske razvojne ljestvice",
+   "alternateName": "KORALJE",
+   "description": "Rani razvoj komunikacije, gesta i prvih riječi.",
+   "provider": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   }
+  },
+  {
+   "@type": "MedicalTest",
+   "name": "Predvještine čitanja i pisanja",
+   "alternateName": "PredČiP",
+   "description": "Procjena predvještina potrebnih za čitanje i pisanje.",
+   "provider": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   }
+  },
   {
    "@type": [
     "ProfessionalService",
@@ -3434,7 +3637,7 @@ class Component extends DCLogic {
    "url": "https://www.logopedski-centar-sano.hr/",
    "description": "Logopedska procjena i terapija za djecu u Zagrebu. Individualan pristup, stručan tim i jasne smjernice za roditelje.",
    "logo": "https://www.logopedski-centar-sano.hr/images/logopedski-centar-sano-logo.webp",
-   "image": "https://www.logopedski-centar-sano.hr/images/og-image.jpg",
+   "image": "https://www.logopedski-centar-sano.hr/images/hero/logoped-zagreb-djeca-igra-kartice.webp",
    "telephone": "+385 98 841 680",
    "email": "udruga.prosano@gmail.com",
    "address": {
@@ -3535,6 +3738,391 @@ class Component extends DCLogic {
    },
    "about": {
     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://www.logopedski-centar-sano.hr/#faq",
+   "inLanguage": "hr",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Kada je pravo vrijeme za javiti se logopedu?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ako primjećujete da dijete kasnije progovara, teško ga je razumjeti ili ima poteškoća s razumijevanjem, izražavanjem, čitanjem ili pisanjem, dobro je napraviti procjenu. Ne morate unaprijed znati postoji li teškoća; upravo tome procjena služi."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kako izgleda prvi dolazak?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Prvi susret započinje razgovorom o razvoju djeteta i onome što vas je potaknulo da se javite. Slijedi procjena prilagođena dobi i potrebama djeteta, a nakon nje razgovaramo o zapažanjima i preporučujemo sljedeće korake."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Treba li se dijete posebno pripremiti za procjenu?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne. Najvažnije je da dijete dođe odmorno i bez osjećaja da mora nešto \"dobro napraviti\". Procjena nije ispit. Cilj je upoznati dijete i dobiti realnu sliku njegovih trenutačnih komunikacijskih, jezičnih i govornih sposobnosti."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Koliko često se dolazi na logopedsku terapiju?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dinamika terapije nije jednaka za svako dijete. Ovisi o vrsti teškoće, postavljenim ciljevima i individualnim potrebama. Nakon procjene zajedno dogovaramo ritam koji ima najviše smisla za dijete i obitelj."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Koliko dugo traje logopedska terapija?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne postoji unaprijed određen broj susreta. Trajanje ovisi o vrsti i izraženosti teškoće, postavljenim ciljevima, redovitosti dolazaka i napretku djeteta. Napredak pratimo tijekom procesa i prema tome prilagođavamo terapiju."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Dobivamo li smjernice za rad kod kuće?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Da, kada je to korisno. Roditelji su važan dio procesa, ali cilj nije pretvoriti svaki dan u terapiju. Dobit ćete konkretne i izvedive smjernice koje možete prirodno uključiti u igru i svakodnevne situacije."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Što ako nisam siguran/na treba li mom djetetu logoped?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ne morate biti sigurni prije nego što nam se javite. Ako vas nešto u govornom, jezičnom ili komunikacijskom razvoju djeteta brine, prvi razgovor i procjena mogu pomoći da dobijete jasniju sliku i preporuku što dalje."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "Product",
+   "name": "Kartice – Moje prve rečenice (Tiskano izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok4glthkmcppp1fiu1mbn1urdh.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/67uZr",
+    "price": "30",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Zamjenice (Tiskana verzija)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok6368arkd39412tu19hs8c7h.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/lfLPm",
+    "price": "30",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Zamjenice (Digitalna verzija)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1job7g5oj16eepar6td1j6f1t7s1a.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/FzdBE",
+    "price": "25",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Ljetna Jezična penjalica (Digitalna verzija)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok0e6osv9seb017hte419qg1a.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/28ZIj",
+    "price": "15",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Predvještine čitanja i pisanja (Tiskano izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jqr51brn8vqia31p151kof1mu0h.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/fm37d",
+    "price": "35",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Predvještine čitanja i pisanja (Digitalno izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jpdm3jss3k519p01oda13p2avc1a.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/y20Lq",
+    "price": "28",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Početno čitanje i pisanje (Tiskano izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jolljntb158o1i3c1blm1oht15oth.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/sfquD",
+    "price": "25",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Početno čitanje i pisanje (Digitalno izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joiqpesj1da7gmq1pqud3fho41c.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/PqobF",
+    "price": "20",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Predmatematička vježbenica 3–5 god. (Tiskano izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jok6urfu1kfhv0i1pp518tm18adn.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/97q1u",
+    "price": "25",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Predmatematička vježbenica 3–5 god. (Digitalno izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joipfe9h4e08ie1bvt1vmc1lr61f.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/UwVNQ",
+    "price": "20",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Predmatematička vježbenica 5–7 god. (Digitalno izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joiq4l7g11pq5pht42149218v91a.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/ckwt7",
+    "price": "20",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Temelji za školu – set vježbenica (Digitalno izdanje)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jpmrg44njn21q4vk77c4oipg1f.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/SVMhq",
+    "price": "39",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Početno čitanje i pisanje + Predmat. 5–7 (Digitalni set)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1jolepr5r16uv1113b771jim7iq7.jpg",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/GKMzf",
+    "price": "34",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
+   }
+  },
+  {
+   "@type": "Product",
+   "name": "Sve vježbenice – Početno + Predmat. 3–5 i 5–7 (Digitalni set)",
+   "image": "https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/o_1joka922r12n5gj41o9g5mjcen7.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Jezična penjalica"
+   },
+   "manufacturer": {
+    "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+   },
+   "category": "Logopedski materijali",
+   "offers": {
+    "@type": "Offer",
+    "url": "https://payhip.com/b/L9XzU",
+    "price": "45",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/OnlineOnly",
+    "seller": {
+     "@id": "https://www.logopedski-centar-sano.hr/#organizacija"
+    }
    }
   }
  ]
