@@ -66,6 +66,8 @@
   #ter-list>li:nth-child(4){animation-delay:.29s}
   #ter-list>li:nth-child(5){animation-delay:.37s}
   #ter-list>li:nth-child(6){animation-delay:.45s}
+  #ter-list>li:nth-child(7){animation-delay:.53s}
+  @media (max-width:620px){#ter-areas-h{font-size:26px!important;line-height:1.22!important}#ter-list{margin-top:20px!important}#ter-list>li{padding:13px 2px!important;gap:12px!important}}
   #ter-list>li>span:first-child{transition:transform .35s cubic-bezier(.22,1,.36,1),background .35s}
   @media (hover:hover) and (pointer:fine){
     #ter-list>li:hover{padding-left:12px;background:rgba(18,144,159,0.045);border-color:rgba(18,144,159,0.32)}
@@ -177,7 +179,7 @@
 
 <section style="position:relative;overflow:hidden;padding:96px 24px;background:#fff;background-image:radial-gradient(52% 44% at 96% 4%,rgba(18,144,159,0.07) 0%,rgba(18,144,159,0) 70%),radial-gradient(46% 40% at 2% 96%,rgba(226,149,58,0.09) 0%,rgba(226,149,58,0) 72%)">
   <div style="max-width:1340px;margin:0 auto">
-    <h2 style="font-size:clamp(32px,4vw,48px);font-weight:600;margin:0;color:#12435A">Terapija iz područja poremećaja komunikacije</h2>
+    <h2 id="ter-areas-h" style="font-size:clamp(32px,4vw,48px);font-weight:600;margin:0;color:#12435A;max-width:900px;text-wrap:balance">Logopedska terapija poremećaja komunikacije, jezika, govora i pisanog jezika</h2>
     <ul id="ter-list" ref="{{ setList }}" style="margin:32px 0 0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px">
       <sc-for list="{{ areas }}" as="a" hint-placeholder-count="7">
         <li style="display:flex;align-items:flex-start;gap:16px;padding:16px 2px;border-bottom:1px solid rgba(18,144,159,0.14);border-radius:10px">
@@ -364,14 +366,14 @@ class Component extends DCLogic {
       progChips: progWheel.chips, progCards: progWheel.cards,
       opChips: opWheel.chips, opCards: opWheel.cards,
       areas: [
+        'Poticanje ranog komunikacijskog i jezično-govornog razvoja',
         'Terapija artikulacijskih i artikulacijsko-fonoloških poremećaja',
         'Terapija poremećaja jezičnog razumijevanja i izražavanja',
-        'Terapija motoričkih govornih poremećaja',
-        'Terapija poremećaja čitanja, pisanja i računanja',
+        'Terapija motoričkih govornih poremećaja (apraksija, dizartrija)',
+        'Terapija poremećaja čitanja, pisanja i računanja (disleksija, disgrafija, diskalkulija)',
         'Terapija poremećaja tečnosti govora (mucanje, brzopletost)',
         'Terapija poremećaja glasa',
-      ],
-      blocks: [
+      ],      blocks: [
       { k: "Plan rada", t: "Nakon logopedske procjene određujemo područja na kojima je potrebno raditi, postavljamo terapijske ciljeve i planiramo dinamiku dolazaka. Terapijski plan tijekom vremena prilagođavamo djetetovu napretku i njegovim aktualnim potrebama." },
       { k: "Kako radimo", t: "Važno nam je da se dijete tijekom terapije osjeća sigurno, motivirano i uspješno. Stručne terapijske postupke stoga povezujemo s pažljivo odabranim aktivnostima i materijalima prilagođenima dobi, sposobnostima i interesima djeteta." },
       { k: "Uloga roditelja", t: "Roditelji su važan dio terapijskog procesa. Redovito ih informiramo o napretku djeteta, objašnjavamo na čemu radimo te im, prema potrebi, dajemo smjernice i prijedloge aktivnosti koje mogu jednostavno uključiti u svakodnevne situacije kod kuće." },

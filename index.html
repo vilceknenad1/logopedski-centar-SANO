@@ -486,6 +486,13 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
     #usluge-bento{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:16px!important;margin:0 -20px!important;padding:4px 20px 12px!important}
     #usluge-bento::-webkit-scrollbar{display:none}
     #usluge-bento>a{flex:0 0 84vw!important;scroll-snap-align:start;min-height:0!important}
+    #usluge-bento{align-items:flex-start!important;scroll-padding-left:20px}
+    #usluge-bento>[data-usluga]{flex:0 0 84vw!important;max-width:360px;scroll-snap-align:start;min-height:0!important;padding:24px 22px 22px!important;border-radius:40px 40px 40px 12px!important}
+    #usluge-bento>[data-usluga]>span:nth-child(2){margin-bottom:12px!important}
+    #usluge-bento>[data-usluga]>span:nth-child(2) img{width:44px!important;height:44px!important}
+    #usluge-bento>[data-usluga]>span:nth-child(3){font-size:21px!important;margin-bottom:8px!important}
+    #usluge-bento>[data-usluga]>span:nth-child(4){font-size:15px!important;line-height:1.55!important;margin-bottom:16px!important}
+    #usluge-bento>[data-usluga]>span:last-child{margin-top:12px!important}
     /* tim: swipe carousel */
     #tim [data-team-grid]{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:16px!important;margin:0 -20px!important;padding:4px 20px 12px!important}
     #tim [data-team-grid]::-webkit-scrollbar{display:none}
@@ -536,6 +543,8 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
   @media (hover:hover) and (pointer:fine){#kada-dob-panel li:hover [data-signum],#kada-dob-panel li:hover [data-sigtxt]{transform:translateX(6px)}}
   #kada-dob-aside{animation:ageHead .7s cubic-bezier(.22,1,.36,1) .1s both}
   #kada-dob-panel::before{content:"";position:absolute;top:-40px;bottom:-40px;left:-32px;right:-32px;background:#F4FAFB;box-shadow:inset 0 0 0 1px rgba(42,93,102,0.07);border-radius:40px 40px 40px 12px;pointer-events:none}
+  @media (min-width:981px){#kada-dob-sticky{padding-right:36px}}
+  @media (max-width:620px){#pen-desc{font-size:15px!important;line-height:1.55!important}}
   @media (max-width:980px){#kada-dob-panel::before{left:-16px;right:-16px;top:-28px;bottom:-40px;box-shadow:none;border-radius:64px 64px 64px 14px}}
   #kada-dob{--k-ink:#1A2E3A;--k-accent:#0E7C8B;--k-warm:#0E7C8B;--k-line:rgba(42,93,102,0.16)}
   #kada-dob-rail [data-agetab]{position:relative;display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:0 20px;width:100%;padding:20px 4px 20px;border:0;border-top:1px solid var(--k-line);background:none;cursor:pointer;text-align:left;font-family:'Mulish',sans-serif;transition:padding-left .5s cubic-bezier(.22,1,.36,1)}
@@ -960,7 +969,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
             </div>
           </sc-if>
         </div>
-        <a href="#kada" style="flex:none;padding:12px 14px;border-radius:999px;color:var(--nav-ink);font-weight:700;font-size:16px;white-space:nowrap;transition:color .3s,background .3s" style-hover="background:var(--nav-hover-bg);color:var(--nav-active)">Kada logopedu?</a>
+        <a href="#kada-dob" style="flex:none;padding:12px 14px;border-radius:999px;color:var(--nav-ink);font-weight:700;font-size:16px;white-space:nowrap;transition:color .3s,background .3s" style-hover="background:var(--nav-hover-bg);color:var(--nav-active)">Kada logopedu?</a>
         <div style="position:relative;flex:none" onMouseEnter="{{ mONama.enter }}" onMouseLeave="{{ mONama.leave }}">
           <button onClick="{{ mONama.toggle }}" style="padding:12px 14px;border-radius:999px;color:var(--nav-ink);font-weight:700;font-size:16px;white-space:nowrap;background:none;border:none;cursor:pointer;font-family:'Mulish',sans-serif;display:flex;align-items:center;gap:6px;transition:color .3s,background .3s" style-hover="background:var(--nav-hover-bg);color:var(--nav-active)">O nama <span style="font-size:12px;opacity:0.7">▾</span></button>
           <sc-if value="{{ mONama.open }}" hint-placeholder-val="{{ false }}">
@@ -996,7 +1005,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
   </div>
   <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
     <div style="max-width:1200px;margin:8px auto 0;background:#fff;border:1px solid #e6ecf3;border-radius:16px;box-shadow:0 10px 30px rgba(47,73,110,0.12);padding:12px;display:flex;flex-direction:column;gap:8px;max-height:calc(100vh - 116px);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain">
-        <a href="#kada" onClick="{{ closeNav }}" style="padding:16px 16px;border-radius:12px;background:#f5f8fc;color:#3a4657;font-weight:700;font-size:16px">Kada logopedu?</a>
+        <a href="#kada-dob" onClick="{{ closeNav }}" style="padding:16px 16px;border-radius:12px;background:#f5f8fc;color:#3a4657;font-weight:700;font-size:16px">Kada logopedu?</a>
         <a href="#usluge" onClick="{{ closeNav }}" style="padding:16px 16px;border-radius:12px;background:#f5f8fc;color:#3a4657;font-weight:700;font-size:16px">Usluge</a>
         <a href="#prvi-dolazak" onClick="{{ closeNav }}" style="padding:16px 16px;border-radius:12px;background:#f5f8fc;color:#3a4657;font-weight:700;font-size:16px">Kako izgleda prvi susret</a>
         <a href="#o-nama" onClick="{{ closeNav }}" style="padding:16px 16px;border-radius:12px;background:#f5f8fc;color:#3a4657;font-weight:700;font-size:16px">O nama</a>
@@ -1049,7 +1058,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
       <div style="flex:1 1 220px;min-width:0">
         
         <p role="heading" aria-level="2" style="font-family:'DM Serif Display',Georgia,serif;font-size:clamp(32px,3.4vw,46px);line-height:1;font-weight:400;color:#1A2E3A;margin:10px 0 0;letter-spacing:-0.01em">Jezična <span style="color:#0F7C8E">penjalica</span></p>
-        <p style="margin:10px 0 0;font-size:17px;line-height:1.5;color:#3E5163;max-width:460px;text-wrap:pretty">Prve rečenice kroz igru. AAC simboli koje deca vole, logopedi odobravaju.</p>
+        <p id="pen-desc" style="margin:10px 0 0;font-size:17px;line-height:1.5;color:#3E5163;max-width:460px;text-wrap:pretty">Prve rečenice kroz igru uz simbole potpomognute komunikacije koji služe kao vizualna podrška razumijevanju i izražavanju, olakšavaju povezivanje riječi u rečenice te potiču razvoj jezičnih i komunikacijskih vještina.</p>
         
       </div>
       <div style="flex:0 0 auto;position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:auto;padding-top:40px">
@@ -1059,86 +1068,14 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
         <svg aria-hidden="true" viewBox="0 0 90 60" style="position:absolute;left:44px;top:0;width:62px;height:40px;overflow:visible"><path d="M6 8 C 34 0, 70 8, 76 40" fill="none" stroke="#e2953a" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6"></path><path d="M68 34 L 76 44 L 84 33" fill="none" stroke="#e2953a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         <span style="font-family:'Caveat',cursive;font-size:20px;font-weight:500;color:#4A5D6C;transform:rotate(-3deg);white-space:nowrap;line-height:1.1">Mali glasovi, veliki koraci.</span>
         <a href="materijali.html" style="display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 26px;border-radius:999px;background:#1A2E3A;color:#fff;font-weight:800;font-size:16px;box-shadow:0 14px 30px rgba(26,46,58,0.26);transition:background .3s,transform .3s;white-space:nowrap" style-hover="background:#0F7C8E;color:#fff;transform:translateY(-2px)">Naručite Penjalicu <span aria-hidden="true">→</span></a>
-        <span style="font-size:12px;color:#6A7C8C;white-space:nowrap">Dostava 24h • Plaćanje pouzećem</span>
       </div>
     <span id="pen-badge" style="position: absolute; transform: rotate(-6deg); background: #1A2E3A; color: #fff; font-size: 11px; font-weight: 800; padding: 6px 11px; border-radius: 999px; box-shadow: 0 10px 22px rgba(26,46,58,0.28); white-space: nowrap; left: 109px; top: 158px">100 kartica za igru</span></div>
   </div>
 </section>
 
 
-<!-- ================= KADA LOGOPEDU ================= -->
-<section id="kada" style="padding:96px 24px;background:#E7F0EE;background-image:radial-gradient(58% 50% at 10% 6%,rgba(18,144,159,0.11) 0%,rgba(18,144,159,0) 70%),radial-gradient(50% 46% at 94% 90%,rgba(226,149,58,0.10) 0%,rgba(226,149,58,0) 70%);position:relative;overflow:hidden;font-family:'Mulish',sans-serif;color:#2A4E54">
-  <div style="position:relative;z-index:1;max-width:1340px;margin:0 auto;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:56px 24px;align-items:stretch">
-    <div data-reveal="" style="grid-column:1 / 5;min-width:0;display:flex;flex-direction:column">
-      <span style="display:block;font-weight:800;letter-spacing:0.2em;font-size:12px;text-transform:uppercase;color:#0f7c8c">Signali</span>
-      <h2 style="font-family:'Lora',Georgia,serif;font-size:clamp(32px,4vw,48px);font-weight:500;line-height:1.14;margin:20px 0 0;color:#0C5563">Kada potražiti <span style="color:#0f7c8c">logopeda?</span></h2>
-      <span style="display:block;width:56px;height:2px;background:rgba(18,144,159,0.45);margin:28px 0"></span>
-      <p style="font-size:16px;line-height:1.7;color:#4E767D;margin:0;text-wrap:pretty">Svako dijete razvija se svojim tempom, no postoje znakovi na koje vrijedi obratiti pažnju. Rano prepoznavanje poteškoća omogućuje lakšu podršku i bolje rezultate.</p>
-      <div id="kada-decak-wrap" style="position:relative;z-index:3;margin:16px 0 16px;display:flex;align-items:flex-end;justify-content:flex-start;gap:0">
-        <img src="images/kada-logoped/djevojcica-govorni-razvoj.webp" alt="Djevojčica čeka razgovor s logopedom o govornom razvoju" loading="lazy" style="display:block;height:clamp(280px,28vw,356px);width:auto;object-fit:contain;object-position:bottom" width="1024" height="1536">
-        <img src="images/kada-logoped/decak-govorni-razvoj.webp" alt="Dječak razmišlja kada trebam logopeda" loading="lazy" style="display:block;height:clamp(260px,26vw,330px);width:auto;object-fit:contain;object-position:bottom;margin-left:-16px" width="1024" height="1536">
-        <img src="images/kada-logoped/kada-trebam-logopeda.webp" alt="A kada trebam logopeda?" loading="lazy" style="position:absolute;left:24%;top:0;width:clamp(92px,8vw,116px);height:auto;object-fit:contain;display:block;pointer-events:none;filter:drop-shadow(0 10px 20px rgba(30,80,90,0.12))" width="1162" height="827">
-        <img data-kada-mob="" src="images/kada-logoped/decak-govorni-razvoj-mobilni.webp" alt="Dječak pokazuje prstima prema dolje" loading="lazy" style="display:none;width:100%;height:auto;object-fit:contain" width="533" height="1082">
-      </div>
-      <div id="kada-cta" style="position:relative;z-index:1;margin:auto 0 0;width:100%;background:#ffffff;box-shadow:0 14px 34px rgba(30,80,90,0.12);border-radius:64px 64px 64px 14px;padding:20px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-        <span style="flex:none;width:44px;height:44px;border-radius:50%;background:#E7F6F8;display:flex;align-items:center;justify-content:center">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#12909f" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 8.3c1-1.1 2.8-.5 2.8 1 0 1.3-2.8 3-2.8 3s-2.8-1.7-2.8-3c0-1.5 1.8-2.1 2.8-1z"></path><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9 9 0 0 1-3.9-.9L3 21l1.9-5.6A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"></path></svg>
-        </span>
-        <div style="flex:1 1 220px;min-width:0">
-          <strong style="display:block;font-size:16px;font-weight:800;color:#12435A;line-height:1.35">Nešto vas brine?</strong>
-          <p style="margin:4px 0 0;font-size:16px;line-height:1.5;color:#6B8F97;text-wrap:pretty">Ako niste sigurni odgovara li razvoj vašeg djeteta dobi, javite nam se za savjet.</p>
-        </div>
-        <a href="#narucivanje" style="flex:1 1 200px;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 24px;border-radius:13px;background:#12909f;color:#ffffff;font-weight:800;font-size:16px;white-space:nowrap;transition:background .3s,transform .3s" style-hover="background:#0d7482;transform:translateY(-1px)">Zatražite savjet <span style="font-size:16px">→</span></a>
-      </div>
-    </div>
-    <div data-reveal="" style="grid-column:5 / 13;min-width:0;display:flex;flex-direction:column;justify-content:flex-start;gap:28px">
-      <div data-sigcard="" style="background:#FBF9F4;border-radius:64px 64px 64px 14px;padding:28px 28px 12px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.07)">
-        <div data-sighead="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:center">
-          <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <span style="flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><img src="images/ikone/ikona-rani-govorni-razvoj.webp" alt="" loading="lazy" style="width:40px;height:40px;object-fit:contain;display:block" width="175" height="175"></span>
-            <span style="font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#2A4E54;text-wrap:pretty">Rani komunikacijski i jezično-govorni razvoj</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <span style="flex:none;font-size:12px;font-weight:800;letter-spacing:0.04em;color:#0f7c8c;background:rgba(255,255,255,0.72);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.25);padding:4px 12px;border-radius:999px">do 3 god.</span>
-            <span style="flex:1;min-width:24px;height:1px;background:rgba(18,144,159,0.24)"></span>
-          </div>
-        </div>
-        <div id="sig-grid-a" class="{{ sigClsA }}" style="margin-top:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px" data-siggrid="">
-          <sc-for list="{{ kadaRani }}" as="it" hint-placeholder-count="6">
-            <div data-sigrow="" style="display:flex;align-items:flex-start;gap:12px;width:100%;min-height:52px;border-bottom:1px solid rgba(18,144,159,0.16);padding:12px 8px 12px 4px;box-sizing:border-box">
-              <span data-sigdot="" aria-hidden="true" style="flex:none;width:7px;height:7px;margin-top:8px;border-radius:50%;background:rgba(18,144,159,0.55)"></span>
-              <span style="flex:1;font-size:16px;line-height:1.5;color:#123F47;text-wrap:pretty">{{ it.t }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <button type="button" class="sig-toggle" onClick="{{ toggleSigA }}" aria-expanded="{{ sigExpA }}">{{ sigTxtA }}</button>
-      </div>
-      <div data-sigcard="" style="background:#FBF9F4;border-radius:64px 64px 64px 14px;padding:28px 28px 12px;box-shadow:inset 0 0 0 1px rgba(18,144,159,0.10),0 12px 30px rgba(30,80,90,0.07)">
-        <div data-sighead="" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:center">
-          <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <span style="flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center"><img src="images/ikone/ikona-skolska-dob.webp" alt="" loading="lazy" style="width:40px;height:40px;object-fit:contain;display:block" width="197" height="197"></span>
-            <span style="font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#2A4E54;text-wrap:pretty">Predškolska i školska dob</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:16px;min-width:0">
-            <span style="flex:none;font-size:12px;font-weight:800;letter-spacing:0.04em;color:#0f7c8c;background:rgba(255,255,255,0.72);box-shadow:inset 0 0 0 1px rgba(18,144,159,0.25);padding:4px 12px;border-radius:999px">3 god. i više</span>
-            <span style="flex:1;min-width:24px;height:1px;background:rgba(18,144,159,0.24)"></span>
-          </div>
-        </div>
-        <div id="sig-grid-b" class="{{ sigClsB }}" style="margin-top:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px" data-siggrid="">
-          <sc-for list="{{ kadaPred }}" as="it" hint-placeholder-count="6">
-            <div data-sigrow="" style="display:flex;align-items:flex-start;gap:12px;width:100%;min-height:52px;border-bottom:1px solid rgba(18,144,159,0.16);padding:12px 8px 12px 4px;box-sizing:border-box">
-              <span data-sigdot="" aria-hidden="true" style="flex:none;width:7px;height:7px;margin-top:8px;border-radius:50%;background:rgba(18,144,159,0.55)"></span>
-              <span style="flex:1;font-size:16px;line-height:1.5;color:#123F47;text-wrap:pretty">{{ it.t }}</span>
-            </div>
-          </sc-for>
-        </div>
-        <button type="button" class="sig-toggle" onClick="{{ toggleSigB }}" aria-expanded="{{ sigExpB }}">{{ sigTxtB }}</button>
-      </div>
-    </div>
-  </div></section>
-
 <!-- ================= KADA SE JAVITI (PO DOBI) ================= -->
-<section id="kada-dob" style="position:relative;z-index:1;overflow:hidden;margin-top:-64px;border-radius:64px 64px 0 0;padding:120px 24px 112px;background:#DCEFF1;box-shadow:0 -1px 0 rgba(14,124,139,0.08);font-family:'Mulish',sans-serif;color:#1A2E3A">
+<section id="kada-dob" style="position:relative;z-index:1;overflow:hidden;border-radius:64px 64px 0 0;padding:120px 24px 112px;background:#DCEFF1;box-shadow:0 -1px 0 rgba(14,124,139,0.08);font-family:'Mulish',sans-serif;color:#1A2E3A">
   
 <div style="max-width:1340px;margin:0 auto;position:relative;z-index:1">
     <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
@@ -1207,7 +1144,7 @@ window.SANO_WEBHOOK_URL = 'https://hook.eu1.make.com/sst2qnly1kedhijqybaov4uxeef
     <div id="usluge-intro" data-reveal="" style="grid-column:1 / 5;min-width:0;position:sticky;top:104px;display:flex;flex-direction:column">
         <span style="display:block;color:#0f7c8c;font-weight:800;letter-spacing:0.14em;font-size:12px;text-transform:uppercase">Naše usluge</span>
         <h2 style="font-family:'Lora',Georgia,serif;font-size:clamp(32px,4vw,48px);font-weight:600;margin:16px 0 0;line-height:1.12;letter-spacing:-0.02em;color:#1F2A44">Terapije i <span style="color:#0d7180">podrška</span></h2>
-      <p style="font-size:17px;line-height:1.65;color:#5A6D80;max-width:400px;margin:20px 0 0;text-wrap:pretty">Od procjene do napretka pratimo dijete u svakom koraku govorno-jezičnog razvoja.</p>
+      <p style="font-size:17px;line-height:1.65;color:#5A6D80;max-width:400px;margin:20px 0 0;text-wrap:pretty">Od procjene do napretka pratimo dijete u svakom koraku jezično-govornog razvoja.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
         <a href="#narucivanje" style="display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:999px;background:#12909f;color:#fff;font-weight:800;font-size:16px;white-space:nowrap;text-decoration:none;transition:background .3s,transform .3s" style-hover="background:#0d7482;transform:translateY(-1px)">Rezervirajte termin <span aria-hidden="true">→</span></a>
       </div>
@@ -1430,7 +1367,7 @@ Rad se odvija u malim skupinama kroz 8 susreta, tijekom kojih djeca kroz igru i 
             </summary>
             <p style="margin:0 0 20px 48px;padding:14px 18px;background:#FBF8F1;border-radius:16px 16px 16px 4px;font-size:15.5px;line-height:1.6;color:#4A5A6A;text-wrap:pretty"><strong style="color:#1A2E3A;font-weight:800">Za roditelje:</strong> Prije škole provjeravamo prepoznaje li dijete glasove u riječima i slova, što je temelj za čitanje i pisanje.</p>
           </details>
-          <a href="#narucivanje" data-met-cta="" style="align-self:stretch;margin:14px 0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:20px 24px;border-radius:20px 20px 20px 6px;background:#F0F9FA;color:#1A2E3A;text-decoration:none;transition:background .25s" style-hover="background:#E3F3F5"><strong style="font-size:16px;font-weight:800">Nakon procjene dobivate pisani nalaz</strong><span style="font-size:15px;line-height:1.5;color:#5A6D80">S rezultatima testova i preporukama za daljnji rad.</span><span style="margin-top:4px;font-size:15px;font-weight:800;color:#0E7C8B">Zatražite primjer nalaza →</span></a>
+          <div data-met-cta="" style="align-self:stretch;margin:14px 0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:20px 24px;border-radius:20px 20px 20px 6px;background:#F0F9FA;color:#1A2E3A"><strong style="font-size:16px;font-weight:800">Nakon procjene dobivate pisani nalaz</strong><span style="font-size:15px;line-height:1.5;color:#5A6D80">S rezultatima testova i preporukama za daljnji rad.</span></div>
       </div>
     </div>
 
@@ -1447,7 +1384,7 @@ Rad se odvija u malim skupinama kroz 8 susreta, tijekom kojih djeca kroz igru i 
         </div>
         <div style="background:#fff;border-radius:24px 24px 24px 8px;padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:inset 0 0 0 1px #EFE7D6">
           <span style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px"><strong style="font-size:18px;color:#132A44;font-weight:800;line-height:1.3">PECS</strong><span style="font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:5px;white-space:nowrap;background:#EFEAFB;color:#584593">komunikacija slikama</span></span>
-          <span style="font-size:15.5px;line-height:1.6;color:#5A6D80;text-wrap:pretty">Sustav komunikacije razmjenom slika, za djecu koja još ne komuniciraju govorom.</span>
+          <span style="font-size:15.5px;line-height:1.6;color:#5A6D80;text-wrap:pretty">PECS sustav je komunikacije razmjenom slika koji pripada području augmentativne i alternativne komunikacije (AAC). Namijenjen je osobama koje imaju teškoće u funkcionalnoj komunikaciji, osobito djeci s poremećajem iz spektra autizma i drugim komunikacijskim teškoćama.</span>
         </div>
       </div>
     </div>
@@ -1470,7 +1407,6 @@ Rad se odvija u malim skupinama kroz 8 susreta, tijekom kojih djeca kroz igru i 
       <div data-reveal="" style="grid-column:8 / 13;min-width:0;background:#1A2E3A;border-radius:160px 160px 28px 28px;padding:64px 40px 36px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
         <span style="font-size:13px;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;background:#FFE7A0;color:#1A2E3A;padding:2px 6px">Nalaz za 7 dana</span>
         <span style="font-size:16px;line-height:1.6;color:#D6E3E8;text-wrap:pretty">U procjeni koristimo standardizirane mjerne instrumente primjerene dobi i području procjene, a nalaz dobivate <strong style="color:#fff;font-weight:700">u pisanom obliku unutar 7 dana</strong>, s jasnim preporukama što dalje.</span>
-        <a href="#narucivanje" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:#FFD66B;color:#1A2E3A;font-weight:800;font-size:16px;white-space:nowrap;transition:translate .2s" style-hover="translate:0 -2px;color:#1A2E3A">Zatražite primjer nalaza →</a>
       </div>
     </div>
 
@@ -2285,7 +2221,7 @@ Rad se odvija u malim skupinama kroz 8 susreta, tijekom kojih djeca kroz igru i 
   <div style="max-width:1340px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px">
     <div>
       <div style="font-family:'Mulish',system-ui,sans-serif;font-weight:700;font-size:28px;color:#fff;letter-spacing:0.02em"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
-      <p style="font-size:16px;line-height:1.6;margin-top:12px;max-width:280px;color:#9EC3C9">Logopedski centar SANO. Mali glasovi, veliki koraci. Podrška govorno-jezičnom razvoju djece.</p>
+      <p style="font-size:16px;line-height:1.6;margin-top:12px;max-width:280px;color:#9EC3C9">Logopedski centar SANO. Mali glasovi, veliki koraci. Podrška jezično-govornom razvoju djece.</p>
       <div style="display:flex;gap:12px;margin-top:20px">
         <a href="https://www.facebook.com/udrugaprosano/?locale=hr_HR" target="_blank" rel="noopener" aria-label="Facebook" style="width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.08);color:#C2DDE1;display:flex;align-items:center;justify-content:center" style-hover="background:#1ea6b6;color:#fff">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.3C16.4 2.2 15.5 2.1 14.5 2.1c-2.4 0-4 1.5-4 4.2v2.2H8v3.2h2.5V22h3.5v-10.3h2.6l.4-3.2H14z"></path></svg>
@@ -3572,7 +3508,7 @@ class Component extends DCLogic {
       methodPrograms: (this._pv = (this._progDefs = this._progDefs || [
         { c: ['#E4F6EC', '#1c7a52'], name: 'LSVT LOUD®', badge: 'licencirano', desc: 'Terapija glasa za osobe s neurološkim poremećajima glasa i govora.', parentDesc: 'Vježbama učimo govoriti glasnije i razumljivije kada je glas oslabio.', tags: ['GOVOR'] },
         { c: ['#E8F1FF', '#33488f'], name: 'Hanen „More Than Words“', badge: 'program za roditelje', desc: 'Edukacija roditelja djece s poteškoćama socijalne komunikacije i poremećajem iz autističnog spektra.', parentDesc: 'Vas učimo kako u svakodnevnoj igri izvući više komunikacije iz djeteta; vi ste glavni terapeut kod kuće.', tags: ['PRVE', 'SKOLA'] },
-        { c: ['#EFEAFB', '#584593'], name: 'PECS', badge: 'komunikacija slikama', desc: 'Sustav komunikacije razmjenom slika, za djecu koja još ne komuniciraju govorom.', parentDesc: 'Dijete slikom traži što želi, tako dobiva „glas“ i prije prvih riječi, a govor se time ne koči.', tags: ['PRVE'] },
+        { c: ['#EFEAFB', '#584593'], name: 'PECS', badge: 'komunikacija slikama', desc: 'PECS sustav je komunikacije razmjenom slika koji pripada području augmentativne i alternativne komunikacije (AAC). Namijenjen je osobama koje imaju teškoće u funkcionalnoj komunikaciji, osobito djeci s poremećajem iz spektra autizma i drugim komunikacijskim teškoćama.', parentDesc: 'Dijete slikom traži što želi, tako dobiva „glas“ i prije prvih riječi, a govor se time ne koči.', tags: ['PRVE'] },
       ]).map((p, i, arr) => {
         const dim = this.state.methodFilter !== 'SVE' && p.tags.indexOf(this.state.methodFilter) < 0;
         return {

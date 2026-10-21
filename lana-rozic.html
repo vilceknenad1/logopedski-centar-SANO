@@ -43,7 +43,8 @@
   #la-hero{display:grid;grid-template-columns:minmax(0,0.86fr) minmax(0,1.14fr);gap:40px;align-items:center}
   #la-bio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 56px;align-items:start}
   #la-cta{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,0.75fr);gap:48px;align-items:center}
-  #la-cert{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  #la-cert{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  @media (max-width:620px){#la-cert{gap:16px!important}#la-cert>div{padding:24px 22px 26px!important}#la-cert strong{font-size:21px!important}}
   #la-cert>div{transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s}
   #la-cert>div [data-rule]{transition:width .55s cubic-bezier(.22,1,.36,1)}
   @media (hover:hover) and (pointer:fine){
@@ -115,7 +116,7 @@
         <span style="display:block;color:#8A6A2E;font-weight:800;letter-spacing:0.16em;font-size:12px;text-transform:uppercase">Obrazovanje</span>
         <span aria-hidden="true" style="display:block;width:34px;height:2px;margin:12px 0 16px;background:rgba(226,149,58,0.45)"></span>
         <p style="font-size:16px;line-height:1.75;color:#4b5563;text-wrap:pretty">Lana Rozić diplomirala je 2025. godine na diplomskom studiju logopedije Edukacijsko-rehabilitacijskog fakulteta Sveučilišta u Zagrebu.</p>
-        <p style="margin-top:20px;font-size:16px;line-height:1.75;color:#4b5563;text-wrap:pretty">Tijekom studija stručno iskustvo stjecala je kroz praksu u dječjim vrtićima, osnovnim školama i Poliklinici SUVAG. U sklopu stručne prakse sudjelovala je u radu stručnih suradnika logopeda te u pripremi i provedbi terapijskog rada s djecom s govorno-jezičnim teškoćama.</p>
+        <p style="margin-top:20px;font-size:16px;line-height:1.75;color:#4b5563;text-wrap:pretty">Tijekom studija stručno iskustvo stjecala je kroz praksu u dječjim vrtićima, osnovnim školama i Poliklinici SUVAG. U sklopu stručne prakse sudjelovala je u radu stručnih suradnika logopeda te u pripremi i provedbi terapijskog rada s djecom s jezično-govornim teškoćama.</p>
       </div>
       <div>
         <span style="display:block;color:#0f7c8c;font-weight:800;letter-spacing:0.16em;font-size:12px;text-transform:uppercase">Rad u SANO centru</span>
@@ -144,6 +145,12 @@
         <strong style="margin-top:16px;font-family:'Lora',Georgia,serif;font-size:24px;font-weight:600;color:#1F2A44;line-height:1.26">Ovladavanje čitanjem</strong>
         <span data-rule aria-hidden="true" style="display:block;width:38px;height:2px;margin:16px 0;background:rgba(18,144,159,0.45)"></span>
         <p style="font-size:16px;line-height:1.65;color:#5A6D80;text-wrap:pretty">Edukacija iz područja predvještina i vještina čitanja.</p>
+      </div>
+      <div style="background:linear-gradient(180deg,#FEFBF4 0%,#F7EFE0 100%);border-radius:64px 64px 64px 14px;padding:28px 28px 32px;box-shadow:inset 0 0 0 1px rgba(176,122,40,0.16);display:flex;flex-direction:column">
+        <span style="font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#8A6A2E">Naklada Slap</span>
+        <strong style="margin-top:16px;font-family:'Lora',Georgia,serif;font-size:24px;font-weight:600;color:#1F2A44;line-height:1.26">Nove Reynell razvojne jezične ljestvice</strong>
+        <span data-rule aria-hidden="true" style="display:block;width:38px;height:2px;margin:16px 0;background:rgba(176,122,40,0.45)"></span>
+        <p style="font-size:16px;line-height:1.65;color:#5A6D80;text-wrap:pretty">Edukacija za primjenu Novih Reynell razvojnih jezičnih ljestvica.</p>
       </div>
     </div>
     <p style="margin:32px 0 0;max-width:900px;font-size:16px;line-height:1.72;color:#4E767D;text-wrap:pretty">Kontinuirano se stručno usavršava sudjelovanjem na edukacijama, stručnim seminarima i radionicama iz različitih područja logopedije.</p>
