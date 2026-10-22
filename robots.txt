@@ -3,3 +3,4 @@ Allow: /
 Disallow: /404.html
 
 Sitemap: https://www.logopedski-centar-sano.com/sitemap.xml
+# AI sažetak: https://www.logopedski-centar-sano.com/llms.txt

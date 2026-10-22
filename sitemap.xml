@@ -1,13 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.logopedski-centar-sano.com/</loc><lastmod>2026-10-17</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/logopedska-dijagnostika.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/logopedska-terapija.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/logopedsko-savjetovanje.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/ana-bilic-topic.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/zrinka-vrljic.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/lana-rozic.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/materijali.html</loc><lastmod>2026-10-17</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/recenzije.html</loc><lastmod>2026-10-17</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.logopedski-centar-sano.com/cjenik.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/materijali/jezicna-penjalica-logo.webp</image:loc><image:title>Jezična penjalica · logopedski materijali za poticanje jezično-govornog razvoja djece</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/logopedski-centar-sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/hero/logopedinja-dijete-individualna-terapija-zagreb.webp</image:loc><image:title>Logopedinja i dijete na individualnoj terapiji u Logopedskom centru SANO u Zagrebu</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/hero/sano-15-godina-iskustva.webp</image:loc><image:title>15+ godina iskustva stručnog rada s djecom i njihovim obiteljima</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/materijali/jezicna-penjalica-logopedske-kartice.webp</image:loc><image:title>Jezična penjalica: 100 logopedskih kartica</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/usluge/logopedinja-dijete-vjezbe-citanja-pisanja-sano.webp</image:loc><image:title>Logopedinja i dijete rješavaju vježbe čitanja i pisanja u Logopedskom centru SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ikone/ikona-logopedska-dijagnostika.webp</image:loc><image:title>Logopedska dijagnostika</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ikone/ikona-logopedska-terapija.webp</image:loc><image:title>Logopedska terapija</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ikone/ikona-logopedsko-savjetovanje.webp</image:loc><image:title>Logopedsko savjetovanje</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ikone/ikona-priprema-za-skolu.webp</image:loc><image:title>Priprema za školu</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/prvi-susret/prvi-susret-upoznavanje-slikovnica-v2.webp</image:loc><image:title>Logopedinja i dijete zajedno gledaju slikovnicu na prvom susretu</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ikone/ikona-upoznavanje.webp</image:loc><image:title>Upoznajemo se</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/logopedska-dijagnostika.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/dijagnostika/logopedinja-dijete-dijagnostika-zadaci-sano.webp</image:loc><image:title>Logopedinja i dijete rješavaju zadatke tijekom logopedske procjene u Logopedskom centru SANO</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/logopedska-terapija.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/logopedska-terapija-dijete-citanje-zagreb-d-800.webp</image:loc><image:title>Logopedinja u Logopedskom centru SANO u Zagrebu prati dječaka dok čita tijekom logopedske terapije</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/penjalica-box.webp</image:loc><image:title>Jezična penjalica, didaktički materijal izrađen u SANO centru</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/terapija-kroz-igru-slikovne-kartice-1000.webp</image:loc><image:title>Ruke djeteta i logopedinje tijekom igre sa slikovnim karticama u logopedskoj terapiji</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/logopedsko-savjetovanje.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/savjetovanje/logopedsko-savjetovanje-roditelja-ana-bilic-topic-zagreb-v2-1000.webp</image:loc><image:title>Logopedinja Ana Bilić Topić u savjetovanju s roditeljem u Logopedskom centru SANO u Zagrebu</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/tim/ana-bilic-topic-logoped-zagreb-avatar-240.webp</image:loc><image:title>Ana Bilić Topić, mag. logopedije, logopedinja u Logopedskom centru SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/tim/zrinka-vrljic-logoped-zagreb-avatar-240.webp</image:loc><image:title>Zrinka Vrljić, mag. logopedije, logopedinja u Logopedskom centru SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/tim/lana-rozic-logoped-zagreb-avatar-240.webp</image:loc><image:title>Lana Rozić, mag. logoped., logopedinja u Logopedskom centru SANO</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/materijali.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/cjenik.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/recenzije.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/ana-bilic-topic.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/ana-bilic-topic-logoped-rad-s-djetetom-zagreb-1200.webp</image:loc><image:title>Ana Bilić Topić, mag. logoped., u radu s djetetom u Logopedskom centru SANO u Zagrebu</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/lsvt-loud-oprema-terapija-glasa-ana-bilic-topic-800.webp</image:loc><image:title>Oprema za terapiju glasa prema LSVT LOUD® programu – Logopedski centar SANO</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/zrinka-vrljic.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/zrinka-vrljic-logoped-rad-s-djetetom-zagreb-1200.webp</image:loc><image:title>Zrinka Vrljić, mag. logoped., u radu s djetetom u Logopedskom centru SANO u Zagrebu</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/lana-rozic.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
+    <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/lana-rozic-logoped-rad-s-djetetom-zagreb-1200.webp</image:loc><image:title>Lana Rozić, univ. mag. logoped., u radu s djetetom u Logopedskom centru SANO u Zagrebu</image:title></image:image>
+  </url>
 </urlset>

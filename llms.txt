@@ -1,0 +1,27 @@
+# Logopedski centar SANO
+
+> Logopedski centar u Zagrebu (Ozaljska 13). Logopedska dijagnostika, terapija i savjetovanje za djecu i roditelje, uživo i online. Autori logopedskih materijala „Jezična penjalica“.
+
+- Adresa: Ozaljska 13, 10000 Zagreb, Hrvatska
+- Telefon: +385 98 841 680
+- E-pošta: udruga.prosano@gmail.com
+- Radno vrijeme: ponedjeljak–petak, 08:00–20:00
+- Jezik: hrvatski
+
+## Usluge
+- [Logopedska dijagnostika](https://www.logopedski-centar-sano.com/logopedska-dijagnostika.html): procjena govora, jezika, komunikacije i predvještina čitanja i pisanja; pisano mišljenje uključeno.
+- [Logopedska terapija](https://www.logopedski-centar-sano.com/logopedska-terapija.html): individualna, online i terapija ranog razvoja.
+- [Logopedsko savjetovanje](https://www.logopedski-centar-sano.com/logopedsko-savjetovanje.html): savjetovanje roditelja o jezično-govornom razvoju.
+
+## Cijene
+- [Cjenik](https://www.logopedski-centar-sano.com/cjenik.html): aktualne cijene i cijene na dan 10. 9. 2026.
+- Strojno čitljivo: [usluge.csv](https://www.logopedski-centar-sano.com/cjenik/usluge.csv), [usluge.xml](https://www.logopedski-centar-sano.com/cjenik/usluge.xml), [proizvodi.csv](https://www.logopedski-centar-sano.com/cjenik/proizvodi.csv), [proizvodi.xml](https://www.logopedski-centar-sano.com/cjenik/proizvodi.xml)
+
+## Tim
+- [Ana Bilić Topić, mag. logoped.](https://www.logopedski-centar-sano.com/ana-bilic-topic.html)
+- [Zrinka Vrljić, mag. logoped.](https://www.logopedski-centar-sano.com/zrinka-vrljic.html)
+- [Lana Rozić, mag. logoped.](https://www.logopedski-centar-sano.com/lana-rozic.html)
+
+## Ostalo
+- [Materijali i vježbenice Jezična penjalica](https://www.logopedski-centar-sano.com/materijali.html)
+- [Iskustva roditelja](https://www.logopedski-centar-sano.com/recenzije.html)
