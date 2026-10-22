@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://www.logopedski-centar-sano.hr/sitemap.xml
+Sitemap: https://www.logopedski-centar-sano.com/sitemap.xml
