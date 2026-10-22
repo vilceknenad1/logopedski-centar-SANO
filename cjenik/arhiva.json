@@ -1,0 +1,18 @@
+[
+ {
+  "vrsta": "proizvodi",
+  "broj": 2,
+  "datum": "2026-10-22",
+  "vrijeme": "10-00",
+  "csv": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0002_2026-10-22_10-00.csv",
+  "xml": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0002_2026-10-22_10-00.xml"
+ },
+ {
+  "vrsta": "usluge",
+  "broj": 1,
+  "datum": "2026-10-22",
+  "vrijeme": "10-00",
+  "csv": "Poslovni-prostor_Ozaljska-13-10000-Zagreb_PP1_0001_2026-10-22_10-00.csv",
+  "xml": "Poslovni-prostor_Ozaljska-13-10000-Zagreb_PP1_0001_2026-10-22_10-00.xml"
+ }
+]

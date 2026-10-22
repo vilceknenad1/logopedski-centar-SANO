@@ -123,6 +123,7 @@
                 <span style="font-weight:800;color:#5f6455">{{ p.price }}</span>
                 <span style="font-size:12px;color:#a2a698">{{ p.ship }}</span>
               </span>
+              <span style="font-size:12px;font-weight:600;color:#8a8d80">Cijena na 10. 9. 2026.: {{ p.anchor }}</span>
             </div>
             <span style="display:flex;align-items:center;gap:8px;margin-top:16px;padding-top:12px;border-top:1px solid #f2f2ec;font-size:12px;font-weight:700;color:#9aa08e"><span style="color:#e2953a;font-size:12px">★</span>{{ p.trust }}</span>
           </div>
@@ -135,6 +136,7 @@
       <strong style="font-family:'Lora',Georgia,serif;font-size:20px;color:#2f3945">Poštarina</strong>
       <span style="font-size:16px;color:#8a8d80">Poštarina unutar Hrvatske · digitalna izdanja bez poštarine</span>
       <span style="margin-left:auto;font-family:'Lora',Georgia,serif;font-weight:900;font-size:20px;background:#1ea6b6;color:#fff;padding:8px 20px;border-radius:10px">5 €</span>
+      <span style="flex-basis:100%;text-align:right;font-size:12px;font-weight:600;color:#8a8d80">Cijena na 10. 9. 2026.: 5 €</span>
     </div>
     <p style="text-align:center;font-family:'Lora',Georgia,serif;font-weight:700;font-size:16px;color:#a9660f;margin-top:24px">Hvala što podržavate logopedski rad! ♡</p>
   </div>
@@ -146,6 +148,7 @@
   <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px">
     <div style="font-family:'Lora',Georgia,serif;font-weight:900;font-size:24px;color:#fff"><span style="color:#6d8ed6">SA</span><span style="color:#1ea6b6">NO</span></div>
     <p style="font-size:16px;color:#a7b1bf">Ozaljska 13, Trešnjevka, 10 000 Zagreb · <a href="tel:+38598841680" style="color:#7fd4df">+385 98 841 680</a> · <a href="mailto:udruga.prosano@gmail.com" style="color:#7fd4df">udruga.prosano@gmail.com</a></p>
+    <a href="cjenik.html" style="color:#7fd4df;font-weight:700">Cjenik i sidrene cijene (CSV/XML)</a>
     <a href="index.html" style="margin-top:8px;color:#7fd4df;font-weight:700">← Natrag na početnu</a>
   </div>
 </footer>
@@ -188,25 +191,25 @@ class Component extends DCLogic {
   renderVals() {
     const P = 'https://payhip.com/cdn-cgi/image/format=auto,width=750/https://pe56d.s3.amazonaws.com/';
     const raw = [
-      ['KARTICE','Kartice – Moje prve rečenice','Tiskano izdanje','30 €','o_1jok4glthkmcppp1fiu1mbn1urdh.jpg','67uZr',null],
-      ['JEZIČNA PENJALICA','Zamjenice','Tiskana verzija','30 €','o_1jok6368arkd39412tu19hs8c7h.jpg','lfLPm',null],
-      ['JEZIČNA PENJALICA','Zamjenice','Digitalna verzija','25 €','o_1job7g5oj16eepar6td1j6f1t7s1a.jpg','FzdBE',null],
-      ['JEZIČNA PENJALICA','Ljetna Jezična penjalica','Digitalna verzija','15 €','o_1jok0e6osv9seb017hte419qg1a.png','28ZIj',null],
-      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Tiskano izdanje','35 €','o_1jqr51brn8vqia31p151kof1mu0h.jpg','fm37d','NOVO'],
-      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Digitalno izdanje','28 €','o_1jpdm3jss3k519p01oda13p2avc1a.jpg','y20Lq','NOVO'],
-      ['VJEŽBENICA','Početno čitanje i pisanje','Tiskano izdanje','25 €','o_1jolljntb158o1i3c1blm1oht15oth.png','sfquD',null],
-      ['VJEŽBENICA','Početno čitanje i pisanje','Digitalno izdanje','20 €','o_1joiqpesj1da7gmq1pqud3fho41c.png','PqobF',null],
-      ['VJEŽBENICA','Predmatematička vježbenica 3–5 god.','Tiskano izdanje','25 €','o_1jok6urfu1kfhv0i1pp518tm18adn.png','97q1u',null],
-      ['VJEŽBENICA','Predmatematička vježbenica 3–5 god.','Digitalno izdanje','20 €','o_1joipfe9h4e08ie1bvt1vmc1lr61f.jpg','UwVNQ',null],
-      ['VJEŽBENICA','Predmatematička vježbenica 5–7 god.','Digitalno izdanje','20 €','o_1joiq4l7g11pq5pht42149218v91a.jpg','ckwt7',null],
-      ['SET','Temelji za školu – set vježbenica','Digitalno izdanje','39 €','o_1jpmrg44njn21q4vk77c4oipg1f.jpg','SVMhq','SET'],
-      ['SET','Početno čitanje i pisanje + Predmat. 5–7','Digitalni set','34 €','o_1jolepr5r16uv1113b771jim7iq7.jpg','GKMzf','SET'],
-      ['SET','Sve vježbenice – Početno + Predmat. 3–5 i 5–7','Digitalni set','45 €','o_1joka922r12n5gj41o9g5mjcen7.png','L9XzU','SET'],
+      ['KARTICE','Kartice – Moje prve rečenice','Tiskano izdanje','30 €','o_1jok4glthkmcppp1fiu1mbn1urdh.jpg','67uZr',null,'30 €'],
+      ['JEZIČNA PENJALICA','Zamjenice','Tiskana verzija','30 €','o_1jok6368arkd39412tu19hs8c7h.jpg','lfLPm',null,'30 €'],
+      ['JEZIČNA PENJALICA','Zamjenice','Digitalna verzija','25 €','o_1job7g5oj16eepar6td1j6f1t7s1a.jpg','FzdBE',null,'25 €'],
+      ['JEZIČNA PENJALICA','Ljetna Jezična penjalica','Digitalna verzija','15 €','o_1jok0e6osv9seb017hte419qg1a.png','28ZIj',null,'15 €'],
+      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Tiskano izdanje','35 €','o_1jqr51brn8vqia31p151kof1mu0h.jpg','fm37d','NOVO','35 €'],
+      ['PREDVJEŠTINE','Predvještine čitanja i pisanja','Digitalno izdanje','28 €','o_1jpdm3jss3k519p01oda13p2avc1a.jpg','y20Lq','NOVO','28 €'],
+      ['VJEŽBENICA','Početno čitanje i pisanje','Tiskano izdanje','25 €','o_1jolljntb158o1i3c1blm1oht15oth.png','sfquD',null,'25 €'],
+      ['VJEŽBENICA','Početno čitanje i pisanje','Digitalno izdanje','20 €','o_1joiqpesj1da7gmq1pqud3fho41c.png','PqobF',null,'20 €'],
+      ['VJEŽBENICA','Predmatematička vježbenica 3–5 god.','Tiskano izdanje','25 €','o_1jok6urfu1kfhv0i1pp518tm18adn.png','97q1u',null,'25 €'],
+      ['VJEŽBENICA','Predmatematička vježbenica 3–5 god.','Digitalno izdanje','20 €','o_1joipfe9h4e08ie1bvt1vmc1lr61f.jpg','UwVNQ',null,'20 €'],
+      ['VJEŽBENICA','Predmatematička vježbenica 5–7 god.','Digitalno izdanje','20 €','o_1joiq4l7g11pq5pht42149218v91a.jpg','ckwt7',null,'20 €'],
+      ['SET','Temelji za školu – set vježbenica','Digitalno izdanje','39 €','o_1jpmrg44njn21q4vk77c4oipg1f.jpg','SVMhq','SET','39 €'],
+      ['SET','Početno čitanje i pisanje + Predmat. 5–7','Digitalni set','34 €','o_1jolepr5r16uv1113b771jim7iq7.jpg','GKMzf','SET','34 €'],
+      ['SET','Sve vježbenice – Početno + Predmat. 3–5 i 5–7','Digitalni set','45 €','o_1joka922r12n5gj41o9g5mjcen7.png','L9XzU','SET','45 €'],
     ];
-    const shop = raw.map(([cat, name, variant, price, img, slug, bt]) => {
+    const shop = raw.map(([cat, name, variant, price, img, slug, bt, anchor]) => {
       const digital = /[Dd]igital/.test(variant);
       return {
-        cat, name, variant, price,
+        cat, name, variant, price, anchor,
         img: P + img,
         link: 'https://payhip.com/b/' + slug,
         badge: !!bt, badgeText: bt || '',

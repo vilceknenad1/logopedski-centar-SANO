@@ -1,0 +1,266 @@
+{
+ "_upute": "Jedini izvor cijena za CSV/XML i stranicu Cjenik. Kod promjene mijenja se samo \"cijena\"; \"sidrena\" ostaje cijena s 10. 9. 2026. Nakon spremanja na GitHub objava se pokreće automatski.",
+ "datum_sidrene_cijene": "2026-09-10",
+ "objekti": {
+  "usluge": {
+   "oblik": "Poslovni prostor",
+   "adresa": "Ozaljska 13, 10000 Zagreb",
+   "oznaka": "PP1"
+  },
+  "proizvodi": {
+   "oblik": "Internetska trgovina",
+   "adresa": "Ozaljska 13, 10000 Zagreb",
+   "oznaka": "WEB1"
+  }
+ },
+ "usluge": [
+  {
+   "naziv": "Logopedska dijagnostika",
+   "opis": "60–90 min · pisano mišljenje uključeno",
+   "cijena": 130,
+   "sidrena": 130,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Ponovna procjena",
+   "opis": "60–90 min",
+   "cijena": 90,
+   "sidrena": 90,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Individualna terapija",
+   "opis": "45 min",
+   "cijena": 40,
+   "sidrena": 40,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Online terapija",
+   "opis": "45 min",
+   "cijena": 40,
+   "sidrena": 40,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Terapija ranog razvoja",
+   "opis": "45 min",
+   "cijena": 40,
+   "sidrena": 40,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Logopedsko savjetovanje",
+   "opis": "45–60 min",
+   "cijena": 50,
+   "sidrena": 50,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Paket terapija (8 individualnih susreta)",
+   "opis": "8 × 45 min",
+   "cijena": 300,
+   "sidrena": 300,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  },
+  {
+   "naziv": "Poštarina za tiskana izdanja (Hrvatska)",
+   "opis": "po narudžbi",
+   "cijena": 5,
+   "sidrena": 5,
+   "posebni_oblik_prodaje": false,
+   "naziv_posebnog_oblika_prodaje": ""
+  }
+ ],
+ "proizvodi": [
+  {
+   "sifra": "67uZr",
+   "naziv": "Kartice – Moje prve rečenice",
+   "kategorija": "Kartice",
+   "izdanje": "Tiskano izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 30,
+   "sidrena": 30,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/67uZr"
+  },
+  {
+   "sifra": "lfLPm",
+   "naziv": "Jezična penjalica – Zamjenice",
+   "kategorija": "Jezična penjalica",
+   "izdanje": "Tiskana verzija",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 30,
+   "sidrena": 30,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/lfLPm"
+  },
+  {
+   "sifra": "FzdBE",
+   "naziv": "Jezična penjalica – Zamjenice",
+   "kategorija": "Jezična penjalica",
+   "izdanje": "Digitalna verzija",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 25,
+   "sidrena": 25,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/FzdBE"
+  },
+  {
+   "sifra": "28ZIj",
+   "naziv": "Ljetna Jezična penjalica",
+   "kategorija": "Jezična penjalica",
+   "izdanje": "Digitalna verzija",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 15,
+   "sidrena": 15,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/28ZIj"
+  },
+  {
+   "sifra": "fm37d",
+   "naziv": "Predvještine čitanja i pisanja",
+   "kategorija": "Predvještine",
+   "izdanje": "Tiskano izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 35,
+   "sidrena": 35,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/fm37d"
+  },
+  {
+   "sifra": "y20Lq",
+   "naziv": "Predvještine čitanja i pisanja",
+   "kategorija": "Predvještine",
+   "izdanje": "Digitalno izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 28,
+   "sidrena": 28,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/y20Lq"
+  },
+  {
+   "sifra": "sfquD",
+   "naziv": "Početno čitanje i pisanje",
+   "kategorija": "Vježbenica",
+   "izdanje": "Tiskano izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 25,
+   "sidrena": 25,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/sfquD"
+  },
+  {
+   "sifra": "PqobF",
+   "naziv": "Početno čitanje i pisanje",
+   "kategorija": "Vježbenica",
+   "izdanje": "Digitalno izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 20,
+   "sidrena": 20,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/PqobF"
+  },
+  {
+   "sifra": "97q1u",
+   "naziv": "Predmatematička vježbenica 3–5 god.",
+   "kategorija": "Vježbenica",
+   "izdanje": "Tiskano izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 25,
+   "sidrena": 25,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/97q1u"
+  },
+  {
+   "sifra": "UwVNQ",
+   "naziv": "Predmatematička vježbenica 3–5 god.",
+   "kategorija": "Vježbenica",
+   "izdanje": "Digitalno izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 20,
+   "sidrena": 20,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/UwVNQ"
+  },
+  {
+   "sifra": "ckwt7",
+   "naziv": "Predmatematička vježbenica 5–7 god.",
+   "kategorija": "Vježbenica",
+   "izdanje": "Digitalno izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 20,
+   "sidrena": 20,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/ckwt7"
+  },
+  {
+   "sifra": "SVMhq",
+   "naziv": "Temelji za školu – set vježbenica",
+   "kategorija": "Set",
+   "izdanje": "Digitalno izdanje",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 39,
+   "sidrena": 39,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/SVMhq"
+  },
+  {
+   "sifra": "GKMzf",
+   "naziv": "Početno čitanje i pisanje + Predmatematička 5–7",
+   "kategorija": "Set",
+   "izdanje": "Digitalni set",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 34,
+   "sidrena": 34,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/GKMzf"
+  },
+  {
+   "sifra": "L9XzU",
+   "naziv": "Sve vježbenice – Početno + Predmatematička 3–5 i 5–7",
+   "kategorija": "Set",
+   "izdanje": "Digitalni set",
+   "marka": "Jezična penjalica",
+   "jedinica_mjere": "kom",
+   "cijena": 45,
+   "sidrena": 45,
+   "barkod": "",
+   "dostupnost": "dostupno",
+   "poveznica": "https://payhip.com/b/L9XzU"
+  }
+ ]
+}

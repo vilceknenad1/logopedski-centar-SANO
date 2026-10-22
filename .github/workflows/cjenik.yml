@@ -1,0 +1,28 @@
+name: Objava cjenika
+
+on:
+  schedule:
+    - cron: '30 4 * * *'   # svaki dan oko 5:30/6:30 po zagrebačkom vremenu (prije 8:00)
+  push:
+    paths: ['cjenik/cjenik.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: cjenik
+
+jobs:
+  objava:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node cjenik/generiraj.mjs
+      - run: |
+          git config user.name "cjenik-bot"
+          git config user.email "cjenik-bot@users.noreply.github.com"
+          git add cjenik
+          git diff --cached --quiet || (git commit -m "Objava cjenika $(TZ=Europe/Zagreb date '+%Y-%m-%d %H:%M')" && git push)

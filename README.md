@@ -8,3 +8,4 @@ Statična stranica (GitHub Pages).
 - materijali.html, recenzije.html
 
 Sve slike su WebP u images/. support.js i image-slot.js moraju ostati u korijenu.
+- Cjenik: cjenik.html (CSV/XML u cjenik/, upute u cjenik/UPUTE.md)
