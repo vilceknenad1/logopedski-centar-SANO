@@ -93,4 +93,10 @@
     <image:image><image:loc>https://www.logopedski-centar-sano.com/images/ostalo/sano-logo.webp</image:loc><image:title>Logopedski centar SANO</image:title></image:image>
     <image:image><image:loc>https://www.logopedski-centar-sano.com/images/terapija/lana-rozic-logoped-rad-s-djetetom-zagreb-1200.webp</image:loc><image:title>Lana Rozić, univ. mag. logoped., u radu s djetetom u Logopedskom centru SANO u Zagrebu</image:title></image:image>
   </url>
+  <url>
+    <loc>https://www.logopedski-centar-sano.com/politika-privatnosti.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
