@@ -70,6 +70,14 @@
     header>div>div>a:first-child:not(:last-child){display:none!important}
   }
 </style>
+<style id="mob-a11y">
+@media (max-width:720px){
+a:not([style*="padding"]):not([style*="height"]),[role="link"]:not([style*="padding"]){position:relative}
+a:not([style*="padding"]):not([style*="height"])::after,[role="link"]:not([style*="padding"])::after{content:"";position:absolute;inset:-11px -6px}
+:is([style*="font-size:11.5px"],[style*="font-size:12px"],[style*="font-size: 12px"]):not([style*="letter-spacing:0.1"]):not([style*="letter-spacing:0.2"]):not([style*="letter-spacing: 0.1"]):not([style*="letter-spacing: 0.2"]):not([style*="letter-spacing:0.08"]):not([style*="letter-spacing: 0.08"]):not([style*="letter-spacing:0.3"]):not([style*="uppercase"]){font-size:14px!important}
+button[style*="padding: 0"],button[style*="padding:0"]{position:relative}button[style*="padding: 0"]::after,button[style*="padding:0"]::after{content:"";position:absolute;inset:-12px -6px}
+}
+</style>
 </helmet>
 
 <div ref="{{ setRoot }}" style="overflow-x:clip">
@@ -79,7 +87,7 @@
     <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="images/ostalo/sano-logo.webp" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
     <div style="display:flex;align-items:center;gap:8px;flex:none">
       <a href="index.html" style="padding:8px 12px;border-radius:10px;color:#4b5563;font-weight:700;font-size:16px;white-space:nowrap" style-hover="background:#f1f5fa;color:#0f7c8c">← Početna</a>
-      <a href="index.html#narucivanje" style="padding:12px 20px;border-radius:12px;background:#1ea6b6;color:#fff;font-weight:800;font-size:16px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezerviraj termin</a>
+      <a href="index.html#narucivanje" style="padding:12px 20px;border-radius:12px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 6px 16px rgba(30,166,182,0.32);white-space:nowrap" style-hover="background:#16899a">Rezervirajte termin</a>
     </div>
   </div>
 </header>
@@ -100,7 +108,7 @@
 
     <div>
       <h2 style="font-size:24px;font-weight:700;margin:0 0 12px;color:#2f3945">1. Voditelj obrade</h2>
-      <p style="margin:0 0 12px;font-size:16px;line-height:1.7;color:#4b5563;text-wrap:pretty"><mark style="background:#fff1c2;color:#7a5200;padding:0 4px;border-radius:4px">[NAZIV PRAVNE OSOBE]</mark>, OIB: <mark style="background:#fff1c2;color:#7a5200;padding:0 4px;border-radius:4px">[OIB]</mark><br>Ozaljska 13, 10000 Zagreb<br>E-pošta: <a href="mailto:udruga.prosano@gmail.com">udruga.prosano@gmail.com</a> · Telefon: <a href="tel:+38598841680">+385 98 841 680</a></p>
+      <p style="margin:0 0 12px;font-size:16px;line-height:1.7;color:#4b5563;text-wrap:pretty">Logopedski centar SANO j.d.o.o., OIB: 36252251137, MBS: 081201666<br>Ozaljska ulica 13, 10000 Zagreb, Hrvatska<br>E-pošta: <a href="mailto:udruga.prosano@gmail.com">udruga.prosano@gmail.com</a> · Telefon: <a href="tel:+38598841680">+385 98 841 680</a></p>
       <p style="margin:0 0 12px;font-size:16px;line-height:1.7;color:#4b5563;text-wrap:pretty">Za sva pitanja o zaštiti osobnih podataka možete nam se obratiti na gore navedenu e-poštu.</p>
     </div>
 
@@ -122,7 +130,7 @@
       </div>
       <p style="margin:0 0 12px;font-size:16px;line-height:1.7;color:#4b5563;text-wrap:pretty">Svoj izbor možete promijeniti u bilo kojem trenutku. Nakon brisanja izbora, karta se više ne prikazuje dok je ponovno ne odobrite.</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px">
-        <button type="button" onClick="{{ resetCookies }}" style="padding:12px 22px;border-radius:999px;border:1.5px solid #1ea6b6;background:#fff;color:#0f7c8c;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit" style-hover="background:#1ea6b6;color:#fff">Obriši moj izbor kolačića</button>
+        <button type="button" onClick="{{ resetCookies }}" style="padding:12px 22px;border-radius:999px;border:1.5px solid #1ea6b6;background:#fff;color:#0f7c8c;font-weight:800;font-size:15px;cursor:pointer;font-family:inherit" style-hover="background:#12909f;color:#fff">Obriši moj izbor kolačića</button>
         <sc-if value="{{ cookiesReset }}" hint-placeholder-val="{{ false }}"><span role="status" style="font-size:14px;font-weight:700;color:#1c7a52">Izbor je obrisan. Na početnoj stranici ponovno ćemo Vas pitati.</span></sc-if>
       </div>
     </div>

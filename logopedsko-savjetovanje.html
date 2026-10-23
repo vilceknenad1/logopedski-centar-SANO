@@ -68,7 +68,7 @@
   }
   @media (max-width:1000px){
     #sav-hero{grid-template-columns:1fr!important}
-    #sav-hero-photo{order:-1}#sav-hero-photo img{margin-right:0!important}#sav-hero-photo img{aspect-ratio:1 / 1!important;object-position:66% 50%!important;border-radius:72px 16px 16px 16px!important}
+    #sav-hero-photo{order:-1}#sav-hero-photo img{margin-right:0!important}#sav-hero-photo img{aspect-ratio:1 / 1!important;object-position:42% 50%!important;border-radius:72px 16px 16px 16px!important}
     #sav-body,#sav-cta{grid-template-columns:1fr!important}
     #sav-trust{grid-template-columns:1fr!important;gap:20px!important}
     #sav-trust>div{border-left:none!important;padding:0!important}
@@ -115,16 +115,24 @@
     if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){sav_init(0)});else setTimeout(function(){sav_init(0)},150);
   }
 </script>
+<style id="mob-a11y">
+@media (max-width:720px){
+a:not([style*="padding"]):not([style*="height"]),[role="link"]:not([style*="padding"]){position:relative}
+a:not([style*="padding"]):not([style*="height"])::after,[role="link"]:not([style*="padding"])::after{content:"";position:absolute;inset:-11px -6px}
+:is([style*="font-size:11.5px"],[style*="font-size:12px"],[style*="font-size: 12px"]):not([style*="letter-spacing:0.1"]):not([style*="letter-spacing:0.2"]):not([style*="letter-spacing: 0.1"]):not([style*="letter-spacing: 0.2"]):not([style*="letter-spacing:0.08"]):not([style*="letter-spacing: 0.08"]):not([style*="letter-spacing:0.3"]):not([style*="uppercase"]){font-size:14px!important}
+button[style*="padding: 0"],button[style*="padding:0"]{position:relative}button[style*="padding: 0"]::after,button[style*="padding:0"]::after{content:"";position:absolute;inset:-12px -6px}
+}
+</style>
 </helmet>
 
 <div style="overflow-x:clip">
 
-<header style="position:sticky;top:0;z-index:60;padding:16px 16px 0">
-  <div style="max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.96);backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(18,144,159,0.20);border-radius:18px;box-shadow:0 10px 30px rgba(12,85,99,0.14);padding:8px 12px 8px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+<header style="position:sticky;top:0;z-index:60;padding:16px 24px 0">
+  <div style="max-width:1280px;margin:0 auto;background:rgba(255,255,255,0.96);backdrop-filter:saturate(180%) blur(14px);border:1px solid rgba(18,144,159,0.20);border-radius:18px;box-shadow:0 10px 30px rgba(12,85,99,0.14);padding:8px 12px 8px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px">
     <a href="index.html" style="display:flex;align-items:center;height:56px;flex:none"><img src="images/ostalo/sano-logo.webp" alt="Logopedski centar SANO" style="height:52px;width:auto;object-fit:contain"></a>
     <div style="display:flex;align-items:center;gap:12px">
       <a href="index.html" style="padding:8px 16px;border-radius:10px;color:#4b5563;font-weight:700;font-size:16px;white-space:nowrap" style-hover="background:#f1f5fa;color:#0f7c8c">← Početna</a>
-      <a href="index.html#narucivanje" style="padding:12px 20px;border-radius:12px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 6px 16px rgba(18,144,159,0.32);white-space:nowrap" style-hover="background:#0f7c8c">Rezerviraj termin</a>
+      <a href="index.html#narucivanje" style="padding:12px 20px;border-radius:12px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 6px 16px rgba(18,144,159,0.32);white-space:nowrap" style-hover="background:#0f7c8c">Rezervirajte termin</a>
     </div>
   </div>
 </header>
@@ -171,7 +179,7 @@
     </div>
 
     <div id="sav-hero-photo" style="position:relative">
-      <img src="images/savjetovanje/logopedsko-savjetovanje-roditelja-ana-bilic-topic-zagreb-v2-1000.webp" srcset="images/savjetovanje/logopedsko-savjetovanje-roditelja-ana-bilic-topic-zagreb-v2-600.webp 600w, images/savjetovanje/logopedsko-savjetovanje-roditelja-ana-bilic-topic-zagreb-v2-1000.webp 1000w, images/savjetovanje/logopedsko-savjetovanje-roditelja-ana-bilic-topic-zagreb-v2-1600.webp 1600w" sizes="(max-width: 899px) 92vw, 640px" width="1600" height="1200" alt="Logopedinja Ana Bilić Topić u savjetovanju s roditeljem u Logopedskom centru SANO u Zagrebu" fetchpriority="high" decoding="async" style="width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:120px 18px 18px 18px;box-shadow:0 1px 2px rgba(20,70,80,0.05),0 24px 56px rgba(20,70,80,0.12)">
+      <img src="images/savjetovanje/logopedsko-savjetovanje-logopedinja-dijete-zagreb-v3-1000.webp" srcset="images/savjetovanje/logopedsko-savjetovanje-logopedinja-dijete-zagreb-v3-600.webp 600w, images/savjetovanje/logopedsko-savjetovanje-logopedinja-dijete-zagreb-v3-1000.webp 1000w, images/savjetovanje/logopedsko-savjetovanje-logopedinja-dijete-zagreb-v3-1600.webp 1600w" sizes="(max-width: 899px) 92vw, 640px" width="1600" height="1200" alt="Logopedinja s djetetom tijekom rada na zadatku u Logopedskom centru SANO u Zagrebu" fetchpriority="high" decoding="async" style="width:100%;height:auto;aspect-ratio:4 / 3;object-fit:cover;display:block;border-radius:120px 18px 18px 18px;box-shadow:0 1px 2px rgba(20,70,80,0.05),0 24px 56px rgba(20,70,80,0.12)">
       <a href="ana-bilic-topic.html" style="position:absolute;right:20px;bottom:20px;display:flex;flex-direction:column;gap:2px;padding:12px 18px;border-radius:16px;background:rgba(255,255,255,0.94);box-shadow:0 10px 28px rgba(20,60,80,0.16);color:#1A2E3A;text-decoration:none;transition:transform .25s" style-hover="transform:translateY(-2px)"><strong style="font-size:15px;font-weight:800">Ana Bilić Topić</strong><span style="font-size:13px;color:#5A6D80">mag. logopedije · <span style="color:#0E7C8B;font-weight:800">Upoznajte Anu →</span></span></a>
     </div>
   </div>
@@ -272,7 +280,7 @@
       <h2 style="font-size:clamp(32px,4vw,48px);font-weight:600;color:#12435A;margin:0">Niste sigurni koji je sljedeći korak?</h2>
       <span style="display:block;width:56px;height:2px;background:#e2953a;margin:20px 0 20px"></span>
       <p style="font-size:16px;line-height:1.7;color:#4E767D;max-width:460px;text-wrap:pretty">Savjetovanje vam pomaže da bolje razumijete razvoj svog djeteta i dobijete jasne preporuke za dalje.</p>
-      <a href="index.html#narucivanje" style="margin-top:28px;display:inline-flex;align-items:center;gap:12px;padding:16px 28px;border-radius:14px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 10px 26px rgba(18,144,159,0.30);transition:gap .3s,background .25s" style-hover="gap:16px;background:#0f7c8c">Naručite savjetovanje <span style="font-size:16px">→</span></a>
+      <a href="index.html#narucivanje" style="margin-top:28px;display:inline-flex;align-items:center;gap:12px;padding:16px 28px;border-radius:999px;background:#12909f;color:#fff;font-weight:800;font-size:16px;box-shadow:0 10px 26px rgba(18,144,159,0.30);transition:gap .3s,background .25s" style-hover="gap:16px;background:#0f7c8c">Naručite savjetovanje <span style="font-size:16px">→</span></a>
     </div>
     <div style="display:flex;align-items:flex-start;justify-content:center;gap:20px;flex-wrap:wrap">
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:132px">
