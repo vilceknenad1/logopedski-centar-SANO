@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cjenik vrsta="proizvodi" oblik_objekta="Internetska trgovina" adresa_objekta="Ozaljska 13, 10000 Zagreb" oznaka_objekta="WEB1" broj_pohrane="3" datum="2026-10-23" vrijeme="11:30" datum_sidrene_cijene="2026-09-10" valuta="EUR">
+  <proizvod>
+    <naziv>Kartice – Moje prve rečenice (Tiskano izdanje)</naziv>
+    <sifra>67uZr</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>30.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>30.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>30.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Jezična penjalica – Zamjenice (Tiskana verzija)</naziv>
+    <sifra>lfLPm</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>30.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>30.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>30.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Jezična penjalica – Zamjenice (Digitalna verzija)</naziv>
+    <sifra>FzdBE</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>25.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>25.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>25.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Ljetna Jezična penjalica (Digitalna verzija)</naziv>
+    <sifra>28ZIj</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>15.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>15.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>15.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Predvještine čitanja i pisanja (Tiskano izdanje)</naziv>
+    <sifra>fm37d</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>35.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>35.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>35.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Predvještine čitanja i pisanja (Digitalno izdanje)</naziv>
+    <sifra>y20Lq</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>28.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>28.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>28.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Početno čitanje i pisanje (Tiskano izdanje)</naziv>
+    <sifra>sfquD</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>25.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>25.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>25.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Početno čitanje i pisanje (Digitalno izdanje)</naziv>
+    <sifra>PqobF</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>20.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>20.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>20.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Predmatematička vježbenica 3–5 god. (Tiskano izdanje)</naziv>
+    <sifra>97q1u</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>25.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>25.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>25.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Predmatematička vježbenica 3–5 god. (Digitalno izdanje)</naziv>
+    <sifra>UwVNQ</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>20.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>20.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>20.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Predmatematička vježbenica 5–7 god. (Digitalno izdanje)</naziv>
+    <sifra>ckwt7</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>20.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>20.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>20.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Temelji za školu – set vježbenica (Digitalno izdanje)</naziv>
+    <sifra>SVMhq</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>39.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>39.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>39.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Početno čitanje i pisanje + Predmatematička 5–7 (Digitalni set)</naziv>
+    <sifra>GKMzf</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>34.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>34.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>34.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+  <proizvod>
+    <naziv>Sve vježbenice – Početno + Predmatematička 3–5 i 5–7 (Digitalni set)</naziv>
+    <sifra>L9XzU</sifra>
+    <marka>Jezična penjalica</marka>
+    <jedinica_mjere>kom</jedinica_mjere>
+    <cijena_za_jedinicu_mjere>45.00</cijena_za_jedinicu_mjere>
+    <maloprodajna_cijena>45.00</maloprodajna_cijena>
+    <posebni_oblik_prodaje>ne</posebni_oblik_prodaje>
+    <naziv_posebnog_oblika_prodaje></naziv_posebnog_oblika_prodaje>
+    <sidrena_cijena>45.00</sidrena_cijena>
+    <barkod></barkod>
+    <dostupnost>dostupno</dostupnost>
+  </proizvod>
+</cjenik>
