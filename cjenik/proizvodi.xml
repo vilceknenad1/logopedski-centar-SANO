@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cjenik vrsta="proizvodi" oblik_objekta="Internetska trgovina" adresa_objekta="Ozaljska 13, 10000 Zagreb" oznaka_objekta="WEB1" broj_pohrane="3" datum="2026-10-24" vrijeme="11:03" datum_sidrene_cijene="2026-09-10" valuta="EUR">
+<cjenik vrsta="proizvodi" oblik_objekta="Internetska trgovina" adresa_objekta="Ozaljska 13, 10000 Zagreb" oznaka_objekta="WEB1" broj_pohrane="4" datum="2026-10-25" vrijeme="10:20" datum_sidrene_cijene="2026-09-10" valuta="EUR">
   <proizvod>
     <naziv>Kartice – Moje prve rečenice (Tiskano izdanje)</naziv>
     <sifra>67uZr</sifra>
