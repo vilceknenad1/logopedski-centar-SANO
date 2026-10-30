@@ -1,24 +1,14 @@
-# Ažuriranje v5 – što učitati na GitHub
+# Ažuriranje "brzina" – što učitati na GitHub
 
-Učitaj sadržaj ove mape u korijen repozitorija (prepiši postojeće):
+Učitaj SADRŽAJ ove mape u korijen repozitorija (prepiši postojeće datoteke).
+Najlakše: na GitHubu otvori repozitorij → Add file → Upload files → povuci sve mape
+i datoteke iz ove mape odjednom → Commit changes.
 
-- index.html (zamjenjuje postojeći)
-- images/hero/logopedinja-dijete-individualna-terapija-zagreb.webp
-- images/usluge/logopedinja-dijete-vjezbe-citanja-pisanja-sano.webp
-- images/metode/logopedinja-dijete-procjena-vjezbe-pisanja-sano.webp
-- images/o-nama/logopedinja-dijete-individualni-rad-sano-zagreb.webp
-- images/prvi-susret/prvi-susret-upoznavanje-slikovnica-v2.webp
-- images/prvi-susret/prvi-susret-testovi-procjene-v2.webp
-- images/prvi-susret/prvi-susret-plan-rada-jezicna-penjalica.webp
+Što je promijenjeno:
+- 11 HTML stranica: fontovi i skripte se učitavaju ranije i ne blokiraju prikaz
+- index.html: responzivne slike (srcset) za hero, "O nama", "Metode", "Recenzije"
+- images/: ~50 slika smanjeno na stvarnu prikazanu veličinu (izgled isti)
+- NOVO vendor/: React se sada učitava s vlastite domene umjesto s unpkg.com
+- NOVE slike: *-640, *-800, *-1080 verzije velikih fotografija
 
-Ostale datoteke na GitHubu ostaju kakve jesu.
-
-Mogu se obrisati (više se ne koriste na početnoj):
-- images/tim/logopedinje-sano-zagreb.webp (AI slika)
-- images/tim/logopedinje-tim-sano-zagreb-v2-*.webp
-- images/hero/logopedinje-djeca-jezicna-penjalica-zagreb-*.webp
-- images/usluge/dijete-plocice-slova-logopedska-terapija-sano-*.webp
-- images/usluge/logopedska-procjena-testna-knjizica-zagreb-*.webp
-- images/prvi-susret/prvi-susret-*.webp (stare tri: razgovor-s-roditeljem, logopedska-procjena, plan-terapije)
-
-Prije brisanja provjeri da ih ne koriste podstranice (npr. stranice logopedinja).
+Nakon objave pričekaj ~10 minuta (GitHub keš) i ponovno pokreni PageSpeed.
