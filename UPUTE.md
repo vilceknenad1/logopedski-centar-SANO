@@ -1,14 +1,24 @@
-# Ažuriranje "brzina 2" – što učitati na GitHub
+# Ažuriranje v5 – što učitati na GitHub
 
-Učitaj SADRŽAJ ove mape u korijen repozitorija (prepiši postojeće).
-GitHub → Add file → Upload files → povuci sve mape i datoteke → Commit changes.
-(Prvo mora biti učitano "azuriranje-brzina" – ako jest, samo nastavi.)
+Učitaj sadržaj ove mape u korijen repozitorija (prepiši postojeće):
 
-Promjene:
-- svih 12 HTML stranica: fontovi ugrađeni u stranicu (nestaje "zahtjevi za blokiranje")
-- boje teksta i gumba blago potamnjene → pristupačnost 100 (kontrast)
-- index.html: mobilne verzije slika (bedž, kartice, Prvi susret)
-- support.js: smanjen (minificiran), radi isto
-- nove slike: *-200, *-240, *-600 verzije
+- index.html (zamjenjuje postojeći)
+- images/hero/logopedinja-dijete-individualna-terapija-zagreb.webp
+- images/usluge/logopedinja-dijete-vjezbe-citanja-pisanja-sano.webp
+- images/metode/logopedinja-dijete-procjena-vjezbe-pisanja-sano.webp
+- images/o-nama/logopedinja-dijete-individualni-rad-sano-zagreb.webp
+- images/prvi-susret/prvi-susret-upoznavanje-slikovnica-v2.webp
+- images/prvi-susret/prvi-susret-testovi-procjene-v2.webp
+- images/prvi-susret/prvi-susret-plan-rada-jezicna-penjalica.webp
 
-Datoteka fonts/fonts.css više se ne koristi, ali može ostati.
+Ostale datoteke na GitHubu ostaju kakve jesu.
+
+Mogu se obrisati (više se ne koriste na početnoj):
+- images/tim/logopedinje-sano-zagreb.webp (AI slika)
+- images/tim/logopedinje-tim-sano-zagreb-v2-*.webp
+- images/hero/logopedinje-djeca-jezicna-penjalica-zagreb-*.webp
+- images/usluge/dijete-plocice-slova-logopedska-terapija-sano-*.webp
+- images/usluge/logopedska-procjena-testna-knjizica-zagreb-*.webp
+- images/prvi-susret/prvi-susret-*.webp (stare tri: razgovor-s-roditeljem, logopedska-procjena, plan-terapije)
+
+Prije brisanja provjeri da ih ne koriste podstranice (npr. stranice logopedinja).
