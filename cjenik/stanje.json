@@ -1,10 +1,18 @@
 {
- "broj": 9,
+ "broj": 10,
  "otisak": {
   "usluge": "[[\"Logopedska dijagnostika\",\"130,00\",\"ne\",\"\",\"130,00\"],[\"Ponovna procjena\",\"90,00\",\"ne\",\"\",\"90,00\"],[\"Individualna terapija\",\"40,00\",\"ne\",\"\",\"40,00\"],[\"Online terapija\",\"40,00\",\"ne\",\"\",\"40,00\"],[\"Terapija ranog razvoja\",\"40,00\",\"ne\",\"\",\"40,00\"],[\"Logopedsko savjetovanje\",\"50,00\",\"ne\",\"\",\"50,00\"],[\"Paket terapija (8 individualnih susreta)\",\"300,00\",\"ne\",\"\",\"300,00\"],[\"Poštarina za tiskana izdanja (Hrvatska)\",\"5,00\",\"ne\",\"\",\"5,00\"]]",
   "proizvodi": "[[\"Kartice – Moje prve rečenice (Tiskano izdanje)\",\"67uZr\",\"Jezična penjalica\",\"kom\",\"30,00\",\"30,00\",\"ne\",\"\",\"30,00\",\"\",\"dostupno\"],[\"Jezična penjalica – Zamjenice (Tiskana verzija)\",\"lfLPm\",\"Jezična penjalica\",\"kom\",\"30,00\",\"30,00\",\"ne\",\"\",\"30,00\",\"\",\"dostupno\"],[\"Jezična penjalica – Zamjenice (Digitalna verzija)\",\"FzdBE\",\"Jezična penjalica\",\"kom\",\"25,00\",\"25,00\",\"ne\",\"\",\"25,00\",\"\",\"dostupno\"],[\"Ljetna Jezična penjalica (Digitalna verzija)\",\"28ZIj\",\"Jezična penjalica\",\"kom\",\"15,00\",\"15,00\",\"ne\",\"\",\"15,00\",\"\",\"dostupno\"],[\"Predvještine čitanja i pisanja (Tiskano izdanje)\",\"fm37d\",\"Jezična penjalica\",\"kom\",\"35,00\",\"35,00\",\"ne\",\"\",\"35,00\",\"\",\"dostupno\"],[\"Predvještine čitanja i pisanja (Digitalno izdanje)\",\"y20Lq\",\"Jezična penjalica\",\"kom\",\"28,00\",\"28,00\",\"ne\",\"\",\"28,00\",\"\",\"dostupno\"],[\"Početno čitanje i pisanje (Tiskano izdanje)\",\"sfquD\",\"Jezična penjalica\",\"kom\",\"25,00\",\"25,00\",\"ne\",\"\",\"25,00\",\"\",\"dostupno\"],[\"Početno čitanje i pisanje (Digitalno izdanje)\",\"PqobF\",\"Jezična penjalica\",\"kom\",\"20,00\",\"20,00\",\"ne\",\"\",\"20,00\",\"\",\"dostupno\"],[\"Predmatematička vježbenica 3–5 god. (Tiskano izdanje)\",\"97q1u\",\"Jezična penjalica\",\"kom\",\"25,00\",\"25,00\",\"ne\",\"\",\"25,00\",\"\",\"dostupno\"],[\"Predmatematička vježbenica 3–5 god. (Digitalno izdanje)\",\"UwVNQ\",\"Jezična penjalica\",\"kom\",\"20,00\",\"20,00\",\"ne\",\"\",\"20,00\",\"\",\"dostupno\"],[\"Predmatematička vježbenica 5–7 god. (Digitalno izdanje)\",\"ckwt7\",\"Jezična penjalica\",\"kom\",\"20,00\",\"20,00\",\"ne\",\"\",\"20,00\",\"\",\"dostupno\"],[\"Temelji za školu – set vježbenica (Digitalno izdanje)\",\"SVMhq\",\"Jezična penjalica\",\"kom\",\"39,00\",\"39,00\",\"ne\",\"\",\"39,00\",\"\",\"dostupno\"],[\"Početno čitanje i pisanje + Predmatematička 5–7 (Digitalni set)\",\"GKMzf\",\"Jezična penjalica\",\"kom\",\"34,00\",\"34,00\",\"ne\",\"\",\"34,00\",\"\",\"dostupno\"],[\"Sve vježbenice – Početno + Predmatematička 3–5 i 5–7 (Digitalni set)\",\"L9XzU\",\"Jezična penjalica\",\"kom\",\"45,00\",\"45,00\",\"ne\",\"\",\"45,00\",\"\",\"dostupno\"]]"
  },
  "arhiva": [
+  {
+   "vrsta": "proizvodi",
+   "broj": 10,
+   "datum": "2026-10-31",
+   "vrijeme": "11-33",
+   "csv": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0010_2026-10-31_11-33.csv",
+   "xml": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0010_2026-10-31_11-33.xml"
+  },
   {
    "vrsta": "proizvodi",
    "broj": 9,
