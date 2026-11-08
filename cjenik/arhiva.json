@@ -1,6 +1,14 @@
 [
  {
   "vrsta": "proizvodi",
+  "broj": 18,
+  "datum": "2026-11-08",
+  "vrijeme": "12-28",
+  "csv": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0018_2026-11-08_12-28.csv",
+  "xml": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0018_2026-11-08_12-28.xml"
+ },
+ {
+  "vrsta": "proizvodi",
   "broj": 17,
   "datum": "2026-11-07",
   "vrijeme": "12-16",
