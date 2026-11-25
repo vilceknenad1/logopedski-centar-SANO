@@ -1,6 +1,14 @@
 [
  {
   "vrsta": "proizvodi",
+  "broj": 35,
+  "datum": "2026-11-25",
+  "vrijeme": "15-51",
+  "csv": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0035_2026-11-25_15-51.csv",
+  "xml": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0035_2026-11-25_15-51.xml"
+ },
+ {
+  "vrsta": "proizvodi",
   "broj": 34,
   "datum": "2026-11-24",
   "vrijeme": "16-10",
@@ -246,14 +254,6 @@
   "vrijeme": "10-20",
   "csv": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0004_2026-10-25_10-20.csv",
   "xml": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0004_2026-10-25_10-20.xml"
- },
- {
-  "vrsta": "proizvodi",
-  "broj": 3,
-  "datum": "2026-10-24",
-  "vrijeme": "11-03",
-  "csv": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0003_2026-10-24_11-03.csv",
-  "xml": "Internetska-trgovina_Ozaljska-13-10000-Zagreb_WEB1_0003_2026-10-24_11-03.xml"
  },
  {
   "vrsta": "usluge",
